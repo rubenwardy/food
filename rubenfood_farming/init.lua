@@ -1,0 +1,1 @@
+ minetest.register_alias("rubenfood:wheat", "farming:wheat")

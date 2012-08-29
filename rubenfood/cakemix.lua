@@ -6,13 +6,13 @@ print ("RubenFood: Loading animal+farming based foods")
 minetest.register_craft({
 	output = '"rubenfood:cakemix_plain" 1',
 	recipe = {
-		{'"farming:wheat"','"animalmaterials:milk"','"animalmaterials:egg"'},
+		{'"rubenfood:wheat"','"rubenfood:milk"','"rubenfood:egg"'},
 	}
 })
 
 minetest.register_craft({
 	output = '"rubenfood:cakemix_choco" 1',
 	recipe = {
-	{'""','"default:dirt"','""'},	{'"farming:wheat"','"animalmaterials:milk"','"animalmaterials:egg"'},
+	{'""','"default:dirt"','""'},	{'"rubenfood:wheat"','"rubenfood:milk"','"rubenfood:egg"'},
 	}
 })

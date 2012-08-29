@@ -1,8 +1,3 @@
--- This file registers all the foods
-
-print ("RubenFood: Loading basic foods")
-
-
 --------------------------Apple Juice--------------------------
 minetest.register_node(":rubenfood:apple_juice", {
 	description = "Apple Juice",
@@ -19,11 +14,11 @@ minetest.register_node(":rubenfood:apple_juice", {
 })
 
 minetest.register_craft({
-	output = '":rubenfood:apple_juice" 4',
+	output = '"rubenfood:apple_juice" 4',
 	recipe = {
 		{'""','""','""'},
 		{'""','"default:apple"','""'},
-		{'""','"bucket:bucket_water"','""'},
+		{'""','"rubenfood:cup"','""'},
 	}
 })
 
@@ -31,28 +26,34 @@ minetest.register_craft({
 
 
 
-----------------------------Cigerete----------------------------
-minetest.register_node(":rubenfood:cigarette", {
-	description = "Cigarette",
+----------------------cactuz juice----------------------------
+minetest.register_node(":rubenfood:cactus_juice", {
+	description = "Cactuz Juice",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
-	tiles = {"ruben_cigar.png"},
-	inventory_image = "ruben_cigar.png",
+	tiles = {"ruben_juice_cactus.png"},
+	inventory_image = "ruben_juice_cactus.png",
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
 	groups = {fleshy=3,dig_immediate=3,flammable=2},
-	on_use = minetest.item_eat(-4),
+	on_use = minetest.item_eat(2),
 	sounds = default.node_sound_defaults(),
 })
 
 minetest.register_craft({
-	output = '"rubenfood:cigarette" 1',
+	output = '"rubenfood:cactus_juice" 4',
 	recipe = {
-		{'"default:dry_shrub"','"default:dry_shrub"','"default:dry_shrub"'},
-
+		{'""','""','""'},
+		{'""','"default:cactus"','""'},
+		{'""','"rubenfood:cup"','""'},
 	}
 })
+
+
+
+
+
 
 
 
@@ -61,7 +62,7 @@ minetest.register_craft({
 -----------------------------Coffee-----------------------------
 
 minetest.register_craftitem(":rubenfood:coffeebean",{
-	description = "Coffee Bean",
+	description = "Raw Coffee Bean",
 	tiles = {"ruben_coffee.png"},
 	inventory_image = "ruben_coffee.png",
 })
@@ -100,7 +101,7 @@ minetest.register_craft({
 	recipe = {
 		{'""','"rubenfood:coffeebean_cooked"','""'},
 		{'""','"rubenfood:coffeebean_cooked"','""'},
-		{'""','"bucket:bucket_water"','""'},
+		{'""','"rubenfood:cup"','""'},
 	}
 })
 
@@ -109,3 +110,7 @@ minetest.register_craft({
 	output = "rubenfood:coffeebean_cooked",
 	recipe = "rubenfood:coffeebean",
 })
+
+
+
+
