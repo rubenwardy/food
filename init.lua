@@ -12,9 +12,14 @@
 
 print ("RubenFood: Loading mainframe: [Master]")
 
-dofile(minetest.get_modpath("rubenfood").."/drinks.lua")
+----------------------Load Files-----------------------------
+dofile(minetest.get_modpath("rubenfood").."/baking.lua")
 dofile(minetest.get_modpath("rubenfood").."/cakes.lua")
+
+dofile(minetest.get_modpath("rubenfood").."/drinks.lua")
 dofile(minetest.get_modpath("rubenfood").."/fruits.lua")
+
+dofile(minetest.get_modpath("rubenfood").."/support.lua")
 
 ----------------------------Cup------------------------------
 minetest.register_craftitem(":rubenfood:cup",{
