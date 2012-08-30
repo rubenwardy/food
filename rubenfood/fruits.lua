@@ -1,4 +1,12 @@
--- This file adds apple like fruits
+-- RUBENFOOD MOD
+-- A mod written by rubenwardy that adds
+-- food to the minetest game
+-- =====================================
+-- >> rubenfood/fruits.lua
+-- adds fruits
+-- =====================================
+-- [regis-food] Oranges
+-- =====================================
 
 print ("RubenFood [Master] - Loading Fruits")
 

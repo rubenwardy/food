@@ -1,17 +1,15 @@
--- Loads the animal mod based crafting
+-- RUBENFOOD MOD
+-- A mod written by rubenwardy that adds
+-- food to the minetest game
+-- =====================================
+-- >> rubenfood/cakemix.lua
+-- adds cake mix
+-- =====================================
+-- [regis-food] Apple Juice
+-- [craft] Cactus Juice
+-- [regis-food] Cactus Juice
+-- [craft] Cactus Juice
+-- =====================================
 
 ---------------Cake Pastry-----------
 
-minetest.register_craft({
-	output = '"rubenfood:cakemix_plain" 1',
-	recipe = {
-		{'"rubenfood:flour"','"rubenfood:milk"','"rubenfood:egg"'},
-	}
-})
-
-minetest.register_craft({
-	output = '"rubenfood:cakemix_choco" 1',
-	recipe = {
-	{'""','"default:dirt"','""'},	{'"rubenfood:flour"','"rubenfood:milk"','"rubenfood:egg"'},
-	}
-})

@@ -2,9 +2,13 @@
 -- A mod written by rubenwardy that adds
 -- food to the minetest game
 -- =====================================
--- rubenfood/init.lua
+-- >> rubenfood/drinks.lua
+-- adds drinks
 -- =====================================
--- 
+-- [regis-food] Apple Juice
+-- [craft] Cactus Juice
+-- [regis-food] Cactus Juice
+-- [craft] Cactus Juice
 -- =====================================
 
 print ("RubenFood [Master] - Loading Juices")
@@ -37,7 +41,7 @@ minetest.register_craft({
 
 
 
-----------------------cactuz juice----------------------------
+----------------------cactus juice----------------------------
 minetest.register_node(":rubenfood:cactus_juice", {
 	description = "Cactuz Juice",
 	drawtype = "plantlike",

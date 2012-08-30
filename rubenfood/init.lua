@@ -2,7 +2,8 @@
 -- A mod written by rubenwardy that adds
 -- food to the minetest game
 -- =====================================
--- rubenfood/init.lua
+-- >> rubenfood/init.lua
+-- inits the mod
 -- =====================================
 -- [regis-item] Cup
 -- [craft] Cup

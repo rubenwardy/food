@@ -1,6 +1,15 @@
+-- RUBENFOOD MOD
+-- A mod written by rubenwardy that adds
+-- food to the minetest game
+-- =====================================
+-- >> rubenfood/cakes.lua
+-- adds cakes
+-- =====================================
+-- [regis-food] Plain Cake
+-- [regis-food] Chocolate Cake
+-- =====================================
 print("RubenFood [Master] - Loading Cakes")
 
-dofile(minetest.get_modpath("rubenfood").."/cakemix.lua")
 --------------------------Cakes-------------------------
 minetest.register_craftitem(":rubenfood:cakemix_plain",{
 	description = "Cake Mix",
@@ -52,4 +61,25 @@ minetest.register_node(":rubenfood:cake_chocolate", {
 	groups = {fleshy=3,dig_immediate=3,flammable=2},
 	on_use = minetest.item_eat(40),
 	sounds = default.node_sound_defaults(),
+})
+
+
+
+
+
+
+----------------------------- Cake Pastry ----------------------------
+
+minetest.register_craft({
+	output = '"rubenfood:cakemix_plain" 1',
+	recipe = {
+		{'"rubenfood:flour"','"rubenfood:milk"','"rubenfood:egg"'},
+	}
+})
+
+minetest.register_craft({
+	output = '"rubenfood:cakemix_choco" 1',
+	recipe = {
+	{'""','"default:dirt"','""'},	{'"rubenfood:flour"','"rubenfood:milk"','"rubenfood:egg"'},
+	}
 })
