@@ -1,3 +1,14 @@
+-- RUBENFOOD MOD
+-- A mod written by rubenwardy that adds
+-- food to the minetest game
+-- =====================================
+-- rubenfood/init.lua
+-- =====================================
+-- 
+-- =====================================
+
+print ("RubenFood [Master] - Loading Juices")
+
 --------------------------Apple Juice--------------------------
 minetest.register_node(":rubenfood:apple_juice", {
 	description = "Apple Juice",

@@ -1,6 +1,19 @@
--- This file registers all the foods
+-- RUBENFOOD MOD
+-- A mod written by rubenwardy that adds
+-- food to the minetest game
+-- =====================================
+-- rubenfood/init.lua
+-- =====================================
+-- [regis-item] Cup
+-- [craft] Cup
+-- [regis-food] Cigerette (-4)
+-- =====================================
 
-print ("RubenFood: Loading mainframe")
+print ("RubenFood: Loading mainframe: [Master]")
+
+dofile(minetest.get_modpath("rubenfood").."/drinks.lua")
+dofile(minetest.get_modpath("rubenfood").."/cakes.lua")
+dofile(minetest.get_modpath("rubenfood").."/fruits.lua")
 
 ----------------------------Cup------------------------------
 minetest.register_craftitem(":rubenfood:cup",{

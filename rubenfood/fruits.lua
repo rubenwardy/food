@@ -1,5 +1,7 @@
 -- This file adds apple like fruits
 
+print ("RubenFood [Master] - Loading Fruits")
+
 minetest.register_node(":default:orange", {
 	description = "Orange Fruit",
 	drawtype = "plantlike",

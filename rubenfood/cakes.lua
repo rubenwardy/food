@@ -1,3 +1,6 @@
+print("RubenFood [Master] - Loading Cakes")
+
+dofile(minetest.get_modpath("rubenfood").."/cakemix.lua")
 --------------------------Cakes-------------------------
 minetest.register_craftitem(":rubenfood:cakemix_plain",{
 	description = "Cake Mix",
