@@ -13,25 +13,35 @@
 print ("RubenFood: Loading mainframe: [Master]")
 
 ----------------------Load Files-----------------------------
+dofile(minetest.get_modpath("rubenfood").."/dairy.lua")
+
 dofile(minetest.get_modpath("rubenfood").."/baking.lua")
 dofile(minetest.get_modpath("rubenfood").."/cakes.lua")
 
 dofile(minetest.get_modpath("rubenfood").."/drinks.lua")
 dofile(minetest.get_modpath("rubenfood").."/fruits.lua")
 
-dofile(minetest.get_modpath("rubenfood").."/support.lua")
+
 
 ----------------------------Cup------------------------------
-minetest.register_craftitem(":rubenfood:cup",{
+minetest.register_alias("rubenfood:cup","animalmaterials:glass")
+minetest.register_craftitem(":animalmaterials:glass",{
 	description = "Cup",
-	tiles = {"ruben_coffee.png"},
-	inventory_image = "ruben_coffee.png",
+	tiles = {"ruben_cup.png"},
+	inventory_image = "ruben_cup.png",
+})
+
+minetest.register_craftitem("rubenfood:mug",{
+	description = "Mug",
+	tiles = {"ruben_mug.png"},
+	inventory_image = "ruben_mug.png",
 })
 
 minetest.register_craft({
 	output = '"rubenfood:cup" 4',
 	recipe = {
-		{'"bucket:bucket_water"'},
+		{"default:glass"},
+		{"default:glass"},
 	}
 })
 

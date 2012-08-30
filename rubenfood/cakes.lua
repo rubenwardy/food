@@ -11,13 +11,13 @@
 print("RubenFood [Master] - Loading Cakes")
 
 --------------------------Cakes-------------------------
-minetest.register_craftitem(":rubenfood:cakemix_plain",{
+minetest.register_craftitem("rubenfood:cakemix_plain",{
 	description = "Cake Mix",
 	tiles = {"ruben_pastry.png"},
 	inventory_image = "ruben_pastry.png",
 })
 
-minetest.register_craftitem(":rubenfood:cakemix_choco",{
+minetest.register_craftitem("rubenfood:cakemix_choco",{
 	description = "Chocolate Cake Mix",
 	tiles = {"ruben_pastry_choco.png"},
 	inventory_image = "ruben_pastry_choco.png",
@@ -35,7 +35,7 @@ minetest.register_craft({
 	recipe = "rubenfood:cakemix_choco",
 })
 
-minetest.register_node(":rubenfood:cake", {
+minetest.register_node("rubenfood:cake", {
 	description = "Cake",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
@@ -49,7 +49,7 @@ minetest.register_node(":rubenfood:cake", {
 	sounds = default.node_sound_defaults(),
 })
 
-minetest.register_node(":rubenfood:cake_chocolate", {
+minetest.register_node("rubenfood:cake_chocolate", {
 	description = "Chocolate Cake",
 	drawtype = "plantlike",
 	visual_scale = 1.0,

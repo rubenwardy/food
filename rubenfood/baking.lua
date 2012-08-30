@@ -16,21 +16,22 @@ minetest.register_craftitem("rubenfood:dough", {
 	inventory_image = "farming_cake_mix.png",
 })
 
+if add_bread_craft then
 minetest.register_craft({
 	output = "rubenfood:dough",
 	type = "shapeless",
-	recipe = {"rubenfood:flour", "rubenfood:flour", "rubenfood:flour", "rubenfood:flour", "bucket:bucket_water"},
+	recipe = {"rubenfood:flour","rubenfood:flour", "bucket:bucket_water"},
 	replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}}
 })
 
-
---plain bread
 minetest.register_craft({
 	type = "cooking",
 	output = "rubenfood:bread",
 	recipe = "rubenfood:dough",
 	cooktime = 10
 })
+
+end
 
 minetest.register_craftitem("rubenfood:bread", {
 	description = "Bread",
