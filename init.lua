@@ -15,6 +15,7 @@ print ("food: Loading mainframe: [Master]")
 ----------------------Load Files-----------------------------
 dofile(minetest.get_modpath("food").."/support.lua")
 dofile(minetest.get_modpath("food").."/dairy.lua")
+dofile(minetest.get_modpath("food").."/sandwich.lua")
 
 dofile(minetest.get_modpath("food").."/baking.lua")
 dofile(minetest.get_modpath("food").."/cakes.lua")

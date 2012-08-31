@@ -1,0 +1,29 @@
+-- RUBENFOOD MOD
+-- A mod written by rubenwardy that adds
+-- food to the minetest game
+-- ======================================
+-- >> rubenfood/sandwich.lua
+-- adds sandwich
+-- ======================================
+-- [regis-food] Cheese
+-- [craft] Cheese
+-- [regis-item] Butter
+-- [craft] Butter
+-- ======================================
+
+print "RubenFood [Master] - Loading Sandwiches"
+
+minetest.register_craftitem("food:sw_meat", {
+	description = "Venison Sandwich",
+	inventory_image = "food_sw_meat.png",
+	on_use = minetest.item_eat(10),
+})
+
+minetest.register_craft({
+	output = '"food:sw_meat" 1',
+	recipe = {
+                 {"",'"food:bread_slice"',""},
+		{"food:butter","",'"food:butter"'},
+		{"",'"food:bread_slice"',""},
+	}
+})
