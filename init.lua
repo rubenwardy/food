@@ -13,6 +13,7 @@
 print ("RubenFood: Loading mainframe: [Master]")
 
 ----------------------Load Files-----------------------------
+dofile(minetest.get_modpath("rubenfood").."/support.lua")
 dofile(minetest.get_modpath("rubenfood").."/dairy.lua")
 
 dofile(minetest.get_modpath("rubenfood").."/baking.lua")
@@ -24,12 +25,6 @@ dofile(minetest.get_modpath("rubenfood").."/fruits.lua")
 
 
 ----------------------------Cup------------------------------
-minetest.register_alias("rubenfood:cup","animalmaterials:glass")
-minetest.register_craftitem(":animalmaterials:glass",{
-	description = "Cup",
-	tiles = {"ruben_cup.png"},
-	inventory_image = "ruben_cup.png",
-})
 
 minetest.register_craftitem("rubenfood:mug",{
 	description = "Mug",

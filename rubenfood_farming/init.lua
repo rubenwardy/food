@@ -1,1 +1,0 @@
-minetest.register_alias("rubenfood:flour","farming:flour")
