@@ -39,6 +39,13 @@ minetest.register_craftitem("food:strawberry", {
 })
 end)
 
+node_implement("farming","farming:rhubarb_item","food:rhubarb",function()
+minetest.register_craftitem("food:rhubarb", {
+	description = "Rhubarb",
+	inventory_image = "farming_rhubarb.png",
+})
+end)
+
 node_implement("farming","farming:bread","food:bread",function()
 
 
