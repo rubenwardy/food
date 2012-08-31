@@ -16,7 +16,7 @@ print ("RubenFood [Master] - Loading Juices")
 --------------------------Apple Juice--------------------------
 minetest.register_node(":rubenfood:apple_juice", {
 	description = "Apple Juice",
-	drawtype = "plantlike",
+	
 	visual_scale = 1.0,
 	tiles = {"ruben_juice_apple.png"},
 	inventory_image = "ruben_juice_apple.png",
@@ -44,7 +44,7 @@ minetest.register_craft({
 ----------------------cactus juice----------------------------
 minetest.register_node(":rubenfood:cactus_juice", {
 	description = "Cactuz Juice",
-	drawtype = "plantlike",
+	
 	visual_scale = 1.0,
 	tiles = {"ruben_juice_cactus.png"},
 	inventory_image = "ruben_juice_cactus.png",
@@ -90,7 +90,7 @@ minetest.register_craftitem(":rubenfood:coffeebean_cooked",{
 
 minetest.register_node(":rubenfood:coffee", {
 	description = "Coffee",
-	drawtype = "plantlike",
+
 	visual_scale = 1.0,
 	tiles = {"ruben_coffee_cup.png"},
 	inventory_image = "ruben_coffee_cup.png",

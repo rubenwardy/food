@@ -4,7 +4,6 @@
 -- ======================================
 -- >> rubenfood/support.lua
 -- adds support for other mods
--- adds items and aliases that are needed
 -- ======================================
 -- [support]
 -- ======================================

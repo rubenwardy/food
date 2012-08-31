@@ -18,9 +18,10 @@ dofile(minetest.get_modpath("rubenfood").."/dairy.lua")
 
 dofile(minetest.get_modpath("rubenfood").."/baking.lua")
 dofile(minetest.get_modpath("rubenfood").."/cakes.lua")
+dofile(minetest.get_modpath("rubenfood").."/tarts.lua")
 
 dofile(minetest.get_modpath("rubenfood").."/drinks.lua")
-dofile(minetest.get_modpath("rubenfood").."/fruits.lua")
+--dofile(minetest.get_modpath("rubenfood").."/fruits.lua")
 
 
 
@@ -44,7 +45,6 @@ minetest.register_craft({
 ----------------------------Cigerete----------------------------
 minetest.register_node(":rubenfood:cigarette", {
 	description = "Cigarette",
-	drawtype = "plantlike",
 	visual_scale = 1.0,
 	tiles = {"ruben_cigar.png"},
 	inventory_image = "ruben_cigar.png",

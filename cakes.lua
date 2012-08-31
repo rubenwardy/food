@@ -35,32 +35,16 @@ minetest.register_craft({
 	recipe = "rubenfood:cakemix_choco",
 })
 
-minetest.register_node("rubenfood:cake", {
+minetest.register_craftitem("rubenfood:cake", {
 	description = "Cake",
-	drawtype = "plantlike",
-	visual_scale = 1.0,
-	tiles = {"ruben_cake.png"},
 	inventory_image = "ruben_cake.png",
-	paramtype = "light",
-	sunlight_propagates = true,
-	walkable = false,
-	groups = {fleshy=3,dig_immediate=3,flammable=2},
 	on_use = minetest.item_eat(30),
-	sounds = default.node_sound_defaults(),
 })
 
-minetest.register_node("rubenfood:cake_chocolate", {
+minetest.register_craftitem("rubenfood:cake_chocolate", {
 	description = "Chocolate Cake",
-	drawtype = "plantlike",
-	visual_scale = 1.0,
-	tiles = {"ruben_cake_choco.png"},
 	inventory_image = "ruben_cake_choco.png",
-	paramtype = "light",
-	sunlight_propagates = true,
-	walkable = false,
-	groups = {fleshy=3,dig_immediate=3,flammable=2},
 	on_use = minetest.item_eat(40),
-	sounds = default.node_sound_defaults(),
 })
 
 
@@ -73,13 +57,13 @@ minetest.register_node("rubenfood:cake_chocolate", {
 minetest.register_craft({
 	output = '"rubenfood:cakemix_plain" 1',
 	recipe = {
-		{'"rubenfood:flour"','"rubenfood:milk"','"rubenfood:egg"'},
+		{'"rubenfood:flour"',"",'"rubenfood:egg"'},
 	}
 })
 
 minetest.register_craft({
 	output = '"rubenfood:cakemix_choco" 1',
 	recipe = {
-	{'""','"default:dirt"','""'},	{'"rubenfood:flour"','"rubenfood:milk"','"rubenfood:egg"'},
+	{'""','"default:dirt"','""'},	{'"rubenfood:flour"',"",'"rubenfood:egg"'},
 	}
 })
