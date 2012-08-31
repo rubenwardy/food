@@ -10,31 +10,31 @@
 -- [regis-food] Cigerette (-4)
 -- =====================================
 
-print ("RubenFood: Loading mainframe: [Master]")
+print ("food: Loading mainframe: [Master]")
 
 ----------------------Load Files-----------------------------
-dofile(minetest.get_modpath("rubenfood").."/support.lua")
-dofile(minetest.get_modpath("rubenfood").."/dairy.lua")
+dofile(minetest.get_modpath("food").."/support.lua")
+dofile(minetest.get_modpath("food").."/dairy.lua")
 
-dofile(minetest.get_modpath("rubenfood").."/baking.lua")
-dofile(minetest.get_modpath("rubenfood").."/cakes.lua")
-dofile(minetest.get_modpath("rubenfood").."/tarts.lua")
+dofile(minetest.get_modpath("food").."/baking.lua")
+dofile(minetest.get_modpath("food").."/cakes.lua")
+dofile(minetest.get_modpath("food").."/tarts.lua")
 
-dofile(minetest.get_modpath("rubenfood").."/drinks.lua")
---dofile(minetest.get_modpath("rubenfood").."/fruits.lua")
+dofile(minetest.get_modpath("food").."/drinks.lua")
+--dofile(minetest.get_modpath("food").."/fruits.lua")
 
 
 
 ----------------------------Cup------------------------------
 
-minetest.register_craftitem("rubenfood:mug",{
+minetest.register_craftitem("food:mug",{
 	description = "Mug",
-	tiles = {"ruben_mug.png"},
-	inventory_image = "ruben_mug.png",
+	tiles = {"food_mug.png"},
+	inventory_image = "food_mug.png",
 })
 
 minetest.register_craft({
-	output = '"rubenfood:cup" 4',
+	output = '"food:cup" 4',
 	recipe = {
 		{"default:glass"},
 		{"default:glass"},
@@ -43,11 +43,11 @@ minetest.register_craft({
 
 
 ----------------------------Cigerete----------------------------
-minetest.register_node(":rubenfood:cigarette", {
+minetest.register_node(":food:cigarette", {
 	description = "Cigarette",
 	visual_scale = 1.0,
-	tiles = {"ruben_cigar.png"},
-	inventory_image = "ruben_cigar.png",
+	tiles = {"food_cigar.png"},
+	inventory_image = "food_cigar.png",
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
@@ -57,11 +57,11 @@ minetest.register_node(":rubenfood:cigarette", {
 })
 
 minetest.register_craft({
-	output = '"rubenfood:cigarette" 1',
+	output = '"food:cigarette" 1',
 	recipe = {
 		{'"default:dry_shrub"','"default:dry_shrub"','"default:dry_shrub"'},
 
 	}
 })
 
-print("Rubenfood: Mainframe loaded")
+print("food: Mainframe loaded")

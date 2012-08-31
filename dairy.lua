@@ -11,28 +11,28 @@
 -- [craft] Butter
 -- ======================================
 
-minetest.register_craftitem("rubenfood:butter", {
+minetest.register_craftitem("food:butter", {
 	description = "Butter",
-	inventory_image = "ruben_butter.png",
+	inventory_image = "food_butter.png",
 })
 
-minetest.register_craftitem("rubenfood:cheese", {
+minetest.register_craftitem("food:cheese", {
 	description = "Cheese",
-	inventory_image = "ruben_cheese.png",
+	inventory_image = "food_cheese.png",
 	on_use = minetest.item_eat(4),
 })
 
 minetest.register_craft({
-	output = '"rubenfood:butter" 1',
+	output = '"food:butter" 1',
 	recipe = {
-	         {'"rubenfood:milk"','"rubenfood:milk"'},
+	         {'"food:milk"','"food:milk"'},
 	}
 })
 
 minetest.register_craft({
-	output = '"rubenfood:cheese" 1',
+	output = '"food:cheese" 1',
 	recipe = {
-	         {'"rubenfood:butter"','"rubenfood:butter"'},
+	         {'"food:butter"','"food:butter"'},
 	}
 })
 

@@ -14,12 +14,12 @@
 print ("RubenFood [Master] - Loading Juices")
 
 --------------------------Apple Juice--------------------------
-minetest.register_node(":rubenfood:apple_juice", {
+minetest.register_node("food:apple_juice", {
 	description = "Apple Juice",
 	
 	visual_scale = 1.0,
-	tiles = {"ruben_juice_apple.png"},
-	inventory_image = "ruben_juice_apple.png",
+	tiles = {"food_juice_apple.png"},
+	inventory_image = "food_juice_apple.png",
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
@@ -29,11 +29,11 @@ minetest.register_node(":rubenfood:apple_juice", {
 })
 
 minetest.register_craft({
-	output = '"rubenfood:apple_juice" 4',
+	output = '"food:apple_juice" 4',
 	recipe = {
 		{'""','""','""'},
 		{'""','"default:apple"','""'},
-		{'""','"rubenfood:cup"','""'},
+		{'""','"food:cup"','""'},
 	}
 })
 
@@ -42,12 +42,12 @@ minetest.register_craft({
 
 
 ----------------------cactus juice----------------------------
-minetest.register_node(":rubenfood:cactus_juice", {
+minetest.register_node(":food:cactus_juice", {
 	description = "Cactuz Juice",
 	
 	visual_scale = 1.0,
-	tiles = {"ruben_juice_cactus.png"},
-	inventory_image = "ruben_juice_cactus.png",
+	tiles = {"food_juice_cactus.png"},
+	inventory_image = "food_juice_cactus.png",
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
@@ -57,11 +57,11 @@ minetest.register_node(":rubenfood:cactus_juice", {
 })
 
 minetest.register_craft({
-	output = '"rubenfood:cactus_juice" 4',
+	output = '"food:cactus_juice" 4',
 	recipe = {
 		{'""','""','""'},
 		{'""','"default:cactus"','""'},
-		{'""','"rubenfood:cup"','""'},
+		{'""','"food:cup"','""'},
 	}
 })
 
@@ -76,24 +76,24 @@ minetest.register_craft({
 
 -----------------------------Coffee-----------------------------
 
-minetest.register_craftitem(":rubenfood:coffeebean",{
+minetest.register_craftitem(":food:coffeebean",{
 	description = "Raw Coffee Bean",
-	tiles = {"ruben_coffee.png"},
-	inventory_image = "ruben_coffee.png",
+	tiles = {"food_coffee.png"},
+	inventory_image = "food_coffee.png",
 })
 
-minetest.register_craftitem(":rubenfood:coffeebean_cooked",{
+minetest.register_craftitem(":food:coffeebean_cooked",{
 	description = "Cooked Coffee Bean",
-	tiles = {"ruben_coffee_cooked.png"},
-	inventory_image = "ruben_coffee_cooked.png",
+	tiles = {"food_coffee_cooked.png"},
+	inventory_image = "food_coffee_cooked.png",
 })
 
-minetest.register_node(":rubenfood:coffee", {
+minetest.register_node(":food:coffee", {
 	description = "Coffee",
 
 	visual_scale = 1.0,
-	tiles = {"ruben_coffee_cup.png"},
-	inventory_image = "ruben_coffee_cup.png",
+	tiles = {"food_coffee_cup.png"},
+	inventory_image = "food_coffee_cup.png",
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
@@ -103,7 +103,7 @@ minetest.register_node(":rubenfood:coffee", {
 })
 
 minetest.register_craft({
-	output = '"rubenfood:coffeebean" 1',
+	output = '"food:coffeebean" 1',
 	recipe = {
 		{'""','"default:dry_shrub"','""'},
 		{'""','"default:dry_shrub"','""'},
@@ -112,18 +112,18 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = '"rubenfood:coffee" 1',
+	output = '"food:coffee" 1',
 	recipe = {
-		{'""','"rubenfood:coffeebean_cooked"','""'},
-		{'""','"rubenfood:coffeebean_cooked"','""'},
-		{'""','"rubenfood:cup"','""'},
+		{'""','"food:coffeebean_cooked"','""'},
+		{'""','"food:coffeebean_cooked"','""'},
+		{'""','"food:cup"','""'},
 	}
 })
 
 minetest.register_craft({
 	type = "cooking",
-	output = "rubenfood:coffeebean_cooked",
-	recipe = "rubenfood:coffeebean",
+	output = "food:coffeebean_cooked",
+	recipe = "food:coffeebean",
 })
 
 

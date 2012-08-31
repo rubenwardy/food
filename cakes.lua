@@ -11,39 +11,39 @@
 print("RubenFood [Master] - Loading Cakes")
 
 --------------------------Cakes-------------------------
-minetest.register_craftitem("rubenfood:cakemix_plain",{
+minetest.register_craftitem("food:cakemix_plain",{
 	description = "Cake Mix",
-	tiles = {"ruben_pastry.png"},
-	inventory_image = "ruben_pastry.png",
+	tiles = {"food_pastry.png"},
+	inventory_image = "food_pastry.png",
 })
 
-minetest.register_craftitem("rubenfood:cakemix_choco",{
+minetest.register_craftitem("food:cakemix_choco",{
 	description = "Chocolate Cake Mix",
-	tiles = {"ruben_pastry_choco.png"},
-	inventory_image = "ruben_pastry_choco.png",
+	tiles = {"food_pastry_choco.png"},
+	inventory_image = "food_pastry_choco.png",
 })
 
 minetest.register_craft({
 	type = "cooking",
-	output = "rubenfood:cake",
-	recipe = "rubenfood:cakemix_plain",
+	output = "food:cake",
+	recipe = "food:cakemix_plain",
 })
 
 minetest.register_craft({
 	type = "cooking",
-	output = "rubenfood:cake_chocolate",
-	recipe = "rubenfood:cakemix_choco",
+	output = "food:cake_chocolate",
+	recipe = "food:cakemix_choco",
 })
 
-minetest.register_craftitem("rubenfood:cake", {
+minetest.register_craftitem("food:cake", {
 	description = "Cake",
-	inventory_image = "ruben_cake.png",
+	inventory_image = "food_cake.png",
 	on_use = minetest.item_eat(30),
 })
 
-minetest.register_craftitem("rubenfood:cake_chocolate", {
+minetest.register_craftitem("food:cake_chocolate", {
 	description = "Chocolate Cake",
-	inventory_image = "ruben_cake_choco.png",
+	inventory_image = "food_cake_choco.png",
 	on_use = minetest.item_eat(40),
 })
 
@@ -55,15 +55,15 @@ minetest.register_craftitem("rubenfood:cake_chocolate", {
 ----------------------------- Cake Pastry ----------------------------
 
 minetest.register_craft({
-	output = '"rubenfood:cakemix_plain" 1',
+	output = '"food:cakemix_plain" 1',
 	recipe = {
-		{'"rubenfood:flour"',"",'"rubenfood:egg"'},
+		{'"food:flour"',"",'"food:egg"'},
 	}
 })
 
 minetest.register_craft({
-	output = '"rubenfood:cakemix_choco" 1',
+	output = '"food:cakemix_choco" 1',
 	recipe = {
-	{'""','"default:dirt"','""'},	{'"rubenfood:flour"',"",'"rubenfood:egg"'},
+	{'""','"default:dirt"','""'},	{'"food:flour"',"",'"food:egg"'},
 	}
 })

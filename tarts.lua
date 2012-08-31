@@ -10,39 +10,39 @@
 
 print "RubenFood [Master] - Loading Tarts"
 
-minetest.register_craftitem("rubenfood:tart_strawberry", {
+minetest.register_craftitem("food:tart_strawberry", {
 	description = "Strawberry Tart",
-	inventory_image = "ruben_tart_strawberry.png",
+	inventory_image = "food_tart_strawberry.png",
 	on_use = minetest.item_eat(30),
 })
 
-minetest.register_craftitem("rubenfood:tart_base", {
+minetest.register_craftitem("food:tart_base", {
 	description = "Tart Base",
-	inventory_image = "ruben_tart_base.png",
+	inventory_image = "food_tart_base.png",
 })
 
-minetest.register_craftitem("rubenfood:tart_base_raw", {
+minetest.register_craftitem("food:tart_base_raw", {
 	description = "Raw Tart Base",
-	inventory_image = "ruben_tart_base_raw.png",
+	inventory_image = "food_tart_base_raw.png",
 })
 
 minetest.register_craft({
 	type = "cooking",
-	output = "rubenfood:tart_base",
-	recipe = "rubenfood:tart_base_raw",
+	output = "food:tart_base",
+	recipe = "food:tart_base_raw",
 })
 
 minetest.register_craft({
-	output = '"rubenfood:tart_strawberry" 1',
+	output = '"food:tart_strawberry" 1',
 	recipe = {
-	         {'"rubenfood:strawberry"'},{'"rubenfood:tart_base"'},
+	         {'"food:strawberry"'},{'"food:tart_base"'},
 	}
 })
 
 minetest.register_craft({
-	output = '"rubenfood:tart_base_raw" 1',
+	output = '"food:tart_base_raw" 1',
 	recipe = {
-	         {'"rubenfood:flour"','"rubenfood:milk"','"rubenfood:egg"'},
+	         {'"food:flour"','"food:milk"','"food:egg"'},
 	}
 })
 
