@@ -20,37 +20,37 @@ Items
 4) Rings
 
 Diary
-1) Butter
-2) Cheese
+* Butter
+* Cheese
 
 Sandwiches
-1) Venison Sandwich
+* Venison Sandwich
 
 Baking
-1) Bread
-2) Bread Slices
+* Bread
+* Bread Slices
 
 Cakes
-1) Plain Cake
-2) Chocolate Cake
-3) Carrot Cake
+* Plain Cake
+* Chocolate Cake
+* Carrot Cake
 
 Tarts
-1) Strawberry Tart
+* Strawberry Tart
 
 Crumbles
-1) Rhubarb Crumble
+* Rhubarb Crumble
 
 Drinks
-1) Apple Juice
-2) Cactus Juice
-3) Coffee
-4) Coffee Beans
+* Apple Juice
+* Cactus Juice
+* Coffee
+* Coffee Beans
 
 Misc
-1) Cigerettes (takes 1 life away)
-2) Cooked Meat
-3) Sugar
+* Cigerettes (takes 1 life away)
+* Cooked Meat
+* Sugar
 
 
 
