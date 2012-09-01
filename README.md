@@ -50,6 +50,7 @@ Drinks
 Misc
 1) Cigerettes (takes 1 life away)
 2) Cooked Meat
+3) Sugar
 
 
 
