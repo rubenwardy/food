@@ -3,17 +3,53 @@ Rubenwardy's Food Mod.
 
 This mod adds food for minetest and is an ideal companion for the Farming (by PilzAdam) and the Animal (by Sapier) Mods.
 
-1) Craft Recipes
+1) List of Food
 
 2) License for Code
 
+Food
+====
 
+Recipes coming on release of this mod.
+Read Code to find recipes before then
 
-Craft Recipes
-=============
+Items
+1) Cup / Glass
+2) Mug
+3) Oven
+4) Rings
 
-coming soon...
+Diary
+1) Butter
+2) Cheese
 
+Sandwiches
+1) Venison Sandwich
+
+Baking
+1) Bread
+2) Bread Slices
+
+Cakes
+1) Plain Cake
+2) Chocolate Cake
+3) Carrot Cake
+
+Tarts
+1) Strawberry Tart
+
+Crumbles
+1) Rhubarb Crumble
+
+Drinks
+1) Apple Juice
+2) Cactus Juice
+3) Coffee
+4) Coffee Beans
+
+Misc
+1) Cigerettes (takes 1 life away)
+2) Cooked Meat
 
 
 
