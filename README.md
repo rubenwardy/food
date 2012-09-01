@@ -14,10 +14,9 @@ Recipes coming on release of this mod.
 Read Code to find recipes before then
 
 Items
-1) Cup / Glass
-2) Mug
-3) Oven
-4) Rings
+* Cup / Glass
+* Mug
+* Oven
 
 Diary
 * Butter
