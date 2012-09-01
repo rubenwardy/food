@@ -19,8 +19,9 @@ dofile(minetest.get_modpath("food").."/oven.lua")
 dofile(minetest.get_modpath("food").."/dairy.lua")
 dofile(minetest.get_modpath("food").."/meats.lua")
 dofile(minetest.get_modpath("food").."/sandwich.lua")
-
 dofile(minetest.get_modpath("food").."/baking.lua")
+
+dofile(minetest.get_modpath("food").."/crumbles.lua")
 dofile(minetest.get_modpath("food").."/cakes.lua")
 dofile(minetest.get_modpath("food").."/tarts.lua")
 
@@ -32,7 +33,6 @@ dofile(minetest.get_modpath("food").."/drinks.lua")
 
 minetest.register_craftitem("food:mug",{
 	description = "Mug",
-	tiles = {"food_mug.png"},
 	inventory_image = "food_mug.png",
 })
 
@@ -60,15 +60,8 @@ minetest.register_craft({
 ----------------------------Cigerete----------------------------
 minetest.register_node(":food:cigarette", {
 	description = "Cigarette",
-	visual_scale = 1.0,
-	tiles = {"food_cigar.png"},
 	inventory_image = "food_cigar.png",
-	paramtype = "light",
-	sunlight_propagates = true,
-	walkable = false,
-	groups = {fleshy=3,dig_immediate=3,flammable=2},
 	on_use = minetest.item_eat(-4),
-	sounds = default.node_sound_defaults(),
 })
 
 minetest.register_craft({

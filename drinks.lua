@@ -16,16 +16,8 @@ print ("RubenFood [Master] - Loading Juices")
 --------------------------Apple Juice--------------------------
 minetest.register_node("food:apple_juice", {
 	description = "Apple Juice",
-	
-	visual_scale = 1.0,
-	tiles = {"food_juice_apple.png"},
 	inventory_image = "food_juice_apple.png",
-	paramtype = "light",
-	sunlight_propagates = true,
-	walkable = false,
-	groups = {fleshy=3,dig_immediate=3,flammable=2},
 	on_use = minetest.item_eat(2),
-	sounds = default.node_sound_defaults(),
 })
 
 minetest.register_craft({
@@ -44,16 +36,8 @@ minetest.register_craft({
 ----------------------cactus juice----------------------------
 minetest.register_node(":food:cactus_juice", {
 	description = "Cactuz Juice",
-	
-	visual_scale = 1.0,
-	tiles = {"food_juice_cactus.png"},
 	inventory_image = "food_juice_cactus.png",
-	paramtype = "light",
-	sunlight_propagates = true,
-	walkable = false,
-	groups = {fleshy=3,dig_immediate=3,flammable=2},
 	on_use = minetest.item_eat(2),
-	sounds = default.node_sound_defaults(),
 })
 
 minetest.register_craft({
@@ -90,16 +74,8 @@ minetest.register_craftitem(":food:coffeebean_cooked",{
 
 minetest.register_node(":food:coffee", {
 	description = "Coffee",
-
-	visual_scale = 1.0,
-	tiles = {"food_coffee_cup.png"},
 	inventory_image = "food_coffee_cup.png",
-	paramtype = "light",
-	sunlight_propagates = true,
-	walkable = false,
-	groups = {fleshy=3,dig_immediate=3,flammable=2},
 	on_use = minetest.item_eat(10),
-	sounds = default.node_sound_defaults(),
 })
 
 minetest.register_craft({

@@ -48,3 +48,12 @@ minetest.register_craft({
 		{"",'"food:bread_slice"',""},
 	}
 })
+
+minetest.register_craft({
+	output = '"food:burger" 1',
+	recipe = {
+                 {"",'"food:bun"',""},
+		{"food:butter","food:meat",'"food:butter"'},
+		{"",'"food:bun"',""},
+	}
+})

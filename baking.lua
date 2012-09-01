@@ -8,32 +8,16 @@
 -- [regis-food] Bread
 -- =====================================
 
-print "RubenFood [Master] - Loading Crumbles"
---Crumbles
-minetest.register_craftitem("food:crumble_rhubarb", {
-	description = "Rhubarb Crumble",
-	inventory_image = "food_crumble_rhubarb.png",
-	on_use = minetest.item_eat(30),
-})
+print "RubenFood [Master] - Loading Bread"
+-- doughs
+if not minetest.get_modpath("farming") then
 
-minetest.register_craftitem("food:crumble_rhubarb_raw", {
-	description = "Raw Rhubarb Crumble",
-	inventory_image = "food_crumble_rhubarb_raw.png",
+else
+minetest.register_craftitem(":farming:cake_mix", {
+	description = "Dough",
+	inventory_image = "farming_cake_mix.png",
 })
-
-minetest.register_craft({
-	output = '"food:crumble_rhubarb_raw" 1',
-	recipe = {
-	{'"food:sugar"',"",""},
-		{'"food:flour"','"food:rhubarb"','"food:butter"'}
-	}
-})
-                                                                            
-minetest.register_craft({
-	type = "cooking",
-	output = "food:crumble_rhubarb",
-	recipe = "food:crumble_rhubarb_raw",
-})
+end
 
 minetest.register_craft({
 	output = '"food:bread_slice" 10',
@@ -49,13 +33,30 @@ minetest.register_craftitem("food:bread_slice", {
 })
 
 
-print "RubenFood [Master] - Loading Dough"
--- doughs
-if not minetest.get_modpath("farming") then
 
-else
-minetest.register_craftitem(":farming:cake_mix", {
-	description = "Dough",
-	inventory_image = "farming_cake_mix.png",
+
+print "RubenFood [Master] - Loading Buns"
+minetest.register_craftitem("food:bun_mix", {
+	description = "Bun Mix",
+	inventory_image = "food_bun_mix.png",
 })
-end
+
+minetest.register_craftitem("food:bun", {
+	description = "Bun",
+	inventory_image = "food_bun.png",
+	on_use = minetest.item_eat(4),
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "food:bun",
+	recipe = "food:bun_mix",
+})
+
+minetest.register_craft({
+	output = '"food:bun_mix" 5',
+	recipe = {
+        {"food:flour", "food:flour", "bucket:bucket_water"},
+        },
+	replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}}
+})
