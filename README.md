@@ -24,6 +24,7 @@ Diary
 
 Sandwiches
 * Venison Sandwich
+* Cheese Sandwich
 
 Baking
 * Bread
