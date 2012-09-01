@@ -13,26 +13,38 @@ print("RubenFood [Master] - Loading Cakes")
 --------------------------Cakes-------------------------
 minetest.register_craftitem("food:cakemix_plain",{
 	description = "Cake Mix",
-	tiles = {"food_pastry.png"},
 	inventory_image = "food_pastry.png",
 })
 
 minetest.register_craftitem("food:cakemix_choco",{
 	description = "Chocolate Cake Mix",
-	tiles = {"food_pastry_choco.png"},
 	inventory_image = "food_pastry_choco.png",
+})
+
+minetest.register_craftitem("food:cakemix_carrot",{
+	description = "Carrot Cake Mix",
+	inventory_image = "food_pastry_carrot.png",
 })
 
 minetest.register_craft({
 	type = "cooking",
 	output = "food:cake",
 	recipe = "food:cakemix_plain",
+	cooktime = 10,
 })
 
 minetest.register_craft({
 	type = "cooking",
 	output = "food:cake_chocolate",
 	recipe = "food:cakemix_choco",
+	cooktime = 10,
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "food:cake_carrot",
+	recipe = "food:cakemix_carrot",
+	cooktime = 10,
 })
 
 minetest.register_craftitem("food:cake", {
@@ -47,6 +59,12 @@ minetest.register_craftitem("food:cake_chocolate", {
 	on_use = minetest.item_eat(40),
 })
 
+minetest.register_craftitem("food:cake_carrot", {
+	description = "Carrot Cake",
+	inventory_image = "food_cake_carrot.png",
+	on_use = minetest.item_eat(40),
+})
+
 
 
 
@@ -57,13 +75,20 @@ minetest.register_craftitem("food:cake_chocolate", {
 minetest.register_craft({
 	output = '"food:cakemix_plain" 1',
 	recipe = {
-		{'"food:flour"',"",'"food:egg"'},
+		{'"food:flour"','"food:sugar"','"food:egg"'},
 	}
 })
 
 minetest.register_craft({
 	output = '"food:cakemix_choco" 1',
 	recipe = {
-	{'""','"default:dirt"','""'},	{'"food:flour"',"",'"food:egg"'},
+	{'""','"default:dirt"','""'},	{'"food:flour"','"food:sugar"','"food:egg"'},
+	}
+})
+
+minetest.register_craft({
+	output = '"food:cakemix_carrot" 1',
+	recipe = {
+	{'""','"food:carrot"','""'},	{'"food:flour"','"food:sugar"','"food:egg"'},
 	}
 })

@@ -14,7 +14,10 @@ print ("food: Loading mainframe: [Master]")
 
 ----------------------Load Files-----------------------------
 dofile(minetest.get_modpath("food").."/support.lua")
+dofile(minetest.get_modpath("food").."/oven.lua")
+
 dofile(minetest.get_modpath("food").."/dairy.lua")
+dofile(minetest.get_modpath("food").."/meats.lua")
 dofile(minetest.get_modpath("food").."/sandwich.lua")
 
 dofile(minetest.get_modpath("food").."/baking.lua")
@@ -22,7 +25,6 @@ dofile(minetest.get_modpath("food").."/cakes.lua")
 dofile(minetest.get_modpath("food").."/tarts.lua")
 
 dofile(minetest.get_modpath("food").."/drinks.lua")
---dofile(minetest.get_modpath("food").."/fruits.lua")
 
 
 
@@ -42,6 +44,18 @@ minetest.register_craft({
 	}
 })
 
+-----------------------------Sugar------------------------------
+minetest.register_craftitem("food:sugar", {
+	description = "Sugar",
+	inventory_image = "food_sugar.png",
+})
+minetest.register_craft({
+	output = '"food:sugar" 20',
+	recipe = {
+		{'"default:papyrus"'},
+
+	}
+})
 
 ----------------------------Cigerete----------------------------
 minetest.register_node(":food:cigarette", {

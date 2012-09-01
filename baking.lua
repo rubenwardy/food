@@ -24,10 +24,11 @@ minetest.register_craftitem("food:crumble_rhubarb_raw", {
 minetest.register_craft({
 	output = '"food:crumble_rhubarb_raw" 1',
 	recipe = {
+	{'"food:sugar"',"",""},
 		{'"food:flour"','"food:rhubarb"','"food:butter"'}
 	}
 })
-
+                                                                            
 minetest.register_craft({
 	type = "cooking",
 	output = "food:crumble_rhubarb",

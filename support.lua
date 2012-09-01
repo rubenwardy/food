@@ -39,10 +39,28 @@ minetest.register_craftitem("food:strawberry", {
 })
 end)
 
+node_implement("farming","farming:carrot_item","food:carrot",function()
+minetest.register_craftitem("farming:carrot_item", {
+	description = "Carrot",
+	inventory_image = "farming_carrot.png",
+	on_use = minetest.item_eat(3),
+})
+end)
+
 node_implement("farming","farming:rhubarb_item","food:rhubarb",function()
 minetest.register_craftitem("food:rhubarb", {
 	description = "Rhubarb",
 	inventory_image = "farming_rhubarb.png",
+})
+end)
+
+node_implement("animalmaterials","animalmaterials:meat_raw","food:meat_raw",function()
+minetest.register_craftitem("food:meat_raw", {
+	description = "Raw meat",
+	image = "animalmaterials_meat_raw.png",
+	on_use = minetest.item_eat(1),
+	groups = { meat=1, eatable=1 },
+	stack_max=25
 })
 end)
 

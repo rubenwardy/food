@@ -19,11 +19,17 @@ minetest.register_craftitem("food:sw_meat", {
 	on_use = minetest.item_eat(10),
 })
 
+minetest.register_craftitem("food:burger", {
+	description = "Burger",
+	inventory_image = "food_burger.png",
+	on_use = minetest.item_eat(10),
+})
+
 minetest.register_craft({
 	output = '"food:sw_meat" 1',
 	recipe = {
                  {"",'"food:bread_slice"',""},
-		{"food:butter","",'"food:butter"'},
+		{"food:butter","food:meat",'"food:butter"'},
 		{"",'"food:bread_slice"',""},
 	}
 })
