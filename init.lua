@@ -14,18 +14,20 @@ print ("food: Loading mainframe: [Master]")
 
 ----------------------Load Files-----------------------------
 dofile(minetest.get_modpath("food").."/support.lua")
-dofile(minetest.get_modpath("food").."/oven.lua")
+dofile(minetest.get_modpath("food").."/tools/oven.lua")
 
 dofile(minetest.get_modpath("food").."/dairy.lua")
-dofile(minetest.get_modpath("food").."/meats.lua")
-dofile(minetest.get_modpath("food").."/sandwich.lua")
-dofile(minetest.get_modpath("food").."/baking.lua")
+dofile(minetest.get_modpath("food").."/food/meats.lua")
+dofile(minetest.get_modpath("food").."/food/sandwich.lua")
+dofile(minetest.get_modpath("food").."/food/baking.lua")
 
-dofile(minetest.get_modpath("food").."/crumbles.lua")
-dofile(minetest.get_modpath("food").."/cakes.lua")
-dofile(minetest.get_modpath("food").."/tarts.lua")
+dofile(minetest.get_modpath("food").."/snacks/crumbles.lua")
+dofile(minetest.get_modpath("food").."/snacks/cakes.lua")
+dofile(minetest.get_modpath("food").."/snacks/tarts.lua")
 
-dofile(minetest.get_modpath("food").."/drinks.lua")
+dofile(minetest.get_modpath("food").."/drinks/juice.lua")
+dofile(minetest.get_modpath("food").."/drinks/hot.lua")
+dofile(minetest.get_modpath("food").."/drinks/milkshakes.lua")
 
 
 
@@ -36,13 +38,26 @@ minetest.register_craftitem("food:mug",{
 	inventory_image = "food_mug.png",
 })
 
+minetest.register_craftitem("food:clay_mug",{
+	description = "Clay Mug",
+	inventory_image = "food_clay_mug.png",
+})
+
 minetest.register_craft({
-	output = '"food:cup" 4',
+	output = '"food:clay_mug" 1',
 	recipe = {
-		{"default:glass"},
-		{"default:glass"},
+		{"default:clay_lump","","default:clay_lump"},
+		{"default:clay_lump","","default:clay_lump"},
+		{"default:clay_lump","default:clay_lump","default:clay_lump"},
 	}
 })
+
+minetest.register_craft({
+	type = "cooking",
+	output = "food:mug",
+	recipe = "food:clay_mug",
+})
+
 
 -----------------------------Sugar------------------------------
 minetest.register_craftitem("food:sugar", {
@@ -58,7 +73,7 @@ minetest.register_craft({
 })
 
 ----------------------------Cigerete----------------------------
-minetest.register_node("food:cigarette", {
+minetest.register_craftitem("food:cigarette", {
 	description = "Cigarette",
 	inventory_image = "food_cigar.png",
 	on_use = minetest.item_eat(-4),

@@ -2,61 +2,16 @@
 -- A mod written by rubenwardy that adds
 -- food to the minetest game
 -- =====================================
--- >> rubenfood/drinks.lua
--- adds drinks
+-- >> rubenfood/drinks/hot.lua
+-- adds hot drinks
 -- =====================================
--- [regis-food] Apple Juice
--- [craft] Cactus Juice
--- [regis-food] Cactus Juice
--- [craft] Cactus Juice
+-- [regis-food] Coffee
+-- [craft] Coffe
+-- [regis-food] Hot Chocolate
+-- [craft] Hot Chocolate
 -- =====================================
 
-print ("RubenFood [Master] - Loading Juices")
-
---------------------------Apple Juice--------------------------
-minetest.register_craftitem("food:apple_juice", {
-	description = "Apple Juice",
-	inventory_image = "food_juice_apple.png",
-	on_use = minetest.item_eat(2)
-})
-
-minetest.register_craft({
-	output = '"food:apple_juice" 4',
-	recipe = {
-		{"","",""},
-		{"","default:apple",""},
-		{"","food:cup",""},
-	}
-})
-
-
-
-
-
-----------------------cactus juice----------------------------
-minetest.register_node("food:cactus_juice", {
-	description = "Cactuz Juice",
-	inventory_image = "food_juice_cactus.png",
-	on_use = minetest.item_eat(2),
-})
-
-minetest.register_craft({
-	output = '"food:cactus_juice" 4',
-	recipe = {
-		{'""','""','""'},
-		{'""','"default:cactus"','""'},
-		{'""','"food:cup"','""'},
-	}
-})
-
-
-
-
-
-
-
-
-
+print ("RubenFood [Master] - Loading Hot")
 
 -----------------------------Coffee-----------------------------
 
@@ -72,7 +27,7 @@ minetest.register_craftitem("food:coffeebean_cooked",{
 	inventory_image = "food_coffee_cooked.png",
 })
 
-minetest.register_node("food:coffee", {
+minetest.register_craftitem("food:coffee", {
 	description = "Coffee",
 	inventory_image = "food_coffee_cup.png",
 	on_use = minetest.item_eat(10),
@@ -103,5 +58,23 @@ minetest.register_craft({
 })
 
 
+
+
+-------------------------Hot Chocolate--------------------------
+
+minetest.register_craftitem("food:hotchoco", {
+	description = "Hot Chocolate",
+	inventory_image = "food_hotchoco.png",
+	on_use = minetest.item_eat(4),
+})
+
+minetest.register_craft({
+output = '"food:hotchoco" 1 ',
+recipe = {
+{"food:chocolate_powder"},
+{"food:milk"},
+{"food:mug"},
+},
+})
 
 

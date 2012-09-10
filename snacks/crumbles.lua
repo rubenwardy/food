@@ -2,7 +2,7 @@
 -- A mod written by rubenwardy that adds
 -- food to the minetest game
 -- =====================================
--- >> rubenfood/crumbles.lua
+-- >> rubenfood/snacks/crumbles.lua
 -- adds crumbles
 -- =====================================
 -- [regis-food] Rhubarb Crumble

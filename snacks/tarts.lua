@@ -2,7 +2,7 @@
 -- A mod written by rubenwardy that adds
 -- food to the minetest game
 -- ======================================
--- >> rubenfood/tarts.lua
+-- >> rubenfood/snacks/tarts.lua
 -- adds diary products
 -- ======================================
 -- [regis-food] Strawberry Tart

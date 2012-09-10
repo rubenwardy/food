@@ -2,11 +2,15 @@
 -- A mod written by rubenwardy that adds
 -- food to the minetest game
 -- =====================================
--- >> rubenfood/cakes.lua
+-- >> rubenfood/snacks/cakes.lua
 -- adds cakes
 -- =====================================
 -- [regis-food] Plain Cake
+-- [craft] Plain Cake
 -- [regis-food] Chocolate Cake
+-- [craft] Chocolate Cake
+-- [regis-food] Carrot Cake
+-- [craft] Chocolate Cake
 -- =====================================
 print("RubenFood [Master] - Loading Cakes")
 

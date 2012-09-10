@@ -38,6 +38,12 @@ minetest.register_craft({
 })
 
 
+--
+--
+-- CHOCOLATE
+--
+--
+
 
 minetest.register_craftitem("food:chocolate_dark", {
 	description = "Dark Chocolate",
@@ -47,8 +53,13 @@ minetest.register_craftitem("food:chocolate_dark", {
 
 minetest.register_craftitem("food:chocolate_milk", {
 	description = "Milk Chocolate",
-	inventory_image = "food_choco_dark.png",
+	inventory_image = "food_choco_milk.png",
 	on_use = minetest.item_eat(3),
+})
+
+minetest.register_craftitem("food:chocolate_powder", {
+	description = "Chocolate Powder",
+	inventory_image = "food_choco_powder.png",
 })
 
 minetest.register_craft({
@@ -59,10 +70,26 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = '"food:chocolate_powder" 1',
+	recipe = {
+                 {"food:cocoa","food:cocoa","food:cocoa"},
+	         {"food:cocoa","food:cocoa","food:cocoa"},
+	         {"food:cocoa","food:cocoa","food:cocoa"},
+	}
+})
+
+minetest.register_craft({
 	output = '"food:chocolate_milk" 1',
 	recipe = {
-	         {"",'"food:milk"',""},
-	         {'"food:cocoa"','"food:cocoa"','"food:cocoa"'},
+	         {"","food:milk",""},
+	         {"food:cocoa","food:cocoa","food:cocoa"},
+	}
+})
+
+minetest.register_craft({
+	output = '"food:chocolate_milk" 1',
+	recipe = {
+	         {"","food:milk","food:chocolate_dark"},
 	}
 })
 

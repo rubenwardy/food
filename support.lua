@@ -55,18 +55,9 @@ minetest.register_craftitem("food:rhubarb", {
 end)
 
 node_implement("farming","farming:cocoa_bean","food:cocoa",function()
-minetest.register_node("food:cocoa", {
-	description = "Cocoa",
-	tiles = {"farming_cocoa.png"},
-	visual_scale = 0.5,
-	inventory_image = "farming_cocoa.png",
-	wield_image = "farming_cocoa.png",
-	drawtype = "torchlike",
-	paramtype = "light",
-	sunlight_propagates = true,
-	walkable = false,
-	groups = {fleshy=3,dig_immediate=3,flammable=2},
-	sounds = default.node_sound_defaults(),
+minetest.register_craftitem("food:cocoa", {
+	description = "Cocoa Bean",
+	inventory_image = "farming_cocoa_bean.png",
 })
 end)
 

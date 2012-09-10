@@ -2,10 +2,10 @@
 -- A mod written by rubenwardy that adds
 -- food to the minetest game
 -- ======================================
--- >> rubenfood/diary.lua
+-- >> rubenfood/tools/oven.lua
 -- adds diary products
 -- ======================================
--- [regis-furnace] Rings
+-- todo [regis-furnace] Rings
 -- [regis-furnace] Oven
 -- ======================================
 
@@ -172,7 +172,7 @@ minetest.register_abm({
 		end
 
 		if fuel.time <= 0 then
-			meta:set_string("infotext","Furnace out of fuel")
+			meta:set_string("infotext","Oven is out of fuel")
 			hacky_swap_node(pos,"food:oven")
 			meta:set_string("formspec", oven_inactive_formspec)
 			return

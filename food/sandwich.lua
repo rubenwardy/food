@@ -2,13 +2,15 @@
 -- A mod written by rubenwardy that adds
 -- food to the minetest game
 -- ======================================
--- >> rubenfood/sandwich.lua
+-- >> rubenfood/food/sandwich.lua
 -- adds sandwich
 -- ======================================
--- [regis-food] Cheese
--- [craft] Cheese
--- [regis-item] Butter
--- [craft] Butter
+-- [regis-food] Cheese Sandwich
+-- [craft] Cheese Sandwich
+-- [regis-food] Venison Sandwich
+-- [craft] Venison Sandwich
+-- [regis-food] Burger
+-- [craft] Burger
 -- ======================================
 
 print "RubenFood [Master] - Loading Sandwiches"
@@ -31,6 +33,8 @@ minetest.register_craftitem("food:burger", {
 	on_use = minetest.item_eat(10),
 })
 
+
+
 minetest.register_craft({
 	output = '"food:sw_meat" 1',
 	recipe = {
@@ -48,6 +52,8 @@ minetest.register_craft({
 		{"",'"food:bread_slice"',""},
 	}
 })
+
+
 
 minetest.register_craft({
 	output = '"food:burger" 1',

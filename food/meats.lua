@@ -2,10 +2,11 @@
 -- A mod written by rubenwardy that adds
 -- food to the minetest game
 -- ======================================
--- >> rubenfood/meats.lua
+-- >> rubenfood/food/meats.lua
 -- adds meat products
 -- ======================================
 -- [regis-food] Meat
+-- [craft] Meat
 -- ======================================
 
 minetest.register_craftitem("food:meat", {

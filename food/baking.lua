@@ -2,10 +2,16 @@
 -- A mod written by rubenwardy that adds
 -- food to the minetest game
 -- =====================================
--- >> rubenfood/baking.lua
+-- >> rubenfood/food/baking.lua
 -- adds bread and pies
 -- =====================================
 -- [regis-food] Bread
+-- [regis-food] Bread Slice
+-- [craft] Bread Slice
+-- [regis-food] Bun
+-- [craft] Bun
+-- [regis-item] Bun Dough
+-- [craft] Bun Dough
 -- =====================================
 
 print "RubenFood [Master] - Loading Bread"
