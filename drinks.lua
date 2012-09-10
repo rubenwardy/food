@@ -14,18 +14,18 @@
 print ("RubenFood [Master] - Loading Juices")
 
 --------------------------Apple Juice--------------------------
-minetest.register_node("food:apple_juice", {
+minetest.register_craftitem("food:apple_juice", {
 	description = "Apple Juice",
 	inventory_image = "food_juice_apple.png",
-	on_use = minetest.item_eat(2),
+	on_use = minetest.item_eat(2)
 })
 
 minetest.register_craft({
 	output = '"food:apple_juice" 4',
 	recipe = {
-		{'""','""','""'},
-		{'""','"default:apple"','""'},
-		{'""','"food:cup"','""'},
+		{"","",""},
+		{"","default:apple",""},
+		{"","food:cup",""},
 	}
 })
 
@@ -34,7 +34,7 @@ minetest.register_craft({
 
 
 ----------------------cactus juice----------------------------
-minetest.register_node(":food:cactus_juice", {
+minetest.register_node("food:cactus_juice", {
 	description = "Cactuz Juice",
 	inventory_image = "food_juice_cactus.png",
 	on_use = minetest.item_eat(2),
@@ -60,19 +60,19 @@ minetest.register_craft({
 
 -----------------------------Coffee-----------------------------
 
-minetest.register_craftitem(":food:coffeebean",{
+minetest.register_craftitem("food:coffeebean",{
 	description = "Raw Coffee Bean",
 	tiles = {"food_coffee.png"},
 	inventory_image = "food_coffee.png",
 })
 
-minetest.register_craftitem(":food:coffeebean_cooked",{
+minetest.register_craftitem("food:coffeebean_cooked",{
 	description = "Cooked Coffee Bean",
 	tiles = {"food_coffee_cooked.png"},
 	inventory_image = "food_coffee_cooked.png",
 })
 
-minetest.register_node(":food:coffee", {
+minetest.register_node("food:coffee", {
 	description = "Coffee",
 	inventory_image = "food_coffee_cup.png",
 	on_use = minetest.item_eat(10),

@@ -54,13 +54,19 @@ minetest.register_craftitem("food:rhubarb", {
 })
 end)
 
-node_implement("animalmaterials","animalmaterials:meat_raw","food:meat_raw",function()
-minetest.register_craftitem("food:meat_raw", {
-	description = "Raw meat",
-	image = "animalmaterials_meat_raw.png",
-	on_use = minetest.item_eat(1),
-	groups = { meat=1, eatable=1 },
-	stack_max=25
+node_implement("farming","farming:cocoa_bean","food:cocoa",function()
+minetest.register_node("food:cocoa", {
+	description = "Cocoa",
+	tiles = {"farming_cocoa.png"},
+	visual_scale = 0.5,
+	inventory_image = "farming_cocoa.png",
+	wield_image = "farming_cocoa.png",
+	drawtype = "torchlike",
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	groups = {fleshy=3,dig_immediate=3,flammable=2},
+	sounds = default.node_sound_defaults(),
 })
 end)
 
@@ -105,12 +111,26 @@ end)
 
 
 print "RubenFood [Support] - Animal Mod"
+
+node_implement("animalmaterials","animalmaterials:meat_raw","food:meat_raw",function()
+minetest.register_craftitem("food:meat_raw", {
+	description = "Raw meat",
+	image = "animalmaterials_meat_raw.png",
+	on_use = minetest.item_eat(1),
+	groups = { meat=1, eatable=1 },
+	stack_max=25
+})
+end)
+
+
+node_implement("vessels","vessels:drinking_glass","food:cup",function()
 node_implement("animalmaterials","animalmaterials:glass","food:cup",function()
    minetest.register_craftitem("food:cup",{
 	description = "Glass",
 	tiles = {"food_cup.png"},
 	inventory_image = "food_cup.png",
 })
+end)
 end)
 
 node_implement("animalmaterials","animalmaterials:egg","food:egg",function()

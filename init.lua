@@ -58,7 +58,7 @@ minetest.register_craft({
 })
 
 ----------------------------Cigerete----------------------------
-minetest.register_node(":food:cigarette", {
+minetest.register_node("food:cigarette", {
 	description = "Cigarette",
 	inventory_image = "food_cigar.png",
 	on_use = minetest.item_eat(-4),

@@ -22,6 +22,7 @@ minetest.register_craftitem("food:cheese", {
 	on_use = minetest.item_eat(4),
 })
 
+
 minetest.register_craft({
 	output = '"food:butter" 1',
 	recipe = {
@@ -33,6 +34,35 @@ minetest.register_craft({
 	output = '"food:cheese" 1',
 	recipe = {
 	         {'"food:butter"','"food:butter"'},
+	}
+})
+
+
+
+minetest.register_craftitem("food:chocolate_dark", {
+	description = "Dark Chocolate",
+	inventory_image = "food_choco_dark.png",
+	on_use = minetest.item_eat(2),
+})
+
+minetest.register_craftitem("food:chocolate_milk", {
+	description = "Milk Chocolate",
+	inventory_image = "food_choco_dark.png",
+	on_use = minetest.item_eat(3),
+})
+
+minetest.register_craft({
+	output = '"food:chocolate_dark" 1',
+	recipe = {
+	         {'"food:cocoa"','"food:cocoa"','"food:cocoa"'},
+	}
+})
+
+minetest.register_craft({
+	output = '"food:chocolate_milk" 1',
+	recipe = {
+	         {"",'"food:milk"',""},
+	         {'"food:cocoa"','"food:cocoa"','"food:cocoa"'},
 	}
 })
 
