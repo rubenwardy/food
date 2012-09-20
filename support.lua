@@ -40,7 +40,7 @@ minetest.register_craftitem("food:strawberry", {
 end)
 
 node_implement("farming","farming:carrot_item","food:carrot",function()
-minetest.register_craftitem("farming:carrot_item", {
+minetest.register_craftitem("food:carrot_item", {
 	description = "Carrot",
 	inventory_image = "farming_carrot.png",
 	on_use = minetest.item_eat(3),
