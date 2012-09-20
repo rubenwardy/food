@@ -34,7 +34,7 @@ end)
 node_implement("farming","farming:strawberry_item","food:strawberry",function()
 minetest.register_craftitem("food:strawberry", {
 	description = "Strawberry",
-	inventory_image = "farming_strawberry.png",
+	inventory_image = "fatrming_strawberry.png",
 	on_use = minetest.item_eat(2),
 })
 end)
@@ -67,7 +67,7 @@ node_implement("farming","farming:bread","food:bread",function()
 
 minetest.register_craftitem("food:bread", {
 	description = "Bread",
-	inventory_image = "farming_bread.png",
+	inventory_image = "food_bread.png",
 	stack_max = 1,
 	on_use = minetest.item_eat(10)
 })
