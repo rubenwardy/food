@@ -31,36 +31,6 @@ node_implement("farming","farming:flour","food:flour",function()
 })
 end)
 
-node_implement("farming","farming:strawberry_item","food:strawberry",function()
-minetest.register_craftitem("food:strawberry", {
-	description = "Strawberry",
-	inventory_image = "fatrming_strawberry.png",
-	on_use = minetest.item_eat(2),
-})
-end)
-
-node_implement("farming","farming:carrot_item","food:carrot",function()
-minetest.register_craftitem("food:carrot", {
-	description = "Carrot",
-	inventory_image = "farming_carrot.png",
-	on_use = minetest.item_eat(3),
-})
-end)
-
-node_implement("farming","farming:rhubarb_item","food:rhubarb",function()
-minetest.register_craftitem("food:rhubarb", {
-	description = "Rhubarb",
-	inventory_image = "farming_rhubarb.png",
-})
-end)
-
-node_implement("farming","farming:cocoa_bean","food:cocoa",function()
-minetest.register_craftitem("food:cocoa", {
-	description = "Cocoa Bean",
-	inventory_image = "farming_cocoa_bean.png",
-})
-end)
-
 node_implement("farming","farming:bread","food:bread",function()
 
 
@@ -94,6 +64,40 @@ node_implement("farming","farming:cake_mix","food:dough",function()
 minetest.register_craftitem("food:dough", {
 	description = "Cake Mix",
 	inventory_image = "farming_cake_mix.png",
+})
+end)
+
+
+
+print "RubenFood [Support] - Farming_Plus Mod"
+
+node_implement("farming_plus","farming_plus:strawberry_item","food:strawberry",function()
+minetest.register_craftitem("food:strawberry", {
+	description = "Strawberry",
+	inventory_image = "fatrming_strawberry.png",
+	on_use = minetest.item_eat(2),
+})
+end)
+
+node_implement("farming_plus","farming_plus:carrot_item","food:carrot",function()
+minetest.register_craftitem("farming:carrot_item", {
+	description = "Carrot",
+	inventory_image = "farming_carrot.png",
+	on_use = minetest.item_eat(3),
+})
+end)
+
+node_implement("farming_plus","farming_plus:rhubarb_item","food:rhubarb",function()
+minetest.register_craftitem("food:rhubarb", {
+	description = "Rhubarb",
+	inventory_image = "farming_rhubarb.png",
+})
+end)
+
+node_implement("farming_plus","farming_plus:cocoa_bean","food:cocoa",function()
+minetest.register_craftitem("food:cocoa", {
+	description = "Cocoa Bean",
+	inventory_image = "farming_cocoa_bean.png",
 })
 end)
 
