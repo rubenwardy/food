@@ -102,6 +102,22 @@ minetest.register_craftitem("food:cocoa", {
 })
 end)
 
+node_implement("farming_plus","farming_plus:banana","food:banana",function()
+mminetest.register_node("food:banana", {
+	description = "Banana",
+	tiles = {"farming_banana.png"},
+	inventory_image = "farming_banana.png",
+	wield_image = "farming_banana.png",
+	drawtype = "torchlike",
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	groups = {fleshy=3,dig_immediate=3,flammable=2},
+	sounds = default.node_sound_defaults(),
+	on_use = minetest.item_eat(6),
+})
+end)
+
 
 
 
