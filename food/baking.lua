@@ -51,6 +51,7 @@ minetest.register_craftitem("food:bun", {
 	description = "Bun",
 	inventory_image = "food_bun.png",
 	on_use = minetest.item_eat(4),
+	groups={food=2},
 })
 
 minetest.register_craft({

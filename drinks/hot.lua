@@ -31,6 +31,7 @@ minetest.register_craftitem("food:coffee", {
 	description = "Coffee",
 	inventory_image = "food_coffee_cup.png",
 	on_use = minetest.item_eat(10),
+	groups={food=1},
 })
 
 minetest.register_craft({

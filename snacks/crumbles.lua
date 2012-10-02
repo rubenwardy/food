@@ -14,6 +14,7 @@ minetest.register_craftitem("food:crumble_rhubarb", {
 	description = "Rhubarb Crumble",
 	inventory_image = "food_crumble_rhubarb.png",
 	on_use = minetest.item_eat(30),
+	groups={food=3},
 })
 
 minetest.register_craftitem("food:crumble_rhubarb_raw", {

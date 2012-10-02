@@ -14,6 +14,7 @@ minetest.register_craftitem("food:tart_strawberry", {
 	description = "Strawberry Tart",
 	inventory_image = "food_tart_strawberry.png",
 	on_use = minetest.item_eat(30),
+	groups={food=3},
 })
 
 minetest.register_craftitem("food:tart_base", {

@@ -19,18 +19,21 @@ minetest.register_craftitem("food:sw_meat", {
 	description = "Venison Sandwich",
 	inventory_image = "food_sw_meat.png",
 	on_use = minetest.item_eat(10),
+	groups={food=2},
 })
 
 minetest.register_craftitem("food:sw_cheese", {
 	description = "Cheese Sandwich",
 	inventory_image = "food_sw_cheese.png",
 	on_use = minetest.item_eat(8),
+	groups={food=2},
 })
 
 minetest.register_craftitem("food:burger", {
 	description = "Burger",
 	inventory_image = "food_burger.png",
 	on_use = minetest.item_eat(10),
+	groups={food=2},
 })
 
 

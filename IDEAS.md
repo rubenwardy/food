@@ -37,7 +37,7 @@ Drinks
 * Cactus Juice
 * Coffee
 * Coffee Beans
-- Hot Chocolate
+* Hot Chocolate
 - Chocolate Milk Shake
 - Banana Milk Shake
 - Strawberry Milk Shake

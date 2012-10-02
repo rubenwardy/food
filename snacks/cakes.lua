@@ -55,18 +55,21 @@ minetest.register_craftitem("food:cake", {
 	description = "Cake",
 	inventory_image = "food_cake.png",
 	on_use = minetest.item_eat(30),
+	groups={food=3},
 })
 
 minetest.register_craftitem("food:cake_chocolate", {
 	description = "Chocolate Cake",
 	inventory_image = "food_cake_choco.png",
 	on_use = minetest.item_eat(40),
+	groups={food=3},
 })
 
 minetest.register_craftitem("food:cake_carrot", {
 	description = "Carrot Cake",
 	inventory_image = "food_cake_carrot.png",
 	on_use = minetest.item_eat(40),
+	groups={food=3},
 })
 
 

@@ -39,19 +39,20 @@ minetest.register_craftitem("food:bread", {
 	description = "Bread",
 	inventory_image = "food_bread.png",
 	stack_max = 1,
-	on_use = minetest.item_eat(10)
+	on_use = minetest.item_eat(10),
+	groups={food=2},
 })
 minetest.register_craft({
 	output = "food:dough",
 	type = "shapeless",
 	recipe = {"food:flour", "food:flour", "food:flour", "food:flour", "bucket:bucket_water"},
-	replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}}
+	replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}},
 })
 minetest.register_craft({
 	type = "cooking",
 	output = "food:bread",
 	recipe = "food:dough",
-	cooktime = 10
+	cooktime = 10,
 })
 
 
