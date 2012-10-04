@@ -103,7 +103,7 @@ minetest.register_craftitem("food:cocoa", {
 end)
 
 node_implement("farming_plus","farming_plus:banana","food:banana",function()
-mminetest.register_node("food:banana", {
+minetest.register_node("food:banana", {
 	description = "Banana",
 	tiles = {"farming_banana.png"},
 	inventory_image = "farming_banana.png",
