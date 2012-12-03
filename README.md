@@ -7,10 +7,12 @@ This mod adds food for minetest and is an ideal companion for the Farming (by Pi
 
 2) License for Code
 
+In alpha development, but is still ok to use.
+
 Food
 ====
 
-Recipes coming on release of this mod.
+Recipes coming on beta release of this mod.
 Read Code to find recipes before then
 
 Items
