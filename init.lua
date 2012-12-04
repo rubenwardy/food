@@ -10,7 +10,7 @@
 -- [regis-food] Cigerette (-4)
 -- =====================================
 
-print ("food: Loading mainframe: [Master]")
+print ("Food: Loading mainframe: [Master]")
 
 ----------------------Load Files-----------------------------
 dofile(minetest.get_modpath("food").."/support.lua")
@@ -20,6 +20,7 @@ dofile(minetest.get_modpath("food").."/dairy.lua")
 dofile(minetest.get_modpath("food").."/food/meats.lua")
 dofile(minetest.get_modpath("food").."/food/sandwich.lua")
 dofile(minetest.get_modpath("food").."/food/baking.lua")
+dofile(minetest.get_modpath("food").."/food/soup.lua")
 
 dofile(minetest.get_modpath("food").."/snacks/crumbles.lua")
 dofile(minetest.get_modpath("food").."/snacks/cakes.lua")
@@ -57,6 +58,13 @@ minetest.register_craft({
 	type = "cooking",
 	output = "food:mug",
 	recipe = "food:clay_mug",
+})
+
+-----------------------------Bowl-------------------------------
+
+minetest.register_craftitem("food:bowl",{
+	description = "Bowl",
+	inventory_image = "food_bowl.png",
 })
 
 

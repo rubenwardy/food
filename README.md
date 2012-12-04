@@ -12,7 +12,7 @@ In alpha development, but is still ok to use.
 Food
 ====
 
-Recipes coming on beta release of this mod.
+Recipes coming on release of this mod.
 Read Code to find recipes before then
 
 Items
@@ -34,6 +34,10 @@ Baking
 * Bread Slices
 * Buns
 
+Soups
+* Tomato Soup
+* Chicken Soup
+
 Cakes
 * Plain Cake
 * Chocolate Cake
@@ -50,6 +54,9 @@ Drinks
 * Cactus Juice
 * Coffee
 * Coffee Beans
+* Chocolate Milkshake
+* Banana Milkshake
+* Strawberry Milkshake
 
 Misc
 * Cigerettes (takes 1 life away)
@@ -58,11 +65,10 @@ Misc
 
 
 
-License for Code
-================
+License for Code and Images
+===========================
 
-Copyright (c) 2012, Andrew "Rubenwardy" Ward
-All rights reserved.
+Copyright (c) 2012, Andrew "Rubenwardy" Ward All rights reserved.
 
 CC BY NC SA 3.0 UNPORTED
 

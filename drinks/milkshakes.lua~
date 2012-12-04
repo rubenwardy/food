@@ -40,14 +40,14 @@ minetest.register_craft({
 
 minetest.register_craftitem("food:ms_banana", {
 	description = "Banana Milkshake",
-	inventory_image = "food_ms_banana.png",
+	inventory_image = "food_ms_chocolate.png",
 	on_use = minetest.item_eat(4)
 })
 
 minetest.register_craft({
-	output = "food:ms_banana",
+	output = "food:ms_chocolate",
 	recipe = {
-		{"food:banana"},
+		{"food:chocolate_milk"},
 		{"food:cup"},	
 	},
 })

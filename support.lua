@@ -8,7 +8,7 @@
 -- [support]
 -- ======================================
 
-print "RubenFood [Support] - Initialising"
+print "Food [Support] - Initialising"
 function node_implement(modname,n_ext,n_int,resultfunc)
          if not minetest.get_modpath(modname) then
             resultfunc()
@@ -23,7 +23,7 @@ end
 
 
 
-print "RubenFood [Support] - Farming Mod"
+print "Food [Support] - Farming Mod"
 node_implement("farming","farming:flour","food:flour",function()
    minetest.register_craftitem("food:flour", {
 	description = "Flour",
@@ -70,12 +70,12 @@ end)
 
 
 
-print "RubenFood [Support] - Farming_Plus Mod"
+print "Food [Support] - Farming_Plus Mod"
 
 node_implement("farming_plus","farming_plus:strawberry_item","food:strawberry",function()
 minetest.register_craftitem("food:strawberry", {
 	description = "Strawberry",
-	inventory_image = "fatrming_strawberry.png",
+	inventory_image = "farming_strawberry.png",
 	on_use = minetest.item_eat(2),
 })
 end)
@@ -118,11 +118,19 @@ minetest.register_node("food:banana", {
 })
 end)
 
+node_implement("farming_plus","farming_plus:tomato_item","food:tomato",function()
+minetest.register_craftitem("food:tomato", {
+	description = "Tomato",
+	inventory_image = "farming_strawberry.png",
+	on_use = minetest.item_eat(2),
+})
+end)
 
 
 
 
-print "RubenFood [Support] - Animal Mod"
+
+print "Food [Support] - Animal Mod"
 
 node_implement("animalmaterials","animalmaterials:meat_raw","food:meat_raw",function()
 minetest.register_craftitem("food:meat_raw", {
@@ -132,17 +140,6 @@ minetest.register_craftitem("food:meat_raw", {
 	groups = { meat=1, eatable=1 },
 	stack_max=25
 })
-end)
-
-
-node_implement("vessels","vessels:drinking_glass","food:cup",function()
-node_implement("animalmaterials","animalmaterials:glass","food:cup",function()
-   minetest.register_craftitem("food:cup",{
-	description = "Glass",
-	tiles = {"food_cup.png"},
-	inventory_image = "food_cup.png",
-})
-end)
 end)
 
 node_implement("animalmaterials","animalmaterials:egg","food:egg",function()
@@ -162,6 +159,20 @@ node_implement("animalmaterials","animalmaterials:milk","food:milk",function()
 	stack_max=10
 })
 end)
+
+print "Food [Support] - Vessels Mod"
+
+node_implement("vessels","vessels:drinking_glass","food:cup",function()
+node_implement("animalmaterials","animalmaterials:glass","food:cup",function()
+   minetest.register_craftitem("food:cup",{
+	description = "Glass",
+	tiles = {"food_cup.png"},
+	inventory_image = "food_cup.png",
+})
+end)
+end)
+
+
 
 
 
