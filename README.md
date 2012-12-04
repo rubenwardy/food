@@ -54,6 +54,7 @@ Drinks
 * Cactus Juice
 * Coffee
 * Coffee Beans
+* Hot Chocolate
 * Chocolate Milkshake
 * Banana Milkshake
 * Strawberry Milkshake

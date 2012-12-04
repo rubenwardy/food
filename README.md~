@@ -72,4 +72,4 @@ Copyright (c) 2012, Andrew "Rubenwardy" Ward All rights reserved.
 
 CC BY NC SA 3.0 UNPORTED
 
-http://creativecommons.org/licenses/by-nc-sa/3.0/
+http://creativecommons.org/licenses/by-sa/3.0/
