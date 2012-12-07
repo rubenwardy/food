@@ -57,3 +57,25 @@ minetest.register_craft({
 	output = "food:coffeebean_cooked",
 	recipe = "food:coffeebean",
 })
+
+
+
+
+-------------------------Hot Chocolate--------------------------
+
+minetest.register_craftitem("food:hotchoco", {
+	description = "Hot Chocolate",
+	inventory_image = "food_hotchoco.png",
+	on_use = minetest.item_eat(4),
+})
+
+minetest.register_craft({
+output = '"food:hotchoco" 1 ',
+recipe = {
+{"food:chocolate_powder"},
+{"food:milk"},
+{"food:mug"},
+},
+})
+
+
