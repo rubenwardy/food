@@ -13,36 +13,20 @@
 -- [craft] Burger
 -- ======================================
 
-print "RubenFood [Master] - Loading Sandwiches"
+print "Food [Modern] - Loading Burgers"
 
-minetest.register_craftitem("food:sw_meat", {
-	description = "Venison Sandwich",
-	inventory_image = "food_sw_meat.png",
+minetest.register_craftitem("food_modern:burger", {
+	description = "Burger",
+	inventory_image = "food_burger.png",
 	on_use = minetest.item_eat(10),
 	groups={food=2},
 })
 
-minetest.register_craftitem("food:sw_cheese", {
-	description = "Cheese Sandwich",
-	inventory_image = "food_sw_cheese.png",
-	on_use = minetest.item_eat(8),
-	groups={food=2},
-})
-
 minetest.register_craft({
-	output = '"food:sw_meat" 1',
+	output = '"food_modern:burger" 1',
 	recipe = {
-                 {"",'"food:bread_slice"',""},
+                 {"",'"food:bun"',""},
 		{"food:butter","food:meat",'"food:butter"'},
-		{"",'"food:bread_slice"',""},
-	}
-})
-
-minetest.register_craft({
-	output = '"food:sw_cheese" 1',
-	recipe = {
-                 {"",'"food:bread_slice"',""},
-		{"food:butter","food:cheese",'"food:butter"'},
-		{"",'"food:bread_slice"',""},
+		{"",'"food:bun"',""},
 	}
 })
