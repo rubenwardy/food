@@ -9,7 +9,7 @@
 -- [craft] Meat
 -- ======================================
 
-if not minetest.get_modpath("mobs") then
+if not minetest.get_modpath(modname) then
 
 minetest.register_craftitem("food:meat", {
 	description = "Venison",

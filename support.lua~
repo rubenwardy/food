@@ -142,7 +142,7 @@ minetest.register_craftitem("food:meat_raw", {
 	stack_max=25
 })
 end)
-end)
+end}
 
 node_implement("animalmaterials","animalmaterials:egg","food:egg",function()
  minetest.register_craftitem("food:egg", {
