@@ -13,7 +13,7 @@
 -- [craft] Burger
 -- ======================================
 
-print "RubenFood [Master] - Loading Sandwiches"
+print "Food [Master] - Loading Sandwiches"
 
 minetest.register_craftitem("food:sw_meat", {
 	description = "Venison Sandwich",

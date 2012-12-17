@@ -12,7 +12,7 @@
 -- [regis-food] Carrot Cake
 -- [craft] Chocolate Cake
 -- =====================================
-print("RubenFood [Master] - Loading Cakes")
+print("Food [Master] - Loading Cakes")
 
 --------------------------Cakes-------------------------
 minetest.register_craftitem("food:cakemix_plain",{
@@ -89,7 +89,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = '"food:cakemix_choco" 1',
 	recipe = {
-	{'""','"default:dirt"','""'},	{'"food:flour"','"food:sugar"','"food:egg"'},
+	{'""','"food:chocolate_milk"','""'},	{'"food:flour"','"food:sugar"','"food:egg"'},
 	}
 })
 

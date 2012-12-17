@@ -11,7 +11,7 @@
 -- [craft] Cactus Juice
 -- =====================================
 
-print ("RubenFood [Master] - Loading Juices")
+print ("Food [Master] - Loading Juices")
 
 --------------------------Apple Juice--------------------------
 minetest.register_craftitem("food:apple_juice", {
@@ -46,5 +46,23 @@ minetest.register_craft({
 		{'""','""','""'},
 		{'""','"default:cactus"','""'},
 		{'""','"food:cup"','""'},
+	}
+})
+
+
+
+--------------------------Apple Juice--------------------------
+minetest.register_craftitem("food:rainbow_juice", {
+	description = "Nyan Rainbow Juice",
+	inventory_image = "food_juice_rainbow.png",
+	on_use = minetest.item_eat(50)
+})
+
+minetest.register_craft({
+	output = '"food:rainbow_juice" 99',
+	recipe = {
+		{"","",""},
+		{"","default:nyancat_rainbow",""},
+		{"","food:cup",""},
 	}
 })

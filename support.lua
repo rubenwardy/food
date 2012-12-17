@@ -22,8 +22,10 @@ end
 
 
 
+print "Food [Support] - Vegetables and Fruit"
+print "Food [Support] -  > Bread and Flour"
 
-print "Food [Support] - Farming Mod"
+
 node_implement("farming","farming:flour","food:flour",function()
    minetest.register_craftitem("food:flour", {
 	description = "Flour",
@@ -70,7 +72,7 @@ end)
 
 
 
-print "Food [Support] - Farming_Plus Mod"
+print "Food [Support] -  > Strawberry"
 
 node_implement("farming_plus","farming_plus:strawberry_item","food:strawberry",function()
 minetest.register_craftitem("food:strawberry", {
@@ -80,14 +82,20 @@ minetest.register_craftitem("food:strawberry", {
 })
 end)
 
+print "Food [Support] -  > Carrot"
+
 node_implement("farming_plus","farming_plus:carrot_item","food:carrot",function()
+node_implement("docfarming","docfarming:carrot","food:carrot",function()
 minetest.register_craftitem("food:carrot", {
 	description = "Carrot",
 	inventory_image = "farming_carrot.png",
 	on_use = minetest.item_eat(3),
 })
 end)
+end)
 
+
+print "Food [Support] -  > Rhubarb"
 node_implement("farming_plus","farming_plus:rhubarb_item","food:rhubarb",function()
 minetest.register_craftitem("food:rhubarb", {
 	description = "Rhubarb",
@@ -95,6 +103,7 @@ minetest.register_craftitem("food:rhubarb", {
 })
 end)
 
+print "Food [Support] -  > Cocoa Bean"
 node_implement("farming_plus","farming_plus:cocoa_bean","food:cocoa",function()
 minetest.register_craftitem("food:cocoa", {
 	description = "Cocoa Bean",
@@ -102,6 +111,8 @@ minetest.register_craftitem("food:cocoa", {
 })
 end)
 
+
+print "Food [Support] -  > Banana"
 node_implement("farming_plus","farming_plus:banana","food:banana",function()
 minetest.register_node("food:banana", {
 	description = "Banana",
@@ -118,6 +129,7 @@ minetest.register_node("food:banana", {
 })
 end)
 
+print "Food [Support] -  > Tomato"
 node_implement("farming_plus","farming_plus:tomato_item","food:tomato",function()
 minetest.register_craftitem("food:tomato", {
 	description = "Tomato",
@@ -126,12 +138,25 @@ minetest.register_craftitem("food:tomato", {
 })
 end)
 
+print "Food [Support] -  > Potato"
+node_implement("docfarming","docfarming:potato","food:potato",function()
+minetest.register_craftitem("food:potato", {
+	description = "Potato",
+	inventory_image = "potato.png",
+})
+end)
 
+node_implement("docfarming","docfarming:bakedpotato","food:potato_baked",function()
+minetest.register_craftitem("food:potato_baked", {
+	description = "Baked Potato",
+	inventory_image = "baked_potato.png",
+	on_use = minetest.item_eat(6),
+})
+end)
 
+print "Food [Support] - Meats and Animal Produce"
 
-
-print "Food [Support] - Animal Mods"
-
+print "Food [Support] -  > Raw Meat"
 node_implement("mobs","mobs:meat_raw","food:meat_raw",function()
 node_implement("animalmaterials","animalmaterials:meat_raw","food:meat_raw",function()
 minetest.register_craftitem("food:meat_raw", {
@@ -144,6 +169,7 @@ minetest.register_craftitem("food:meat_raw", {
 end)
 end)
 
+print "Food [Support] -  > Meat"
 node_implement("mobs","mobs:meat","food:meat",function()
 minetest.register_craftitem("food:meat", {
 	description = "Venison",
@@ -158,6 +184,8 @@ minetest.register_craft({
 })
 end)
 
+
+print "Food [Support] -  > Egg"
 node_implement("animalmaterials","animalmaterials:egg","food:egg",function()
  minetest.register_craftitem("food:egg", {
 	description = "Egg",
@@ -166,6 +194,7 @@ node_implement("animalmaterials","animalmaterials:egg","food:egg",function()
 })
 end)
 
+print "Food [Support] -  > Milk"
 node_implement("animalmaterials","animalmaterials:milk","food:milk",function()
   minetest.register_craftitem("food:milk", {
 	description = "Milk",
@@ -176,7 +205,7 @@ node_implement("animalmaterials","animalmaterials:milk","food:milk",function()
 })
 end)
 
-print "Food [Support] - Vessels Mod"
+print "Food [Support] - Vessels and Cutlery"
 
 node_implement("vessels","vessels:drinking_glass","food:cup",function()
 node_implement("animalmaterials","animalmaterials:glass","food:cup",function()

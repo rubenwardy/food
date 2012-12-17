@@ -14,7 +14,6 @@ print ("Food: Loading mainframe: [Master]")
 
 ----------------------Load Files-----------------------------
 dofile(minetest.get_modpath("food").."/support.lua")
-dofile(minetest.get_modpath("food").."/tools/oven.lua")
 
 dofile(minetest.get_modpath("food").."/dairy.lua")
 dofile(minetest.get_modpath("food").."/food/meats.lua")
@@ -94,4 +93,4 @@ minetest.register_craft({
 	}
 })
 
-print("food: Mainframe loaded")
+print("Food: Mainframe loaded")

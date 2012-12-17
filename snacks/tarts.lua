@@ -8,7 +8,7 @@
 -- [regis-food] Strawberry Tart
 -- ======================================
 
-print "RubenFood [Master] - Loading Tarts"
+print "Food [Master] - Loading Tarts"
 
 minetest.register_craftitem("food:tart_strawberry", {
 	description = "Strawberry Tart",
