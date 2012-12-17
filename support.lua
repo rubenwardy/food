@@ -11,8 +11,10 @@
 print "Food [Support] - Initialising"
 function node_implement(modname,n_ext,n_int,resultfunc)
          if not minetest.get_modpath(modname) then
+            -- Mod is NOT installed
             resultfunc()
          else
+            -- Mod IS installed
             minetest.register_alias(n_int,n_ext)
          end
 end
