@@ -15,14 +15,8 @@ print ("Food [Master] - Loading Hot")
 
 -----------------------------Coffee-----------------------------
 
-minetest.register_craftitem("food:coffeebean",{
-	description = "Raw Coffee Bean",
-	tiles = {"food_coffee.png"},
-	inventory_image = "food_coffee.png",
-})
-
 minetest.register_craftitem("food:coffeebean_cooked",{
-	description = "Cooked Coffee Bean",
+	description = "Roasted Coffee Beans",
 	tiles = {"food_coffee_cooked.png"},
 	inventory_image = "food_coffee_cooked.png",
 })
@@ -35,15 +29,6 @@ minetest.register_craftitem("food:coffee", {
 })
 
 minetest.register_craft({
-	output = '"food:coffeebean" 1',
-	recipe = {
-		{'""','"default:dry_shrub"','""'},
-		{'""','"default:dry_shrub"','""'},
-		{'""','"default:dry_shrub"','""'},
-	}
-})
-
-minetest.register_craft({
 	output = '"food:coffee" 1',
 	recipe = {
 		{'""','"food:coffeebean_cooked"','""'},
@@ -53,7 +38,17 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = '"food:coffee" 1',
+	recipe = {
+		{'""','"food:coffeebean_cooked"','""'},
+		{'""','"food:coffeebean_cooked"','""'},
+		{'""','"food:mug"','""'},
+	}
+})
+
+minetest.register_craft({
 	type = "cooking",
 	output = "food:coffeebean_cooked",
 	recipe = "food:coffeebean",
+	cooktime = 5,
 })

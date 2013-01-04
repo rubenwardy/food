@@ -27,11 +27,19 @@ end
 print "Food [Support] - Vegetables and Fruit"
 print "Food [Support] -  > Bread and Flour"
 
-
 node_implement("farming","farming:flour","food:flour",function()
-   minetest.register_craftitem("food:flour", {
+node_implement("plantlib","plantlib:wheat","food:wheat",function()
+
+end)
+minetest.register_craftitem("food:flour", {
 	description = "Flour",
 	inventory_image = "farming_flour.png",
+})
+minetest.register_craft({
+	output = '"food:flour" 1',
+	recipe = {
+		{"food:wheat"},
+	}
 })
 end)
 
@@ -77,22 +85,26 @@ end)
 print "Food [Support] -  > Strawberry"
 
 node_implement("farming_plus","farming_plus:strawberry_item","food:strawberry",function()
+node_implement("plantlib","plantlib:strawberry","food:strawberry",function()
 minetest.register_craftitem("food:strawberry", {
 	description = "Strawberry",
 	inventory_image = "farming_strawberry.png",
 	on_use = minetest.item_eat(2),
 })
 end)
+end)
 
 print "Food [Support] -  > Carrot"
 
 node_implement("farming_plus","farming_plus:carrot_item","food:carrot",function()
 node_implement("docfarming","docfarming:carrot","food:carrot",function()
+node_implement("plantlib","plantlib:carrot","food:carrot",function()
 minetest.register_craftitem("food:carrot", {
 	description = "Carrot",
 	inventory_image = "farming_carrot.png",
 	on_use = minetest.item_eat(3),
 })
+end)
 end)
 end)
 
@@ -133,11 +145,13 @@ end)
 
 print "Food [Support] -  > Tomato"
 node_implement("farming_plus","farming_plus:tomato_item","food:tomato",function()
+node_implement("plantlib","plantlib:tomato","food:tomato",function()
 minetest.register_craftitem("food:tomato", {
 	description = "Tomato",
 	inventory_image = "farming_strawberry.png",
 	on_use = minetest.item_eat(2),
 })
+end)
 end)
 
 print "Food [Support] -  > Potato"
@@ -153,6 +167,24 @@ minetest.register_craftitem("food:potato_baked", {
 	description = "Baked Potato",
 	inventory_image = "baked_potato.png",
 	on_use = minetest.item_eat(6),
+})
+end)
+
+print "Food [Support] -  > Coffee"
+node_implement("plantlib","plantlib:coffee","food:coffeebean",function()
+minetest.register_craftitem("food:coffeebean",{
+	description = "Raw Coffee Bean",
+	tiles = {"food_coffee.png"},
+	inventory_image = "food_coffee.png",
+})
+
+minetest.register_craft({
+	output = '"food:coffeebean" 1',
+	recipe = {
+		{'""','"default:dry_shrub"','""'},
+		{'""','"default:dry_shrub"','""'},
+		{'""','"default:dry_shrub"','""'},
+	}
 })
 end)
 
@@ -186,6 +218,17 @@ minetest.register_craft({
 })
 end)
 
+node_implement("my_mobs","my_mobs:rabbit_cooked","food:rabbit",function()
+node_implement("mobs","mobs:meat","food:rabbit",function()
+minetest.register_craftitem("food:rabbit", {
+	description = "Cooked Rabbit",
+	inventory_image = "my_mobs_cooked_rabbit.png",
+	
+	on_use = minetest.item_eat(5),
+})
+end)
+end)
+
 
 print "Food [Support] -  > Egg"
 node_implement("animalmaterials","animalmaterials:egg","food:egg",function()
@@ -198,6 +241,7 @@ end)
 
 print "Food [Support] -  > Milk"
 node_implement("animalmaterials","animalmaterials:milk","food:milk",function()
+node_implement("my_mobs","my_mobs:milk_glass_cup","food:milk",function()
   minetest.register_craftitem("food:milk", {
 	description = "Milk",
 	image = "animalmaterials_milk.png",
@@ -205,6 +249,7 @@ node_implement("animalmaterials","animalmaterials:milk","food:milk",function()
 	groups = { eatable=1 },
 	stack_max=10
 })
+end)
 end)
 
 print "Food [Support] - Vessels and Cutlery"
