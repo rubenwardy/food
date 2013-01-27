@@ -69,7 +69,7 @@ Misc
 License for Code and Images
 ===========================
 
-Copyright (c) 2012, Andrew "Rubenwardy" Ward All rights reserved.
+License Holder: Andrew "Rubenwardy" Ward.
 
 CC BY SA 3.0 UNPORTED
 
