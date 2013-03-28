@@ -164,14 +164,14 @@ print "Food [Support] -  > Potato"
 node_implement("docfarming","docfarming:potato","food:potato",function()
 minetest.register_craftitem("food:potato", {
 	description = "Potato",
-	inventory_image = "potato.png",
+	inventory_image = "food_potato.png",
 })
 end)
 
 node_implement("docfarming","docfarming:bakedpotato","food:potato_baked",function()
 minetest.register_craftitem("food:potato_baked", {
 	description = "Baked Potato",
-	inventory_image = "baked_potato.png",
+	inventory_image = "food_baked_potato.png",
 	on_use = minetest.item_eat(6),
 })
 end)

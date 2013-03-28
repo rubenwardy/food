@@ -78,17 +78,16 @@ minetest.register_craft({
 	}
 })
 
-----------------------------Cigerete----------------------------
-minetest.register_craftitem("food:cigarette", {
-	description = "Cigarette",
-	inventory_image = "food_cigar.png",
-	on_use = minetest.item_eat(-4),
+--------------------------Cactus Slice--------------------------
+minetest.register_craftitem("food:cactus_slice", {
+	description = "Cactus Slice",
+	inventory_image = "food_cactus_slice.png",
+	on_use = minetest.item_eat(2),
 })
-
 minetest.register_craft({
-	output = '"food:cigarette" 1',
+	output = '"food:cactus_slice" 4',
 	recipe = {
-		{'"default:dry_shrub"','"default:dry_shrub"','"default:dry_shrub"'},
+		{'"default:cactus"'},
 
 	}
 })
