@@ -25,34 +25,31 @@ function node_implement(modname,n_ext,n_int,resultfunc)
          end
 end
 
-
-
-
-
-
 print "Food [Support] - Vegetables and Fruit"
 print "Food [Support] -  > Bread and Flour"
 
 node_implement("farming","farming:flour","food:flour",function()
-node_implement("plantlib","plantlib:wheat","food:wheat",function()
-
-end)
-minetest.register_craftitem("food:flour", {
-	description = "Flour",
-	inventory_image = "farming_flour.png",
-})
-minetest.register_craft({
-	output = '"food:flour" 1',
-	recipe = {
-		{"food:wheat"},
-	}
-})
+	node_implement("plantlib","plantlib:wheat","food:wheat",function()
+		minetest.register_craft({
+			output = '"food:wheat" 1',
+			recipe = {
+				{"default:dry_shrub"},
+			}
+		})
+	end)
+	minetest.register_craftitem("food:flour", {
+		description = "Flour",
+		inventory_image = "farming_flour.png",
+	})
+	minetest.register_craft({
+		output = '"food:flour" 1',
+		recipe = {
+			{"food:wheat"},
+		}
+	})
 end)
 
 node_implement("farming","farming:bread","food:bread",function()
-
-
-
 minetest.register_craftitem("food:bread", {
 	description = "Bread",
 	inventory_image = "food_bread.png",
@@ -61,21 +58,11 @@ minetest.register_craftitem("food:bread", {
 	groups={food=2},
 })
 minetest.register_craft({
-	output = "food:dough",
-	type = "shapeless",
-	recipe = {"food:flour", "food:flour", "food:flour", "food:flour", "bucket:bucket_water"},
-	replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}},
-})
-minetest.register_craft({
 	type = "cooking",
 	output = "food:bread",
 	recipe = "food:dough",
 	cooktime = 10,
 })
-
-
-
-
 end)
 
 
@@ -83,6 +70,12 @@ node_implement("farming","farming:cake_mix","food:dough",function()
 minetest.register_craftitem("food:dough", {
 	description = "Cake Mix",
 	inventory_image = "farming_cake_mix.png",
+})
+minetest.register_craft({
+	output = "food:dough",
+	type = "shapeless",
+	recipe = {"food:flour", "food:flour", "food:flour", "food:flour", "bucket:bucket_water"},
+	replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}},
 })
 end)
 
@@ -97,6 +90,12 @@ minetest.register_craftitem("food:strawberry", {
 	inventory_image = "farming_strawberry.png",
 	on_use = minetest.item_eat(2),
 })
+minetest.register_craft({
+	output = '"food:strawberry" 1',
+	recipe = {
+		{"default:apple"},
+	}
+})
 end)
 end)
 
@@ -110,6 +109,12 @@ minetest.register_craftitem("food:carrot", {
 	inventory_image = "farming_carrot.png",
 	on_use = minetest.item_eat(3),
 })
+minetest.register_craft({
+	output = '"food:carrot" 1',
+	recipe = {
+		{"default:apple","default:apple","default:apple"},
+	}
+})
 end)
 end)
 end)
@@ -121,6 +126,14 @@ minetest.register_craftitem("food:rhubarb", {
 	description = "Rhubarb",
 	inventory_image = "farming_rhubarb.png",
 })
+minetest.register_craft({
+	output = '"food:rhubarb" 1',
+	recipe = {
+		{"default:apple"},
+		{"default:apple"},
+		{"default:apple"}
+	}
+})
 end)
 
 print "Food [Support] -  > Cocoa Bean"
@@ -128,6 +141,14 @@ node_implement("farming_plus","farming_plus:cocoa_bean","food:cocoa",function()
 minetest.register_craftitem("food:cocoa", {
 	description = "Cocoa Bean",
 	inventory_image = "farming_cocoa_bean.png",
+})
+minetest.register_craft({
+	output = '"food:cocoa" 1',
+	recipe = {
+		{"","default:apple",""},
+		{"default:apple","","default:apple"},
+		{"","default:apple",""}
+	}
 })
 end)
 
@@ -147,6 +168,13 @@ minetest.register_node("food:banana", {
 	sounds = default.node_sound_defaults(),
 	on_use = minetest.item_eat(6),
 })
+minetest.register_craft({
+	output = '"food:banana" 1',
+	recipe = {
+		{"default:apple"},
+		{"default:apple"}
+	}
+})
 end)
 
 print "Food [Support] -  > Tomato"
@@ -157,6 +185,14 @@ minetest.register_craftitem("food:tomato", {
 	inventory_image = "farming_strawberry.png",
 	on_use = minetest.item_eat(2),
 })
+minetest.register_craft({
+	output = '"food:rhubarb" 1',
+	recipe = {
+		{""},
+		{""},
+		{"default:apple"}
+	}
+})
 end)
 end)
 
@@ -166,6 +202,13 @@ minetest.register_craftitem("food:potato", {
 	description = "Potato",
 	inventory_image = "food_potato.png",
 })
+minetest.register_craft({
+	output = '"food:rhubarb" 1',
+	recipe = {
+		{"default:apple"},
+		{"default:dirt"}
+	}
+})
 end)
 
 node_implement("docfarming","docfarming:bakedpotato","food:potato_baked",function()
@@ -173,6 +216,12 @@ minetest.register_craftitem("food:potato_baked", {
 	description = "Baked Potato",
 	inventory_image = "food_baked_potato.png",
 	on_use = minetest.item_eat(6),
+})
+minetest.register_craft({
+	type = "cooking",
+	output = "food:potato_baked",
+	recipe = "food:potato",
+	cooktime = 2,
 })
 end)
 
@@ -206,6 +255,13 @@ minetest.register_craftitem("food:meat_raw", {
 	groups = { meat=1, eatable=1 },
 	stack_max=25
 })
+minetest.register_craft({
+	output = '"food:meat_raw" 1',
+	recipe = {
+		{"default:apple"},
+		{"default:dirt"}
+	}
+})
 end)
 end)
 
@@ -220,21 +276,9 @@ minetest.register_craft({
 	type = "cooking",
 	output = "food:meat",
 	recipe = "food:meat_raw",
-	cooktime = 20
+	cooktime = 30
 })
 end)
-
-node_implement("my_mobs","my_mobs:rabbit_cooked","food:rabbit",function()
-node_implement("mobs","mobs:meat","food:rabbit",function()
-minetest.register_craftitem("food:rabbit", {
-	description = "Cooked Rabbit",
-	inventory_image = "my_mobs_cooked_rabbit.png",
-	
-	on_use = minetest.item_eat(5),
-})
-end)
-end)
-
 
 print "Food [Support] -  > Egg"
 node_implement("animalmaterials","animalmaterials:egg","food:egg",function()
@@ -242,6 +286,13 @@ node_implement("animalmaterials","animalmaterials:egg","food:egg",function()
 	description = "Egg",
 	image = "animalmaterials_egg.png",
 	stack_max=10
+})
+minetest.register_craft({
+	output = '"food:egg" 1',
+	recipe = {
+		{"default:sand"},
+		{"default:apple"}
+	}
 })
 end)
 
@@ -255,6 +306,14 @@ node_implement("my_mobs","my_mobs:milk_glass_cup","food:milk",function()
 	groups = { eatable=1 },
 	stack_max=10
 })
+minetest.register_craft({
+	output = '"food:meat_raw" 1',
+	recipe = {
+		{"default:apple"},
+		{"bucket:bucket_water"}
+	},
+	replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}},
+})
 end)
 end)
 
@@ -266,6 +325,13 @@ node_implement("animalmaterials","animalmaterials:glass","food:cup",function()
 	description = "Glass",
 	tiles = {"food_cup.png"},
 	inventory_image = "food_cup.png",
+})
+minetest.register_craft({
+	output = '"food:cup" 1',
+	recipe = {
+		{"default:glass"},
+		{"default:glass"}
+	}
 })
 end)
 end)
