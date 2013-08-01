@@ -64,6 +64,15 @@ minetest.register_craftitem("food:bowl",{
 	inventory_image = "food_bowl.png",
 })
 
+minetest.register_craft({
+	output = '"food:bowl" 1',
+	recipe = {
+		{"","",""},
+		{"default:stone","","default:stone"},
+		{"","default:stone",""},
+	}
+})
+
 
 -----------------------------Sugar------------------------------
 minetest.register_craftitem("food:sugar", {
