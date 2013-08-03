@@ -67,7 +67,6 @@ minetest.register_craftitem("food:bowl",{
 minetest.register_craft({
 	output = "food:bowl",
 	recipe = {
-		{"","",""},
 		{"default:stone","","default:stone"},
 		{"","default:stone",""},
 	}
