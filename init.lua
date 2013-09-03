@@ -1,5 +1,6 @@
 -- RUBENFOOD MOD
--- A mod written by rubenwardy that adds
+-- A mod written by rubenwardy and helped
+-- by Zaraki98 that adds
 -- food to the minetest game
 -- =====================================
 -- >> rubenfood/init.lua
@@ -24,10 +25,11 @@ dofile(minetest.get_modpath("food").."/food/soup.lua")
 dofile(minetest.get_modpath("food").."/snacks/crumbles.lua")
 dofile(minetest.get_modpath("food").."/snacks/cakes.lua")
 dofile(minetest.get_modpath("food").."/snacks/tarts.lua")
+dofile(minetest.get_modpath("food").."/snacks/misc.lua")
 
 dofile(minetest.get_modpath("food").."/drinks/juice.lua")
 dofile(minetest.get_modpath("food").."/drinks/hot.lua")
-
+dofile(minetest.get_modpath("food").."/drinks/milkshakes.lua")
 
 
 ----------------------------Cup------------------------------
@@ -64,6 +66,14 @@ minetest.register_craftitem("food:bowl",{
 	inventory_image = "food_bowl.png",
 })
 
+minetest.register_craft({
+	output = "food:bowl",
+	recipe = {
+		{"default:stone","","default:stone"},
+		{"","default:stone",""},
+	}
+})
+
 
 -----------------------------Sugar------------------------------
 minetest.register_craftitem("food:sugar", {
@@ -91,5 +101,21 @@ minetest.register_craft({
 
 	}
 })
+
+----------------------------Cigarete----------------------------
+minetest.register_craftitem("food:cigarette", {
+	description = "Cigarette",
+	inventory_image = "food_cigar.png",
+	on_use = minetest.item_eat(-4),
+})
+
+minetest.register_craft({
+	output = "food:cigarette",
+	recipe = {
+		{'"default:dry_shrub"','"default:dry_shrub"','"default:dry_shrub"'},
+
+	}
+})
+
 
 print("Food: Mainframe loaded")

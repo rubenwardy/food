@@ -37,7 +37,7 @@ minetest.register_craft({
         	{"bucket:bucket_water", "food:tomato", "bucket:bucket_water"},
 		{"", "food:bowl", ""},
         },
-	replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}}
+	replacements = {{"bucket:bucket_water", "bucket:bucket_empty"},{"bucket:bucket_water", "bucket:bucket_empty"}}
 })
 
 
@@ -68,5 +68,5 @@ minetest.register_craft({
         	{"bucket:bucket_water", "food:meat", "bucket:bucket_water"},
 		{"", "food:bowl", ""},
         },
-	replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}}
+	replacements = {{"bucket:bucket_water", "bucket:bucket_empty"},{"bucket:bucket_water", "bucket:bucket_empty"}}
 })
