@@ -1,5 +1,6 @@
 -- RUBENFOOD MOD
--- A mod written by rubenwardy that adds
+-- A mod written by rubenwardy and helped
+-- by Zaraki98 that adds
 -- food to the minetest game
 -- =====================================
 -- >> rubenfood/init.lua
@@ -109,7 +110,7 @@ minetest.register_craftitem("food:cigarette", {
 })
 
 minetest.register_craft({
-	output = '"food:cigarette" 1',
+	output = "food:cigarette",
 	recipe = {
 		{'"default:dry_shrub"','"default:dry_shrub"','"default:dry_shrub"'},
 
