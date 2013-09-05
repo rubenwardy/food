@@ -5,10 +5,16 @@ This is the main mod in the food mod collection.
 
 The Aims
 --------
+
 All content should follow these aims:
 * Basis for expansion - supplies a framework of ingredients for other mods to build upon
 * Mod support without dependancies - this allows flexibility for the user
 * Minetest-game worthy - (Minimalism) This mod only contains traditional foods - such as cakes, soups and bread.
+
+Documentation
+-------------
+
+Advanced documentation and a recipe guide is coming soon!
 
 Other mods
 ----------
