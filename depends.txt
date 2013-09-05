@@ -1,1 +1,7 @@
-default
+default?
+farming?
+farming_plus?
+plantlib?
+docfarming?
+animalmaterials?
+my_mobs?
