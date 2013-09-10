@@ -5,3 +5,4 @@ plantlib?
 docfarming?
 animalmaterials?
 my_mobs?
+hud?

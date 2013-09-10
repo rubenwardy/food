@@ -52,6 +52,13 @@ function food.asupport(group,add)
  
 	add()
 end
+function food.item_eat(amt)
+	if minetest.get_modpath("hud") then
+		return hud.item_eat(hunger_change)
+	else
+		return minetest.item_eat(amt)
+	end
+end
 
 -- Add support for other mods
 food.support("wheat","farming","farming:wheat")
@@ -67,6 +74,9 @@ food.support("cocoa","farming_plus","farming_plus:cocoa_bean")
 food.support("milk","animalmaterials","animalmaterials:milk")
 food.support("milk","my_mobs","my_mobs:milk_glass_cup")
 food.support("egg","animalmaterials","animalmaterials:egg")
+--food.support("meat_raw","mobs","mobs:meat_raw")
+food.support("meat_raw","animalmaterials","animalmaterials:meat_raw")
+food.support("meat","mobs","mobs:meat")
 
 -- Default inbuilt ingrediants
 food.asupport("wheat",function()
@@ -123,7 +133,7 @@ food.asupport("strawberry",function()
 	minetest.register_craftitem("food:strawberry", {
 		description = "Strawberry",
 		inventory_image = "food_strawberry.png",
-		on_use = minetest.item_eat(2),
+		on_use = food.item_eat(2),
 		groups = {food_strawberry=1}
 	})
 	minetest.register_craft({
@@ -138,7 +148,7 @@ food.asupport("carrot",function()
 		description = "Carrot",
 		inventory_image = "food_carrot.png",
 		groups = {food_carrot=1},
-		on_use = minetest.item_eat(3)
+		on_use = food.item_eat(3)
 	})
 	minetest.register_craft({
 		output = "food:carrot",
@@ -151,7 +161,7 @@ food.asupport("milk",function()
 	minetest.register_craftitem("food:milk", {
 		description = "Milk",
 		image = "food_milk.png",
-		on_use = minetest.item_eat(1),
+		on_use = food.item_eat(1),
 		groups = { eatable=1, food_milk = 1 },
 		stack_max=10
 	})
@@ -192,6 +202,36 @@ food.asupport("cocoa",function()
 			{"default:apple","","default:apple"},
 			{"","default:apple",""}
 		}
+	})
+end)
+food.asupport("meat_raw",function()
+	minetest.register_craftitem("food:meat_raw", {
+		description = "Raw meat",
+		image = "food_meat_raw.png",
+		on_use = food.item_eat(1),
+		groups = { meat=1, eatable=1, food_meat_raw=1 },
+		stack_max=25
+	})
+	minetest.register_craft({
+		output = "food:meat_raw",
+		recipe = {
+			{"default:apple"},
+			{"default:dirt"}
+		}
+	})
+end)
+food.asupport("food:meat",function()
+	minetest.register_craftitem("food:meat", {
+		description = "Venison",
+		inventory_image = "food_meat.png",
+		groups = {food_meat=1,food_chicken=1}
+	})
+	
+	minetest.register_craft({
+		type = "cooking",
+		output = "food:meat",
+		recipe = "group:food_meat_raw",
+		cooktime = 30
 	})
 end)
 
@@ -268,6 +308,13 @@ minetest.register_craftitem("food:bowl",{
 	inventory_image = "food_bowl.png",
 	groups = {food_bowl=1}
 })
+minetest.register_craft({
+	output = "food:bowl",
+	recipe = {
+		{"default:clay_lump","","default:clay_lump"},
+		{"","default:clay_lump",""}
+	}
+})
 -- Register butter
 minetest.register_craftitem("food:butter", {
 	description = "Butter",
@@ -285,7 +332,7 @@ minetest.register_craft({
 minetest.register_craftitem("food:cheese", {
 	description = "Cheese",
 	inventory_image = "food_cheese.png",
-	on_use = minetest.item_eat(4),
+	on_use = food.item_eat(4),
 	groups = {food_cheese=1}
 })
 minetest.register_craft({
@@ -299,6 +346,7 @@ minetest.register_craft({
 minetest.register_craftitem("food:pasta_bake",{
 	description = "Pasta Bake",
 	inventory_image = "food_pasta_bake.png",
+	on_use = food.item_eat(4),
 	groups = {food=3}
 })
 minetest.register_craftitem("food:pasta_bake_raw",{
@@ -319,10 +367,41 @@ minetest.register_craft({
 	}
 })
 
+-- Soups
+local soups = {"tomato","chicken"}
+for i=1, #soups do
+	local flav = soups[i]
+	minetest.register_craftitem("food:soup_"..flav,{
+		description = flav.." Soup",
+		inventory_image = "food_soup_"..flav..".png",
+		on_use = food.item_eat(4),
+		groups = {food=3}
+	})
+	minetest.register_craftitem("food:soup_"..flav.."_raw",{
+		description = "Uncooked ".. flav.." Soup",
+		inventory_image = "food_soup_"..flav.."_raw.png",
+	
+	})
+	minetest.register_craft({
+		type = "cooking",
+		output = "food:soup_"..flav,
+		recipe = "food:soup_"..flav.."_raw",
+	})
+	minetest.register_craft({
+		output = "food:soup_"..flav.."_raw",
+		recipe = {
+	        	{"", "", ""},
+	        	{"bucket:bucket_water", "group:food_"..flav, "bucket:bucket_water"},
+			{"", "group:food_bowl", ""},
+	        },
+		replacements = {{"bucket:bucket_water", "bucket:bucket_empty"},{"bucket:bucket_water", "bucket:bucket_empty"}}
+	})
+end
+
 -- Register cakes
 minetest.register_node("food:cake", {
 	description = "Cake",
-	on_use = minetest.item_eat(4),
+	on_use = food.item_eat(4),
 	groups={food=3,crumbly=3},
 	tiles = {
 		"food_cake_texture.png",
@@ -347,7 +426,7 @@ minetest.register_node("food:cake", {
 })
 minetest.register_node("food:cake_choco", {
 	description = "Chocolate Cake",
-	on_use = minetest.item_eat(4),
+	on_use = food.item_eat(4),
 	groups={food=3,crumbly=3},
 	tiles = {
 		"food_cake_choco_texture.png",
@@ -372,7 +451,7 @@ minetest.register_node("food:cake_choco", {
 })
 minetest.register_node("food:cake_carrot", {
 	description = "Carrot Cake",
-	on_use = minetest.item_eat(4),
+	on_use = food.item_eat(4),
 	groups={food=3,crumbly=3},
 	walkable = false,
 	sunlight_propagates = true,
@@ -398,7 +477,7 @@ minetest.register_node("food:cake_carrot", {
 minetest.register_craftitem("food:cake_cheese",{
 	description = "Cheese cake",
 	inventory_image = "food_cake_cheese.png",
-	on_use = minetest.item_eat(4),
+	on_use = food.item_eat(4),
 	groups={food=3,crumbly=3}
 })
 minetest.register_craft({
