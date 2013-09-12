@@ -1,76 +1,37 @@
-Rubenwardy's Food Mod.
-======================
+The Food Mod
+============
 
-This mod adds food for minetest and is an ideal companion for the Farming (by PilzAdam) and the Animal (by Sapier) Mods.
+This is the main mod in the food mod collection.
 
-1) List of Food
+The Aims
+--------
 
-2) License for Code
+All content should follow these aims:
+* Basis for expansion - supplies a framework of ingredients for other mods to build upon
+* Mod support without dependancies - this allows flexibility for the user
+* Minetest-game worthy - (Minimalism) This mod only contains traditional foods - such as cakes, soups and bread.
 
-In alpha development, but is still ok to use.
+Documentation
+-------------
 
-Food
-====
+Advanced documentation and a recipe guide is coming soon!
 
-Recipes coming on release of this mod.
-Read Code to find recipes before then
+Other mods
+----------
 
-Items
-* Cup / Glass
-* Mug
-* Oven
+There are expansion mods avaliable. Just install them in a mod folder, and everything should be fine.
 
-Diary
-* Butter
-* Cheese
+* Modern food (Needs updating)
+* English food (Coming Soon)
+* Asian food (Coming Soon)
 
-Sandwiches
-* Venison Sandwich
-* Cheese Sandwich
-* Burger
+Licensing
+---------
 
-Baking
-* Bread
-* Bread Slices
-* Buns
+This mod, its code, images and nodeboxes, are licensed under:
 
-Soups
-* Tomato Soup
-* Chicken Soup
-
-Cakes
-* Plain Cake
-* Chocolate Cake
-* Carrot Cake
-
-Tarts
-* Strawberry Tart
-
-Crumbles
-* Rhubarb Crumble
-
-Drinks
-* Apple Juice
-* Cactus Juice
-* Coffee
-* Coffee Beans
-* Hot Chocolate
-* Chocolate Milkshake
-* Banana Milkshake
-* Strawberry Milkshake
-
-Misc
-* Cigerettes (takes 1 life away)
-* Cooked Meat
-* Sugar
-
-
-
-License for Code and Images
-===========================
-
-License Holder: Andrew "Rubenwardy" Ward.
-
-CC BY SA 3.0 UNPORTED
+ANDREW "RUBENWARDY" WARD
+Creative Commons BY-SA 3.0
+(or similar)
 
 http://creativecommons.org/licenses/by-sa/3.0/
