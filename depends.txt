@@ -1,1 +1,11 @@
 default
+
+farming
+
+farming_plus?
+vessels
+plantlib?
+docfarming?
+animalmaterials?
+my_mobs?
+hud?
