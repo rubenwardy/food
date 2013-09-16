@@ -21,17 +21,22 @@ Other mods
 
 There are expansion mods avaliable. Just install them in a mod folder, and everything should be fine.
 
-* Modern food (Needs updating)
-* English food (Coming Soon)
-* Asian food (Coming Soon)
+* Modern food (Needs updating) - burgers, soft drinks, pop corn, coffee, etc
+* English food (Coming Soon) - breakfast, pastries, pasties, buns, muffins, teas, cheese
+* Asian food (Coming Soon) - indian, chinese, thai
 
 Licensing
 ---------
 
-This mod, its code, images and nodeboxes, are licensed under:
+The code, textures and nodeboxes in this mod are, unless otherwise notified, licensed under CC BY SA.
 
 ANDREW "RUBENWARDY" WARD
 Creative Commons BY-SA 3.0
 (or similar)
 
 http://creativecommons.org/licenses/by-sa/3.0/
+
+Baked potato texture by Doc, WTFPL
+Dough, flour and wheat textures from default farming mod, WTFPL
+Egg and milk textures from Mobf, CC BY SA
+Have I missed out credit? Please tell me.

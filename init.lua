@@ -7,10 +7,17 @@
 -- basic foods
 -- =====================================
 
-food = { supported={} }
+food = {
+	supported={},
+	atsup={},
+	df={},
+	debug=true
+}
+
 function food.support(group,mod,item)
+	food.atsup[group] = true
 	if not minetest.get_modpath(mod) then
-		print("'"..mod.."' is not installed")
+		print("mod '"..mod.."' is not installed")
 		return
 	end
 
@@ -23,7 +30,7 @@ function food.support(group,mod,item)
 	local data = minetest.registered_items[item]
 
 	if not data then
-		print(item.." not found")
+		print("item '",item.."' not found")
 		return
 	end
 
@@ -34,9 +41,10 @@ function food.support(group,mod,item)
 	else
 		minetest.register_node(":"..item,data)
 	end
-	food.supported[group] = true	
+	food.supported[group] = true
 end
 function food.asupport(group,add)
+	food.df[group] = true
 	if food.supported[group] then
 		return
 	end
@@ -60,9 +68,29 @@ function food.item_eat(amt)
 	end
 end
 
+-- Debug to check all supports have inbuilt
+if food.debug then
+minetest.after(0, function()
+	for name, val in pairs(food.atsup) do
+		if not food.df[name] then
+			print("[FOOD DEBUG] Ingredient "..name.." has no built in equiv")
+		
+		end
+	end
+	
+	for name, val in pairs(food.df) do
+		if not food.atsup[name] then
+			print("[FOOD DEBUG] Inbuilt ingredient "..name.." has no supported external equiv")
+
+		end
+	end
+end)
+end
+
 -- Add support for other mods
 food.support("wheat","farming","farming:wheat")
 food.support("flour","farming","farming:flour")
+food.support("potato","docfarming","docfarming:potato")
 food.support("tomato","farming_plus","farming_plus:tomato_item")
 food.support("tomato","plantlib","plantlib:tomato")
 food.support("strawberry","farming_plus","farming_plus:strawberry_item")
@@ -77,6 +105,8 @@ food.support("egg","animalmaterials","animalmaterials:egg")
 --food.support("meat_raw","mobs","mobs:meat_raw")
 food.support("meat_raw","animalmaterials","animalmaterials:meat_raw")
 food.support("meat","mobs","mobs:meat")
+food.support("cup","vessels","vessels:drinking_glass")
+food.support("cup","animalmaterials","animalmaterials:glass")
 
 -- Default inbuilt ingrediants
 food.asupport("wheat",function()
@@ -111,6 +141,20 @@ food.asupport("flour",function()
 		recipe = {
 			{"default:sand"},
 			{"default:sand"}
+		}
+	})
+end)
+food.asupport("potato",function()
+	minetest.register_craftitem("food:potato", {
+		description = "Potato",
+		inventory_image = "food_potato.png",
+	})
+	minetest.register_craft({
+		output = "food:potato",
+		recipe = {
+			{"default:dirt"},
+			{"default:apple"}
+
 		}
 	})
 end)
@@ -220,7 +264,7 @@ food.asupport("meat_raw",function()
 		}
 	})
 end)
-food.asupport("food:meat",function()
+food.asupport("meat",function()
 	minetest.register_craftitem("food:meat", {
 		description = "Venison",
 		inventory_image = "food_meat.png",
@@ -234,6 +278,16 @@ food.asupport("food:meat",function()
 		cooktime = 30
 	})
 end)
+
+if minetest.get_modpath("animalmaterials") then
+	minetest.register_craft({
+		type = "cooking",
+		output = "group:food_meat",
+		recipe = "group:food_meat_raw",
+		cooktime = 30
+	})
+
+end
 
 -- Register sugar
 minetest.register_craftitem("food:sugar", {
@@ -342,6 +396,18 @@ minetest.register_craft({
 	}
 })
 
+-- Register baked potato
+minetest.register_craftitem("food:baked_potato", {
+	description = "Baked Potato",
+	inventory_image = "food_baked_potato.png",
+	on_use = food.item_eat(6),
+})
+minetest.register_craft({
+	type = "cooking",
+	output = "food:baked_potato",
+	recipe = "group:food_potato",
+})
+
 -- Register pasta bake
 minetest.register_craftitem("food:pasta_bake",{
 	description = "Pasta Bake",
@@ -367,7 +433,7 @@ minetest.register_craft({
 	}
 })
 
--- Soups
+-- Register Soups
 local soups = {"tomato","chicken"}
 for i=1, #soups do
 	local flav = soups[i]
@@ -397,6 +463,41 @@ for i=1, #soups do
 		replacements = {{"bucket:bucket_water", "bucket:bucket_empty"},{"bucket:bucket_water", "bucket:bucket_empty"}}
 	})
 end
+
+-- Juices
+local juices = {"apple","cactus"}
+for i=1, #juices do
+	local flav = juices[i]
+	minetest.register_craftitem("food:"..flav.."_juice", {
+		description = flav.." Juice",
+		inventory_image = "food_"..flav.."_juice.png",
+		on_use = minetest.item_eat(2),
+	})
+		
+	minetest.register_craft({
+		output = "food:"..flav.."_juice 4",
+		recipe = {
+			{"","",""},
+			{"","default:"..flav,""},
+			{"","group:food_cup",""},
+		}
+	})
+end
+
+minetest.register_craftitem("food:rainbow_juice", {
+	description = "Rainbow Juice",
+	inventory_image = "food_rainbow_juice.png",
+	on_use = minetest.item_eat(20),
+})
+
+minetest.register_craft({
+	output = "food:rainbow_juice 99",
+	recipe = {
+		{"","",""},
+		{"","default:nyancat_rainbow",""},
+		{"","group:food_cup",""},
+	}
+})
 
 -- Register cakes
 minetest.register_node("food:cake", {

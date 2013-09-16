@@ -6,3 +6,4 @@ docfarming?
 animalmaterials?
 my_mobs?
 hud?
+vessels?
