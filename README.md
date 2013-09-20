@@ -36,7 +36,8 @@ Creative Commons BY-SA 3.0
 
 http://creativecommons.org/licenses/by-sa/3.0/
 
-Baked potato texture by Doc, WTFPL
-Dough, flour and wheat textures from default farming mod, WTFPL
-Egg and milk textures from Mobf, CC BY SA
+* Baked potato texture by Doc, WTFPL
+* Dough, flour and wheat textures from default farming mod, WTFPL
+* Egg and milk textures from Mobf, CC BY SA
+
 Have I missed out credit? Please tell me.
