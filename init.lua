@@ -62,7 +62,7 @@ function food.asupport(group,add)
 end
 function food.item_eat(amt)
 	if minetest.get_modpath("hud") then
-		return hud.item_eat(hunger_change)
+		return hud.item_eat(amt)
 	else
 		return minetest.item_eat(amt)
 	end
