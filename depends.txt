@@ -1,9 +1,11 @@
 default?
 farming?
 farming_plus?
+jkfarming?
 plantlib?
 docfarming?
 animalmaterials?
+jkanimals?
 my_mobs?
 hud?
 vessels?
