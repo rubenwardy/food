@@ -91,6 +91,7 @@ end
 food.support("wheat","farming","farming:wheat")
 food.support("flour","farming","farming:flour")
 food.support("potato","docfarming","docfarming:potato")
+food.support("potato","veggies","veggies:potato")
 food.support("tomato","farming_plus","farming_plus:tomato_item")
 food.support("tomato","plantlib","plantlib:tomato")
 food.support("strawberry","farming_plus","farming_plus:strawberry_item")
