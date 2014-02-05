@@ -8,10 +8,10 @@
 -- =====================================
 
 food = {
-	supported={},
-	atsup={},
-	df={},
-	debug=true
+	supported = {},
+	atsup = {},
+	df = {},
+	debug = false
 }
 
 function food.support(group,mod,item)
@@ -30,7 +30,7 @@ function food.support(group,mod,item)
 	local data = minetest.registered_items[item]
 
 	if not data then
-		print("item '",item.."' not found")
+		print("item '"..item.."' not found")
 		return
 	end
 
@@ -154,6 +154,7 @@ food.asupport("potato",function()
 	minetest.register_craftitem("food:potato", {
 		description = "Potato",
 		inventory_image = "food_potato.png",
+		groups = {food_potato = 1}
 	})
 	minetest.register_craft({
 		output = "food:potato",
