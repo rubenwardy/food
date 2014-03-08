@@ -34,6 +34,6 @@ Chocolate Cake =
 Carrot Cake =
 Cheese cake =
 Cake Mix =
-Chokolate Cake Mix =
+Chocolate Cake Mix =
 Carrot Cake Mix =
 Cheese Cake Mix =
