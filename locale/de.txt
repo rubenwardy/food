@@ -23,7 +23,9 @@ Baked Potato = Ofenkartoffel
 Pasta Bake = Nudelauflauf
 Raw Pasta Bake = ungekochter Nudelauflauf
 ## 1 flavour (bei Vanessa diese Erklärung nachschauen) ###
-%s Soup = %ssuppe
+tomato = Tomaten
+chicken = Huehner
+Soup = suppe
 ## 1 flavour (bei Vanessa nachschauen, wie man mit Funktionen in der Mitte umgeht) ###
 Uncooked %s Soup = ungekochte %ssuppe
 ## 1 flavour
