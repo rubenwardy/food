@@ -450,7 +450,7 @@ minetest.register_craft({
 })
 
 -- Register Soups
-local soups = {"tomato","chicken"}
+local soups = {S("tomato"),S("chicken")}
 for i=1, #soups do
 	local flav = soups[i]
 	minetest.register_craftitem("food:soup_"..flav,{
