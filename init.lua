@@ -450,11 +450,11 @@ minetest.register_craft({
 })
 
 -- Register Soups
-local soups = {S("tomato"),S("chicken")}
+local soups = {"tomato","chicken"}
 for i=1, #soups do
 	local flav = soups[i]
 	minetest.register_craftitem("food:soup_"..flav,{
-		description = flav..S(" Soup"),
+		description = flav.." Soup",
 		inventory_image = "food_soup_"..flav..".png",
 		on_use = food.item_eat(4),
 		groups = {food=3}
@@ -485,7 +485,7 @@ local juices = {"apple","cactus"}
 for i=1, #juices do
 	local flav = juices[i]
 	minetest.register_craftitem("food:"..flav.."_juice", {
-		description = flav..S(" Juice"),
+		description = flav.." Juice",
 		inventory_image = "food_"..flav.."_juice.png",
 		on_use = minetest.item_eat(2),
 	})
