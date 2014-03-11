@@ -485,7 +485,7 @@ local juices = {"apple","cactus"}
 for i=1, #juices do
 	local flav = juices[i]
 	minetest.register_craftitem("food:"..flav.."_juice", {
-		description = flav.." Juice",
+		description = S(flav.." Juice"),
 		inventory_image = "food_"..flav.."_juice.png",
 		on_use = minetest.item_eat(2),
 	})
