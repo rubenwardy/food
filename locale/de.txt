@@ -39,3 +39,7 @@ Cake Mix = Backmischung
 Chocolate Cake Mix = Backmischung fuer Schokoladenkuchen
 Carrot Cake Mix = Backmischung fuer Karottenkuchen
 Cheese Cake Mix = Backmischung fuer Kaesekuchen
+chicken Soup = Huehnersuppe
+tomato Soup = Tomatensuppe
+Uncooked tomato Soup = Ungekochte Huehnersuppe
+Uncooked chicken Soup = Ungekochte Tomatensuppe

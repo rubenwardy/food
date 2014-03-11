@@ -454,13 +454,13 @@ local soups = {"tomato","chicken"}
 for i=1, #soups do
 	local flav = soups[i]
 	minetest.register_craftitem("food:soup_"..flav,{
-		description = flav.." Soup",
+		description = S(flav.." Soup"),
 		inventory_image = "food_soup_"..flav..".png",
 		on_use = food.item_eat(4),
 		groups = {food=3}
 	})
 	minetest.register_craftitem("food:soup_"..flav.."_raw",{
-		description = "Uncooked ".. flav.." Soup",
+		description = S("Uncooked ".. flav.." Soup"),
 		inventory_image = "food_soup_"..flav.."_raw.png",
 	
 	})
