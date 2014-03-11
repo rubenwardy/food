@@ -1,4 +1,4 @@
-# Translation by Xanthin
+# Translation by Xanthin and hawkril
 
 Wheat = Weizen
 Flour = Mehl
@@ -22,14 +22,12 @@ Cheese = Kaese
 Baked Potato = Ofenkartoffel
 Pasta Bake = Nudelauflauf
 Raw Pasta Bake = ungekochter Nudelauflauf
-## 1 flavour (bei Vanessa diese Erklärung nachschauen) ###
-tomato = Tomaten
-chicken = Huehner
-Soup = suppe
-## 1 flavour (bei Vanessa nachschauen, wie man mit Funktionen in der Mitte umgeht) ###
-Uncooked %s Soup = ungekochte %ssuppe
-## 1 flavour
-%s Juice = %ssaft
+chicken Soup = Huehnersuppe
+tomato Soup = Tomatensuppe
+Uncooked tomato Soup = Ungekochte Huehnersuppe
+Uncooked chicken Soup = Ungekochte Tomatensuppe
+apple Juice = Apfelsaft
+cactus Juice = Kaktussaft
 Rainbow Juice = Regenbogensaft
 Cake = Kuchen
 Chocolate Cake = Schokoladenkuchen
@@ -39,7 +37,3 @@ Cake Mix = Backmischung
 Chocolate Cake Mix = Backmischung fuer Schokoladenkuchen
 Carrot Cake Mix = Backmischung fuer Karottenkuchen
 Cheese Cake Mix = Backmischung fuer Kaesekuchen
-chicken Soup = Huehnersuppe
-tomato Soup = Tomatensuppe
-Uncooked tomato Soup = Ungekochte Huehnersuppe
-Uncooked chicken Soup = Ungekochte Tomatensuppe
