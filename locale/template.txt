@@ -22,12 +22,12 @@ Cheese =
 Baked Potato = 
 Pasta Bake = 
 Raw Pasta Bake = 
-## 1 flavour (bei Vanessa diese Erklärung nachschauen) ###
-%s Soup = 
-## 1 flavour (bei Vanessa nachschauen, wie man mit Funktionen in der Mitte umgeht) ###
-Uncooked %s Soup = 
-## 1 flavour
-%s Juice =
+chicken Soup = 
+tomato Soup = 
+Uncooked tomato Soup = 
+Uncooked chicken Soup = 
+apple Juice = 
+cactus Juice = 
 Rainbow Juice =
 Cake =
 Chocolate Cake =
