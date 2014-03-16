@@ -6,6 +6,7 @@ plantlib?
 docfarming?
 animalmaterials?
 jkanimals?
+bushes_classic?
 my_mobs?
 hud?
 vessels?

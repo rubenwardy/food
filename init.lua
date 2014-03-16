@@ -113,6 +113,7 @@ food.support("meat","jkanimals","jkanimals:meat")
 food.support("cup","vessels","vessels:drinking_glass")
 food.support("cup","animalmaterials","animalmaterials:glass")
 food.support("sugar","jkfarming","jkfarming:sugar")
+food.support("sugar","bushes_classic","bushes:sugar")
 
 -- Default inbuilt ingrediants
 food.asupport("wheat",function()
