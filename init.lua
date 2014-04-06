@@ -123,6 +123,7 @@ food.support("cup","vessels","vessels:drinking_glass")
 food.support("cup","animalmaterials","animalmaterials:glass")
 food.support("sugar","jkfarming","jkfarming:sugar")
 food.support("sugar","bushes_classic","bushes:sugar")
+food.support("strawberry","bushes_classic","bushes:strawberry")
 
 -- Default inbuilt ingrediants
 food.asupport("wheat",function()
@@ -265,6 +266,19 @@ food.asupport("cocoa",function()
 		}
 	})
 end)
+food.asupport("sugar",function()
+	minetest.register_craftitem("food:sugar", {
+		description = S("Sugar"),
+		inventory_image = "food_sugar.png",
+		groups = {food_sugar=1}
+	})
+	minetest.register_craft({
+		output = "food:sugar 20",
+		recipe = {
+			{"default:papyrus"},
+		}
+	})
+end)
 food.asupport("meat_raw",function()
 	minetest.register_craftitem("food:meat_raw", {
 		description = S("Raw meat"),
@@ -306,19 +320,6 @@ if minetest.get_modpath("animalmaterials") then
 
 end
 
--- Register sugar
-minetest.register_craftitem("food:sugar", {
-	description = S("Sugar"),
-	inventory_image = "food_sugar.png",
-	groups = {food_sugar=1}
-})
-minetest.register_craft({
-	output = "food:sugar 20",
-	recipe = {
-		{"default:papyrus"},
-	}
-})
-
 -- Register chocolate powder	
 minetest.register_craftitem("food:chocolate_powder", {
 	description = S("Chocolate Powder"),
@@ -338,6 +339,7 @@ minetest.register_craft({
 minetest.register_craftitem("food:dark_chocolate",{
 	description = S("Dark Chocolate"),
 	inventory_image = "food_dark_chocolate.png",
+	on_use = food.item_eat(3),
 	groups = {food_dark_chocolate=1}
 })
 minetest.register_craft({
@@ -351,6 +353,7 @@ minetest.register_craft({
 minetest.register_craftitem("food:milk_chocolate",{
 	description = S("Milk Chocolate"),
 	inventory_image = "food_milk_chocolate.png",
+	on_use = food.item_eat(3),
 	groups = {food_milk_chocolate=1}
 })
 minetest.register_craft({
