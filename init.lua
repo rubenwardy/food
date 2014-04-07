@@ -117,7 +117,9 @@ food.support("milk","jkanimals","jkanimals:bucket_milk")
 food.support("egg","animalmaterials","animalmaterials:egg")
 food.support("egg","jkanimals","jkanimals:egg")
 food.support("meat_raw","animalmaterials","animalmaterials:meat_raw")
+food.support("meat_raw","mobs","mobs:meat_raw")
 food.support("meat","mobs","mobs:meat")
+food.support("meat_raw","jkanimals","jkanimals:meat_raw")
 food.support("meat","jkanimals","jkanimals:meat")
 food.support("cup","vessels","vessels:drinking_glass")
 food.support("cup","animalmaterials","animalmaterials:glass")
@@ -281,7 +283,7 @@ food.asupport("meat_raw",function()
 		}
 	})
 end)
-food.asupport("meat",function()
+food.asupport("chicken",function()
 	minetest.register_craftitem("food:meat", {
 		description = S("Venison"),
 		inventory_image = "food_meat.png",
@@ -299,7 +301,7 @@ end)
 if minetest.get_modpath("animalmaterials") then
 	minetest.register_craft({
 		type = "cooking",
-		output = "group:food_meat",
+		output = "food:meat",
 		recipe = "group:food_meat_raw",
 		cooktime = 30
 	})
