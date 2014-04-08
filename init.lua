@@ -9,10 +9,11 @@
 
 -- Boilerplate to support localized strings if intllib mod is installed.
 local S
-if intllib then
-	S = intllib.Getter()
+if (minetest.get_modpath("intllib")) then
+  dofile(minetest.get_modpath("intllib").."/intllib.lua")
+  S = intllib.Getter(minetest.get_current_modname())
 else
-	S = function(s) return s end
+  S = function ( s ) return s end
 end
 
 food = {
@@ -58,7 +59,7 @@ function food.asupport(group,add)
 	end
 
 	for name, def in pairs(minetest.registered_items) do
-		local g = def.groups and def.groups[group] or 0
+		local g = def.groups and def.groups["food_"..group] or 0
 		if g > 0 then
 			return
 		end
@@ -116,16 +117,12 @@ food.support("milk","jkanimals","jkanimals:bucket_milk")
 food.support("egg","animalmaterials","animalmaterials:egg")
 food.support("egg","jkanimals","jkanimals:egg")
 food.support("meat_raw","animalmaterials","animalmaterials:meat_raw")
-food.support("chicken","animalmaterials","animalmaterials:meat_chicken")
-food.support("meat_raw","mobs","mobs:meat_raw")
 food.support("meat","mobs","mobs:meat")
-food.support("meat_raw","jkanimals","jkanimals:meat_raw")
 food.support("meat","jkanimals","jkanimals:meat")
 food.support("cup","vessels","vessels:drinking_glass")
 food.support("cup","animalmaterials","animalmaterials:glass")
 food.support("sugar","jkfarming","jkfarming:sugar")
 food.support("sugar","bushes_classic","bushes:sugar")
-food.support("strawberry","bushes_classic","bushes:strawberry")
 
 -- Default inbuilt ingrediants
 food.asupport("wheat",function()
@@ -268,19 +265,6 @@ food.asupport("cocoa",function()
 		}
 	})
 end)
-food.asupport("sugar",function()
-	minetest.register_craftitem("food:sugar", {
-		description = S("Sugar"),
-		inventory_image = "food_sugar.png",
-		groups = {food_sugar=1}
-	})
-	minetest.register_craft({
-		output = "food:sugar 20",
-		recipe = {
-			{"default:papyrus"},
-		}
-	})
-end)
 food.asupport("meat_raw",function()
 	minetest.register_craftitem("food:meat_raw", {
 		description = S("Raw meat"),
@@ -297,7 +281,7 @@ food.asupport("meat_raw",function()
 		}
 	})
 end)
-food.asupport("chicken",function()
+food.asupport("meat",function()
 	minetest.register_craftitem("food:meat", {
 		description = S("Venison"),
 		inventory_image = "food_meat.png",
@@ -311,6 +295,29 @@ food.asupport("chicken",function()
 		cooktime = 30
 	})
 end)
+
+if minetest.get_modpath("animalmaterials") then
+	minetest.register_craft({
+		type = "cooking",
+		output = "food:meat",
+		recipe = "group:food_meat_raw",
+		cooktime = 30
+	})
+
+end
+
+-- Register sugar
+minetest.register_craftitem("food:sugar", {
+	description = S("Sugar"),
+	inventory_image = "food_sugar.png",
+	groups = {food_sugar=1}
+})
+minetest.register_craft({
+	output = "food:sugar 20",
+	recipe = {
+		{"default:papyrus"},
+	}
+})
 
 -- Register chocolate powder	
 minetest.register_craftitem("food:chocolate_powder", {
@@ -331,7 +338,6 @@ minetest.register_craft({
 minetest.register_craftitem("food:dark_chocolate",{
 	description = S("Dark Chocolate"),
 	inventory_image = "food_dark_chocolate.png",
-	on_use = food.item_eat(3),
 	groups = {food_dark_chocolate=1}
 })
 minetest.register_craft({
@@ -345,7 +351,6 @@ minetest.register_craft({
 minetest.register_craftitem("food:milk_chocolate",{
 	description = S("Milk Chocolate"),
 	inventory_image = "food_milk_chocolate.png",
-	on_use = food.item_eat(3),
 	groups = {food_milk_chocolate=1}
 })
 minetest.register_craft({
@@ -446,30 +451,33 @@ minetest.register_craft({
 })
 
 -- Register Soups
-local soups = {"tomato","chicken"}
+local soups = {
+	{"tomato","tomato"},
+	{"chicken","meat"}
+}
 for i=1, #soups do
 	local flav = soups[i]
-	minetest.register_craftitem("food:soup_"..flav,{
-		description = S(flav.." Soup"),
-		inventory_image = "food_soup_"..flav..".png",
+	minetest.register_craftitem("food:soup_"..flav[1],{
+		description = S(flav[1].." Soup"),
+		inventory_image = "food_soup_"..flav[1]..".png",
 		on_use = food.item_eat(4),
 		groups = {food=3}
 	})
-	minetest.register_craftitem("food:soup_"..flav.."_raw",{
-		description = S("Uncooked ".. flav.." Soup"),
-		inventory_image = "food_soup_"..flav.."_raw.png",
+	minetest.register_craftitem("food:soup_"..flav[1].."_raw",{
+		description = S("Uncooked ".. flav[1].." Soup"),
+		inventory_image = "food_soup_"..flav[1].."_raw.png",
 	
 	})
 	minetest.register_craft({
 		type = "cooking",
-		output = "food:soup_"..flav,
-		recipe = "food:soup_"..flav.."_raw",
+		output = "food:soup_"..flav[1],
+		recipe = "food:soup_"..flav[1].."_raw",
 	})
 	minetest.register_craft({
-		output = "food:soup_"..flav.."_raw",
+		output = "food:soup_"..flav[1].."_raw",
 		recipe = {
 	        	{"", "", ""},
-	        	{"bucket:bucket_water", "group:food_"..flav, "bucket:bucket_water"},
+	        	{"bucket:bucket_water", "group:food_"..flav[2], "bucket:bucket_water"},
 			{"", "group:food_bowl", ""},
 	        },
 		replacements = {{"bucket:bucket_water", "bucket:bucket_empty"},{"bucket:bucket_water", "bucket:bucket_empty"}}
