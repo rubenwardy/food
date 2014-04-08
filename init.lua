@@ -59,7 +59,7 @@ function food.asupport(group,add)
 	end
 
 	for name, def in pairs(minetest.registered_items) do
-		local g = def.groups and def.groups[group] or 0
+		local g = def.groups and def.groups["food_"..group] or 0
 		if g > 0 then
 			return
 		end
@@ -451,30 +451,33 @@ minetest.register_craft({
 })
 
 -- Register Soups
-local soups = {"tomato","chicken"}
+local soups = {
+	{"tomato","tomato"},
+	{"chicken","meat"}
+}
 for i=1, #soups do
 	local flav = soups[i]
-	minetest.register_craftitem("food:soup_"..flav,{
-		description = S(flav.." Soup"),
-		inventory_image = "food_soup_"..flav..".png",
+	minetest.register_craftitem("food:soup_"..flav[1],{
+		description = S(flav[1].." Soup"),
+		inventory_image = "food_soup_"..flav[1]..".png",
 		on_use = food.item_eat(4),
 		groups = {food=3}
 	})
-	minetest.register_craftitem("food:soup_"..flav.."_raw",{
-		description = S("Uncooked ".. flav.." Soup"),
-		inventory_image = "food_soup_"..flav.."_raw.png",
+	minetest.register_craftitem("food:soup_"..flav[1].."_raw",{
+		description = S("Uncooked ".. flav[1].." Soup"),
+		inventory_image = "food_soup_"..flav[1].."_raw.png",
 	
 	})
 	minetest.register_craft({
 		type = "cooking",
-		output = "food:soup_"..flav,
-		recipe = "food:soup_"..flav.."_raw",
+		output = "food:soup_"..flav[1],
+		recipe = "food:soup_"..flav[1].."_raw",
 	})
 	minetest.register_craft({
-		output = "food:soup_"..flav.."_raw",
+		output = "food:soup_"..flav[1].."_raw",
 		recipe = {
 	        	{"", "", ""},
-	        	{"bucket:bucket_water", "group:food_"..flav, "bucket:bucket_water"},
+	        	{"bucket:bucket_water", "group:food_"..flav[2], "bucket:bucket_water"},
 			{"", "group:food_bowl", ""},
 	        },
 		replacements = {{"bucket:bucket_water", "bucket:bucket_empty"},{"bucket:bucket_water", "bucket:bucket_empty"}}
