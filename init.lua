@@ -299,7 +299,7 @@ end)
 if minetest.get_modpath("animalmaterials") then
 	minetest.register_craft({
 		type = "cooking",
-		output = "group:food_meat",
+		output = "food:meat",
 		recipe = "group:food_meat_raw",
 		cooktime = 30
 	})
