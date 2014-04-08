@@ -339,6 +339,7 @@ minetest.register_craft({
 minetest.register_craftitem("food:dark_chocolate",{
 	description = S("Dark Chocolate"),
 	inventory_image = "food_dark_chocolate.png",
+	on_use = food.item_eat(3),
 	groups = {food_dark_chocolate=1}
 })
 minetest.register_craft({
@@ -352,6 +353,7 @@ minetest.register_craft({
 minetest.register_craftitem("food:milk_chocolate",{
 	description = S("Milk Chocolate"),
 	inventory_image = "food_milk_chocolate.png",
+	on_use = food.item_eat(3),
 	groups = {food_milk_chocolate=1}
 })
 minetest.register_craft({
