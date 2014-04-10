@@ -22,7 +22,8 @@ food = {
 	supported = {},
 	atsup = {},
 	df = {},
-	debug = false
+	debug = false,
+	version = 2.1
 }
 
 -- Checks for external content, and adds support
