@@ -4,7 +4,6 @@ Wheat =
 Flour = 
 Potato =
 Tomato =
-Strawberry = 
 Carrot = 
 Milk = 
 Egg = 

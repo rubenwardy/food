@@ -3,6 +3,8 @@ The Food Mod
 
 This is the main mod in the food mod collection.
 
+Version 2.1
+
 The Aims
 --------
 
@@ -14,27 +16,24 @@ All content should follow these aims:
 Documentation
 -------------
 
-Advanced documentation and a recipe guide is coming soon!
+Recipe guide: https://www.dropbox.com/s/tsvjmobv9n3isu0/food_crafting.pdf?dl=1
 
-Other mods
-----------
+Expansion Packs
+---------------
 
-There are expansion mods avaliable. Just install them in a mod folder, and everything should be fine.
+There are expansion mods available. Just install them in a mod folder, and everything should be fine.
 
+* Sweet Foods - https://github.com/rubenwardy/food_sweet
 * Modern food (Needs updating) - burgers, soft drinks, pop corn, coffee, etc
-* English food (Coming Soon) - breakfast, pastries, pasties, buns, muffins, teas, cheese
-* Asian food (Coming Soon) - indian, chinese, thai
 
 Licensing
 ---------
 
-The code, textures and nodeboxes in this mod are, unless otherwise notified, licensed under CC BY SA.
+Created by rubenwardy
+License for code: GPL 3.0 or later.
+License for textures: CC-BY-SA
 
-ANDREW "RUBENWARDY" WARD
-Creative Commons BY-SA 3.0
-(or similar)
-
-http://creativecommons.org/licenses/by-sa/3.0/
+Exceptions:
 
 * Baked potato texture by Doc, WTFPL
 * Dough, flour and wheat textures from default farming mod, WTFPL
