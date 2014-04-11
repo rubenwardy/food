@@ -11,7 +11,7 @@ print("Food Mod - Version 2.1")
 
 -- Boilerplate to support localized strings if intllib mod is installed.
 local S
-if (minetest.get_modpath("intllib")) then
+if (intllib) then
 	dofile(minetest.get_modpath("intllib").."/intllib.lua")
 	S = intllib.Getter(minetest.get_current_modname())
 else
@@ -106,7 +106,7 @@ function food.register(name,data,mod)
 			on_use = data.on_use,
 			walkable = false,
 			sunlight_propagates = true,
-			drawtype="nodebox",
+			drawtype = "nodebox",
 			paramtype = "light",
 			node_box = data.node_box
 		}
@@ -141,6 +141,10 @@ end)
 end
 
 -- Add support for other mods
+local function _meat(type,mod,item)
+	food.support(type,mod,item)
+	food.support("meat",mod,item)
+end
 food.support("wheat","farming","farming:wheat")
 food.support("flour","farming","farming:flour")
 food.support("potato","docfarming","docfarming:potato")
@@ -161,6 +165,11 @@ food.support("egg","jkanimals","jkanimals:egg")
 food.support("meat_raw","animalmaterials","animalmaterials:meat_raw")
 food.support("meat","mobs","mobs:meat")
 food.support("meat","jkanimals","jkanimals:meat")
+_meat("pork","mobfcooking","mobfcooking:cooked_pork")
+_meat("beef","mobfcooking","mobfcooking:cooked_beef")
+_meat("chicken","mobfcooking","mobfcooking:cooked_chicken")
+_meat("lamb","mobfcooking","mobfcooking:cooked_lamb")
+_meat("venison","mobfcooking","mobfcooking:cooked_venison")
 food.support("cup","vessels","vessels:drinking_glass")
 food.support("sugar","jkfarming","jkfarming:sugar")
 food.support("sugar","bushes_classic","bushes:sugar")
@@ -322,29 +331,29 @@ food.asupport("meat",function()
 		cooktime = 30
 	})
 end)
+food.asupport("sugar",function()
+	minetest.register_craftitem("food:sugar", {
+		description = S("Sugar"),
+		inventory_image = "food_sugar.png",
+		groups = {food_sugar=1}
+	})
 
-if minetest.get_modpath("animalmaterials") then
+	minetest.register_craft({
+		output = "food:sugar 20",
+		recipe = {
+			{"default:papyrus"},
+		}
+	})
+end)
+
+if (minetest.get_modpath("animalmaterials") and not minetest.get_modpath("mobfcooking")) then
 	food.craft({
 		type = "cooking",
-		output = "group:food_meat",
+		output = "food:meat",
 		recipe = "group:food_meat_raw",
 		cooktime = 30
 	})
-
 end
-
--- Register sugar
-minetest.register_craftitem("food:sugar", {
-	description = S("Sugar"),
-	inventory_image = "food_sugar.png",
-	groups = {food_sugar=1}
-})
-food.craft({
-	output = "food:sugar 20",
-	recipe = {
-		{"default:papyrus"},
-	}
-})
 
 -- Register chocolate powder	
 minetest.register_craftitem("food:chocolate_powder", {
@@ -365,6 +374,7 @@ food.craft({
 minetest.register_craftitem("food:dark_chocolate",{
 	description = S("Dark Chocolate"),
 	inventory_image = "food_dark_chocolate.png",
+	on_use = food.item_eat(3),
 	groups = {food_dark_chocolate=1}
 })
 food.craft({
@@ -378,6 +388,7 @@ food.craft({
 minetest.register_craftitem("food:milk_chocolate",{
 	description = S("Milk Chocolate"),
 	inventory_image = "food_milk_chocolate.png",
+	on_use = food.item_eat(3),
 	groups = {food_milk_chocolate=1}
 })
 food.craft({
@@ -518,7 +529,7 @@ for i=1, #juices do
 	minetest.register_craftitem("food:"..flav.."_juice", {
 		description = S(flav.." Juice"),
 		inventory_image = "food_"..flav.."_juice.png",
-		on_use = minetest.item_eat(2),
+		on_use = food.item_eat(2),
 	})
 		
 	food.craft({
@@ -534,7 +545,7 @@ end
 minetest.register_craftitem("food:rainbow_juice", {
 	description = S("Rainbow Juice"),
 	inventory_image = "food_rainbow_juice.png",
-	on_use = minetest.item_eat(20),
+	on_use = food.item_eat(20),
 })
 
 food.craft({
