@@ -7,7 +7,7 @@
 -- basic foods
 -- =====================================
 
-print("Food Mod - Version 2.1")
+print("Food Mod - Version 2.2")
 
 -- Boilerplate to support localized strings if intllib mod is installed.
 local S
@@ -23,7 +23,7 @@ food = {
 	atsup = {},
 	df = {},
 	debug = false,
-	version = 2.1
+	version = 2.2
 }
 
 -- Checks for external content, and adds support
@@ -82,7 +82,9 @@ end
 
 -- Checks for hunger mods to register food on
 function food.item_eat(amt)
-	if minetest.get_modpath("hud") then
+	if minetest.get_modpath("diet") then
+		return diet.item_eat(amt)
+	elseif minetest.get_modpath("hud") then
 		return hud.item_eat(amt)
 	else
 		return minetest.item_eat(amt)
