@@ -2,6 +2,7 @@ animalmaterials?
 bushes_classic?
 default?
 docfarming?
+diet?
 farming?
 farming_plus?
 hud?
