@@ -36,26 +36,21 @@ function food.support(group,mod,item)
 		return
 	end
 
-	local mtype = "item"
-
-	if minetest.registered_nodes[item] then
-		mtype = "node"
-	end
-
 	local data = minetest.registered_items[item]
-
 	if not data then
 		print("[FOOD MOD WARNING] item '"..item.."' not found")
 		return
 	end
 
-	data.groups["food_"..group]=1
-
-	if mtype == "item" then
-		minetest.register_craftitem(":"..item,data)
-	else
-		minetest.register_node(":"..item,data)
+	-- Need to copy this table, not modify it in place, otherwise it can change
+	-- the groups for ALL craftitems that use the default groups.
+	g = {}
+	for k, v in pairs(data.groups) do
+		g[k] = v
 	end
+	g["food_"..group] = 1
+	minetest.override_item(item, {groups = g})
+
 	food.supported[group] = true
 end
 
