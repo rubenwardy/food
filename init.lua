@@ -172,7 +172,7 @@ food.support("cup","vessels","vessels:drinking_glass")
 food.support("sugar","jkfarming","jkfarming:sugar")
 food.support("sugar","bushes_classic","bushes:sugar")
 
--- Default inbuilt ingrediants
+-- Default inbuilt ingredients
 food.asupport("wheat",function()
 	minetest.register_craftitem("food:wheat", {
 		description = S("Wheat"),
