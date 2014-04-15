@@ -36,26 +36,21 @@ function food.support(group,mod,item)
 		return
 	end
 
-	local mtype = "item"
-
-	if minetest.registered_nodes[item] then
-		mtype = "node"
-	end
-
 	local data = minetest.registered_items[item]
-
 	if not data then
 		print("[FOOD MOD WARNING] item '"..item.."' not found")
 		return
 	end
 
-	data.groups["food_"..group]=1
-
-	if mtype == "item" then
-		minetest.register_craftitem(":"..item,data)
-	else
-		minetest.register_node(":"..item,data)
+	-- Need to copy this table, not modify it in place, otherwise it can change
+	-- the groups for ALL craftitems that use the default groups.
+	g = {}
+	for k, v in pairs(data.groups) do
+		g[k] = v
 	end
+	g["food_"..group] = 1
+	minetest.override_item(item, {groups = g})
+
 	food.supported[group] = true
 end
 
@@ -163,6 +158,7 @@ food.support("milk","animalmaterials","animalmaterials:milk")
 food.support("milk","my_mobs","my_mobs:milk_glass_cup")
 food.support("milk","jkanimals","jkanimals:bucket_milk")
 food.support("egg","animalmaterials","animalmaterials:egg")
+food.support("egg","animalmaterials","animalmaterials:egg_big")
 food.support("egg","jkanimals","jkanimals:egg")
 food.support("meat_raw","animalmaterials","animalmaterials:meat_raw")
 food.support("meat","mobs","mobs:meat")
@@ -176,7 +172,7 @@ food.support("cup","vessels","vessels:drinking_glass")
 food.support("sugar","jkfarming","jkfarming:sugar")
 food.support("sugar","bushes_classic","bushes:sugar")
 
--- Default inbuilt ingrediants
+-- Default inbuilt ingredients
 food.asupport("wheat",function()
 	minetest.register_craftitem("food:wheat", {
 		description = S("Wheat"),
