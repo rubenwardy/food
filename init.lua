@@ -45,8 +45,10 @@ function food.support(group,mod,item)
 	-- Need to copy this table, not modify it in place, otherwise it can change
 	-- the groups for ALL craftitems that use the default groups.
 	g = {}
+	if data.groups then
 	for k, v in pairs(data.groups) do
 		g[k] = v
+	end
 	end
 	g["food_"..group] = 1
 	minetest.override_item(item, {groups = g})
