@@ -3,7 +3,7 @@ The Food Mod
 
 This is the main mod in the food mod collection.
 
-Version 2.2
+Version 2.3
 
 The Aims
 --------
@@ -16,7 +16,9 @@ All content should follow these aims:
 Documentation
 -------------
 
-Recipe guide: https://www.dropbox.com/s/tsvjmobv9n3isu0/food_crafting.pdf?dl=1
+2.2: Recipe guide: https://www.dropbox.com/s/tsvjmobv9n3isu0/food_crafting.pdf?dl=1
+
+2.3: There are several changes in recipes, due to conflicts with other mods. Recipe guide is in crafting_guide.txt
 
 Expansion Packs
 ---------------
@@ -36,7 +38,5 @@ License for textures: CC-BY-SA
 Exceptions:
 
 * Baked potato texture by Doc, WTFPL
+* Various other textures by Flipsels, WTFPL
 * Dough, flour and wheat textures from default farming mod, WTFPL
-* Egg and milk textures from Mobf, CC BY SA
-
-Have I missed out credit? Please tell me.
