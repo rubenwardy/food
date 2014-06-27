@@ -1,0 +1,385 @@
+food -- Crafting Guide
+--------------------------------------------------------------------------------
+
+
+SECTION 1
+--------------------------------------------------------------------------------
+Recipes
+--------------------------------------------------------------------------------
+
+
+APPLE JUICE
++---+---+---+
+|   |   |   |
++---+---+---+
+|   | A |   |
++---+---+---+
+|   | C |   |
++---+---+---+
+A = Apple
+C = Cup
+
+BOWL
++---+---+---+
+|   |   |   |
++---+---+---+
+| X |   | X |
++---+---+---+
+|   | X |   |
++---+---+---+
+X = Cay lump
+
+BUTTER
++---+---+---+
+|   |   |   |
++---+---+---+
+|   | M | M |
++---+---+---+
+|   |   |   |
++---+---+---+
+M = Milk
+
+CACTUS JUICE
++---+---+---+
+|   |   |   |
++---+---+---+
+|   | A |   |
++---+---+---+
+|   | C |   |
++---+---+---+
+A = CACTUS
+C = Cup
+
+CAKEMIX
++---+---+---+
+|   |   |   |
++---+---+---+
+| X | Y | Z |
++---+---+---+
+|   |   |   |
++---+---+---+
+X = FLOUR
+Y = SUGAR
+Z = EGG
+
+CAKEMIX
++---+---+---+
+|   |   |   |
++---+---+---+
+| X | Y | Z |
++---+---+---+
+|   |   |   |
++---+---+---+
+X = FLOUR
+Y = SUGAR
+Z = EGG
+
+CAKEMIX COCOA
++---+---+---+
+|   | C |   |
++---+---+---+
+| X | Y | Z |
++---+---+---+
+|   |   |   |
++---+---+---+
+C = COCOA
+X = FLOUR
+Y = SUGAR
+Z = EGG
+
+CAKEMIX CARROT
++---+---+---+
+|   | C |   |
++---+---+---+
+| X | Y | Z |
++---+---+---+
+|   |   |   |
++---+---+---+
+C = CARROT
+X = FLOUR
+Y = SUGAR
+Z = EGG
+
+RAW CHICKEN SOUP
++---+---+---+
+|   |   |   |
++---+---+---+
+| W | V | W |
++---+---+---+
+|   | B |   |
++---+---+---+
+V = Meat
+W = Water bucket
+B = Bowl
+
+CHEESE
++---+---+---+
+|   |   |   |
++---+---+---+
+|   | B | B |
++---+---+---+
+|   |   |   |
++---+---+---+
+B = Butter
+
+DARK CHOCOLAT
++---+---+---+
+|   |   |   |
++---+---+---+
+| X | X | X |
++---+---+---+
+|   |   |   |
++---+---+---+
+X = Cocoa bean
+
+MILK CHOCOLAT
++---+---+---+
+|   | M |   |
++---+---+---+
+| X | X | X |
++---+---+---+
+|   |   |   |
++---+---+---+
+M = Milk
+X = Cocoa bean
+
+PASTA
++---+---+---+
+|   |   |   |
++---+---+---+
+| X | Y | Y |
++---+---+---+
+|   |   |   |
++---+---+---+
+X = Flour
+Y = Egg
+
+RAW PASTA BAKE
++---+---+---+
+|   | X |   |
++---+---+---+
+|   | Y |   |
++---+---+---+
+|   | Z |   |
++---+---+---+
+X = Cheese
+Y = Pasta
+Z = Bowl
+
+RHUBARB JUICE
++---+---+---+
+|   |   |   |
++---+---+---+
+|   | A |   |
++---+---+---+
+|   | C |   |
++---+---+---+
+A = Rhubarb
+C = Cup
+
+RAINBOW JUICE
++---+---+---+
+|   |   |   |
++---+---+---+
+|   | A |   |
++---+---+---+
+|   | C |   |
++---+---+---+
+A = NYANCAT RAINBOW BLOCK
+C = Cup
+
+STRAWBERRY JUICE
++---+---+---+
+|   |   |   |
++---+---+---+
+|   | A |   |
++---+---+---+
+|   | C |   |
++---+---+---+
+A = STRAWBERRY
+C = Cup
+
+RAW TOMATO SOUP
++---+---+---+
+|   |   |   |
++---+---+---+
+| W | T | W |
++---+---+---+
+|   | B |   |
++---+---+---+
+T = Tomato
+W = Water bucket
+B = Bowl
+
+
+SECTION 2
+--------------------------------------------------------------------------------
+There are several options to craft basic ingredients Within the food module.
+This is normally only necessary when some optional mods are omitted.
+To enable/disable crafting of basic ingredients, adjust food.conf.
+Further note: crafted items can only be used for food. It doesn't
+--------------------------------------------------------------------------------
+
+CARROT
+mod:	    docfarming,farming_plus,jkfarming,plantlib
++---+---+---+
+|   | Y |   |
++---+---+---+
+|   | X |   |
++---+---+---+
+|   | X |   |
++---+---+---+
+X = [group:potato]			(check below how to craft potatoes)
+Y = [default:grass_1]
+
+COCOA
+mod:	    farming_plus
++---+---+---+
+|   | X |   |
++---+---+---+
+| X |   | X |
++---+---+---+
+|   | X |   |
++---+---+---+
+X = [default:apple]
+
+EGG
+mod:	    animalmaterials,jkanimals
++---+---+---+
+|   | X |   |
++---+---+---+
+| X | Y | X |
++---+---+---+
+|   | X |   |
++---+---+---+
+X = [default:sand]
+Y = [default:dirt]
+
+FISH (RAW)
+mod:        animalmaterials
++---+---+---+
+|   |   |   |
++---+---+---+
+| X | X | Y |
++---+---+---+
+|   |   |   |
++---+---+---+
+X = [default:apple]
+Y = [default:dirt]
+
+FLOUR
+mod:        farming
++---+---+---+
+| X |   |   |
++---+---+---+
+| X | X | X |
++---+---+---+
+|   |   |   |
++---+---+---+
+X = [wheat]
+
+MEAT (RAW)
+mod:        animalmaterials
++---+---+---+
+|   |   |   |
++---+---+---+
+| Y | X | X |
++---+---+---+
+|   |   |   |
++---+---+---+
+X = [default:apple]
+Y = [default:dirt]
+
+MILK
+mod:        animalmaterials
++---+---+---+
+|   |   |   |
++---+---+---+
+|   | X |   |
++---+---+---+
+|   | Y |   |
++---+---+---+
+X = [default:sand]
+Y = [bucket:bucket_water]
+
+POTATO
+mod:        docfarming,farming_plus,veggies
++---+---+---+
+|   | X |   |
++---+---+---+
+|   | Y |   |
++---+---+---+
+|   | X |   |
++---+---+---+
+X = [default:dirt]
+Y = [default:apple]
+
+RHUBARB
+mod:	    farming_plus
++---+---+---+
+|   | Y |   |
++---+---+---+
+|   | X |   |
++---+---+---+
+|   | X |   |
++---+---+---+
+Y = [default:grass_1]
+X = [default:apple]
+
+
+STRAWBERRY
+mod:	    bushes_classic(plantlife),farming_plus
++---+---+---+
+|   | Y |   |
++---+---+---+
+|   | X |   |
++---+---+---+
+|   |   |   |
++---+---+---+
+Y = [default:grass_1]
+X = [default:apple]
+
+SUGAR
+mod:	    bushes_classic(plantlife),jkfarming
++---+---+---+
+|   |   |   |
++---+---+---+
+| X | X |   |
++---+---+---+
+|   |   |   |
++---+---+---+
+X = [default:papyrus]
+
+TOMATO
+mod:	    farming_plus
++---+---+---+
+|   | X |   |
++---+---+---+
+|   | Y |   |
++---+---+---+
+|   | X |   |
++---+---+---+
+X = [default:desert_sand]
+Y = [default:apple]
+
+WHEAT
+mod:  		farming
++---+---+---+
+|   | X |   |
++---+---+---+
+|   | X |   |
++---+---+---+
+|   | X |   |
++---+---+---+
+X = [default:dry_shrub]
+
+GLASS (CUP)
+mod:  		vessels
++---+---+---+
+| X |   | X |
++---+---+---+
+| X |   | X |
++---+---+---+
+| X | X | X |
++---+---+---+
+X = [default:glass]

@@ -1,0 +1,36 @@
+# Translation by Flipsels
+
+Wheat = Tarwe
+Flour = Meel
+Potato = Aardappel
+Tomato = Tomaat
+Carrot = Wortel
+Milk = Melk
+Egg = Ei
+Cocoa Bean = Cacaoboon
+Raw meat = rauw vlees
+Venison = Wildbraad
+Sugar = Suiker
+Dark Chocolate = Pure chokolade
+Milk Chocolate = Melk chokolade
+Pasta = Pasta
+Bowl = Schotel
+Butter = Boter
+Cheese = Kaas
+Baked Potato = Gebakken Aardappel
+Pasta Bake = Pastaschotel
+Raw Pasta Bake = Ongekookte Pastaschotel
+chicken Soup = Kippensoep
+tomato Soup = Tomatensoep
+Uncooked tomato Soup = Ongekookte Tomatensoep
+Uncooked chicken Soup = Gekookte Kippensoep
+apple Juice = Appelsap
+cactus Juice = Cactussap
+Rainbow Juice = Regenboogsap
+Cake = Koek
+Chocolate Cake = Chokoladekoek
+Carrot Cake = Wortelkoek
+Cake Mix = Bakbeslag
+Chocolate Cake Mix = Bakbeslag voor chokoladekoek
+Carrot Cake Mix = Bakbeslag voor wortelkoek
+Strawberry = Aardbei
