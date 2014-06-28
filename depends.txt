@@ -1,8 +1,8 @@
 animalmaterials?
 bushes_classic?
-default?
-docfarming?
+default
 diet?
+docfarming?
 farming?
 farming_plus?
 hud?
