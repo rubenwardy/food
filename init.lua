@@ -415,7 +415,7 @@ food.craft({
 minetest.register_craftitem("food:bowl",{
 	description = S("Bowl"),
 	inventory_image = "food_bowl.png",
-	groups = {food_bowl=1}
+	groups = {food_bowl=1, food_cup=1}
 })
 food.craft({
 	output = "food:bowl",
@@ -636,7 +636,7 @@ minetest.register_node("food:cake_carrot", {
 food.craft({
 	type = "cooking",
 	output = "food:cake",
-	recipe = "food:cakemix_plain",
+	recipe = "food:cakemix_plain",f
 	cooktime = 10,
 })
 food.craft({
