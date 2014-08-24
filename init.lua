@@ -633,6 +633,34 @@ minetest.register_node("food:cake_carrot", {
 		}
 	}
 })
+
+minetest.register_node('food:pizza', {
+	        description = S('Pizza'),
+		drawtype = 'nodebox',
+		tiles = {
+			'pizza.png',
+			'pizza_sides.png'
+		},
+		paramtype = 'light',
+		walkable = true,
+		groups={food=3,crumbly=3},
+		paramtype2 = "facedir",
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{ -0.25,   -0.5, -0.5,    0.25,   -0.48, 0.5    },
+				{ -0.375,  -0.5, -0.4375, 0.375,  -0.48, 0.4375 },
+				{ -0.5,    -0.5, -0.25,   0.5,    -0.48, 0.25   },
+				{ -0.4375, -0.5, -0.375,  0.4375, -0.48, 0.375  },
+				{ -0.25,   -0.5, -0.5,    0.25,   -0.48, 0.5    },
+			}
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = { -0.5, -0.5, -0.5, 0.5, -0.4375, 0.5 },
+		},
+	})
+
 food.craft({
 	type = "cooking",
 	output = "food:cake",
