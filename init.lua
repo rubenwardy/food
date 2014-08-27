@@ -6,7 +6,7 @@
 -- Some basic foods
 -- =====================================
 
-print("Food Mod - Version 2.2")
+print("Food Mod - Version 2.3")
 
 dofile(minetest.get_modpath("food").."/api.lua")
 dofile(minetest.get_modpath("food").."/support.lua")

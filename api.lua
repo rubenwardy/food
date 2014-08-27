@@ -1,4 +1,4 @@
- -- FOOD MOD
+-- FOOD MOD
 -- A mod written by rubenwardy that adds
 -- food to the minetest game
 -- =====================================
