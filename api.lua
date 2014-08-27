@@ -18,7 +18,7 @@ end
 food = {
 	modules = {},
 	disabled_modules = {},
-	debug = true,
+	debug = false,
 	version = 2.3
 }
 
