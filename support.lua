@@ -1,4 +1,4 @@
- -- FOOD MOD
+-- FOOD MOD
 -- A mod written by rubenwardy that adds
 -- food to the minetest game
 -- =====================================
@@ -7,8 +7,6 @@
 -- =====================================
 
 -- Add support for other mods
-food.support("wheat", "farming:wheat")
-food.support("flour", "farming:flour")
 food.support("cocoa", "farming_plus:cocoa_bean")
 food.support("cup", "vessels:drinking_glass")
 food.support("potato", {
@@ -49,4 +47,20 @@ food.support("sugar", {
 	"jkfarming:sugar",
 	"bushes:sugar"
 })
+
+if farming and farming.mod == "redo" then
+	food.support("wheat", "farming:wheat")
+	food.support("flour", "farming:flour")
+	food.support("carrot", "farming:carrot")
+	food.support("potato", "farming:potato")
+	food.support("tomato", "farming:tomato")
+	food.support("cocoa", "farming:cocoa_beans")
+	food.support("dark_chocolate", "farming:chocolate_dark")
+	food.support("sugar", "farming:sugar")
+	food.support("cup", "farming:drinking_cup")
+	food.disable_if("farming", "baked_potato")
+else
+	food.support("wheat", "farming:wheat")
+	food.support("flour", "farming:flour")
+end
 

@@ -70,8 +70,20 @@ function food.support(group, item)
 	minetest.override_item(item, {groups = g})
 end
 
-function food.disable(name)
+function food.disable(name)	
+	if type(name) == "table" then
+		for i = 1, #name do
+			food.disable(name[i])
+		end
+		return
+	end
 	food.disabled_modules[name] = true
+end
+
+function food.disable_if(mod, name)
+	if minetest.get_modpath(mod) then
+		food.disable(name)
+	end
 end
 
 -- Adds a module
