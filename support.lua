@@ -6,6 +6,11 @@
 -- Support external mods
 -- =====================================
 
+-- The following ingredient list is licensed under WTFPL
+-- You may use the list in your mod. I am doing this to
+-- make it easier for mods to support lots of others -
+-- good for the end user
+
 -- Add support for other mods
 food.support("cocoa", "farming_plus:cocoa_bean")
 food.support("cup", "vessels:drinking_glass")
