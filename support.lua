@@ -69,3 +69,10 @@ else
 	food.support("flour", "farming:flour")
 end
 
+if minetest.get_modpath("mtfoods") then
+	food.support("strawberry", "farming_plus:strawberry_item")
+	food.support("strawberry", "plantlib:strawberry")
+	food.support("strawberry", "bushes:strawberry")
+	food.support("rhubarb", "farming_plus:rhubarb_item")
+end
+
