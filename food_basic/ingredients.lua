@@ -7,7 +7,7 @@
 -- =====================================
 
 food.module("wheat", function()
-	minetest.register_craftitem("food:wheat", {
+	minetest.register_craftitem(":food:wheat", {
 		description = S("Wheat"),
 		inventory_image = "food_wheat.png",
 		groups = {food_wheat=1}
@@ -22,7 +22,7 @@ food.module("wheat", function()
 end, true)
 
 food.module("flour", function()
-	minetest.register_craftitem("food:flour", {
+	minetest.register_craftitem(":food:flour", {
 		description = S("Flour"),
 		inventory_image = "food_flour.png",
 		groups = {food_flour = 1}
@@ -44,7 +44,7 @@ food.module("flour", function()
 end, true)
 
 food.module("potato", function()
-	minetest.register_craftitem("food:potato", {
+	minetest.register_craftitem(":food:potato", {
 		description = S("Potato"),
 		inventory_image = "food_potato.png",
 		groups = {food_potato = 1}
@@ -60,7 +60,7 @@ food.module("potato", function()
 end, true)
 
 food.module("orange", function()
-	minetest.register_craftitem("food:orange", {
+	minetest.register_craftitem(":food:orange", {
 		description = S("Orange"),
 		inventory_image = "food_orange.png",
 		groups = {food_orange = 1}
@@ -76,7 +76,7 @@ food.module("orange", function()
 end, true)
 
 food.module("tomato", function()
-	minetest.register_craftitem("food:tomato", {
+	minetest.register_craftitem(":food:tomato", {
 		description = S("Tomato"),
 		inventory_image = "food_tomato.png",
 		groups = {food_tomato = 1}
@@ -92,7 +92,7 @@ food.module("tomato", function()
 end, true)
 
 food.module("carrot", function()
-	minetest.register_craftitem("food:carrot", {
+	minetest.register_craftitem(":food:carrot", {
 		description = S("Carrot"),
 		inventory_image = "food_carrot.png",
 		groups = {food_carrot=1},
@@ -107,7 +107,7 @@ food.module("carrot", function()
 end, true)
 
 food.module("milk", function()
-	minetest.register_craftitem("food:milk", {
+	minetest.register_craftitem(":food:milk", {
 		description = S("Milk"),
 		image = "food_milk.png",
 		on_use = food.item_eat(1),
@@ -125,7 +125,7 @@ food.module("milk", function()
 end, true)
 
 food.module("egg", function()
-	minetest.register_craftitem("food:egg", {
+	minetest.register_craftitem(":food:egg", {
 		description = S("Egg"),
 		inventory_image = "food_egg.png",
 		groups = {food_egg=1}
@@ -141,7 +141,7 @@ food.module("egg", function()
 end, true)
 
 food.module("cocoa", function()
-	minetest.register_craftitem("food:cocoa", {
+	minetest.register_craftitem(":food:cocoa", {
 		description = S("Cocoa Bean"),
 		inventory_image = "food_cocoa.png",
 		groups = {food_cocoa=1}
@@ -157,7 +157,7 @@ food.module("cocoa", function()
 end, true)
 
 food.module("meat", function()
-	minetest.register_craftitem("food:meat", {
+	minetest.register_craftitem(":food:meat", {
 		description = S("Venison"),
 		inventory_image = "food_meat.png",
 		groups = {food_meat=1, food_chicken=1}
@@ -170,7 +170,7 @@ food.module("meat", function()
 	})
 
 	if not minetest.get_modpath("animalmaterials") then
-		minetest.register_craftitem("food:meat_raw", {
+		minetest.register_craftitem(":food:meat_raw", {
 			description = S("Raw meat"),
 			image = "food_meat_raw.png",
 			on_use = food.item_eat(1),
@@ -188,7 +188,7 @@ food.module("meat", function()
 end, true)
 
 food.module("sugar", function()
-	minetest.register_craftitem("food:sugar", {
+	minetest.register_craftitem(":food:sugar", {
 		description = S("Sugar"),
 		inventory_image = "food_sugar.png",
 		groups = {food_sugar=1}
@@ -203,7 +203,7 @@ food.module("sugar", function()
 end, true)
 
 food.module("chocolate_powder", function()
-	minetest.register_craftitem("food:chocolate_powder", {
+	minetest.register_craftitem(":food:chocolate_powder", {
 		description = S("Chocolate Powder"),
 		inventory_image = "food_chocolate_powder.png",
 		groups = {food_choco_powder = 1}
@@ -219,7 +219,7 @@ food.module("chocolate_powder", function()
 end, true)
 
 food.module("pasta", function()
-	minetest.register_craftitem("food:pasta",{
+	minetest.register_craftitem(":food:pasta",{
 		description = S("Pasta"),
 		inventory_image = "food_pasta.png",
 		groups = {food_pasta=1}
@@ -232,7 +232,7 @@ food.module("pasta", function()
 end, true)
 
 food.module("bowl", function()
-	minetest.register_craftitem("food:bowl",{
+	minetest.register_craftitem(":food:bowl",{
 		description = S("Bowl"),
 		inventory_image = "food_bowl.png",
 		groups = {food_bowl=1}
@@ -247,7 +247,7 @@ food.module("bowl", function()
 end, true)
 
 food.module("butter", function()
-	minetest.register_craftitem("food:butter", {
+	minetest.register_craftitem(":food:butter", {
 		description = S("Butter"),
 		inventory_image = "food_butter.png",
 		groups = {food_butter=1}
@@ -261,7 +261,7 @@ food.module("butter", function()
 end, true)
 
 food.module("cheese", function()
-	minetest.register_craftitem("food:cheese", {
+	minetest.register_craftitem(":food:cheese", {
 		description = S("Cheese"),
 		inventory_image = "food_cheese.png",
 		on_use = food.item_eat(4),
