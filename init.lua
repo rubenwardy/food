@@ -125,9 +125,13 @@ for i=1, #soups do
 end
 
 -- Juices
-local juices = {"apple","cactus"}
-for i=1, #juices do
-	local flav = juices[i]
+local juices = {apple = "default:apple",
+                cactus = "default:cactus"}
+if minetest.get_modpath("farming_plus") then
+    juices["orange"] = "farming_plus:orange_item"
+end
+
+for flav, item in pairs(juices) do
 	food.module(flav.."_juice", function()
 		minetest.register_craftitem("food:"..flav.."_juice", {
 			description = S(flav.." Juice"),
@@ -138,7 +142,7 @@ for i=1, #juices do
 			output = "food:"..flav.."_juice 4",
 			recipe = {
 				{"","",""},
-				{"","default:"..flav,""},
+				{"",item,""},
 				{"","group:food_cup",""},
 			}
 		})
