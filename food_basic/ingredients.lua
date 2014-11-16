@@ -2,7 +2,7 @@
 -- A mod written by rubenwardy that adds
 -- food to the minetest game
 -- =====================================
--- >> food/ingredients.lua
+-- >> food_basic/ingredients.lua
 -- Fallback ingredients
 -- =====================================
 
