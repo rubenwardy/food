@@ -8,36 +8,36 @@
 
 food.module("wheat", function()
 	minetest.register_craftitem("food:wheat", {
-		description = S("Wheat"), 
-		inventory_image = "food_wheat.png", 
+		description = S("Wheat"),
+		inventory_image = "food_wheat.png",
 		groups = {food_wheat=1}
 	})
 
 	food.craft({
-		output = "food:wheat", 
+		output = "food:wheat",
 		recipe = {
-			{"default:dry_shrub"}, 
+			{"default:dry_shrub"},
 		}
 	})
 end, true)
 
 food.module("flour", function()
 	minetest.register_craftitem("food:flour", {
-		description = S("Flour"), 
-		inventory_image = "food_flour.png", 
+		description = S("Flour"),
+		inventory_image = "food_flour.png",
 		groups = {food_flour = 1}
 	})
 	food.craft({
-		output = "food:flour", 
+		output = "food:flour",
 		recipe = {
-			{"group:food_wheat"}, 
+			{"group:food_wheat"},
 			{"group:food_wheat"}
 		}
 	})
 	food.craft({
-		output = "food:flour", 
+		output = "food:flour",
 		recipe = {
-			{"default:sand"}, 
+			{"default:sand"},
 			{"default:sand"}
 		}
 	})
@@ -45,31 +45,47 @@ end, true)
 
 food.module("potato", function()
 	minetest.register_craftitem("food:potato", {
-		description = S("Potato"), 
-		inventory_image = "food_potato.png", 
+		description = S("Potato"),
+		inventory_image = "food_potato.png",
 		groups = {food_potato = 1}
 	})
 	food.craft({
-		output = "food:potato", 
+		output = "food:potato",
 		recipe = {
-			{"default:dirt"}, 
+			{"default:dirt"},
 			{"default:apple"}
 
 		}
 	})
 end, true)
 
+food.module("orange", function()
+	minetest.register_craftitem("food:orange", {
+		description = S("Orange"),
+		inventory_image = "food_orange.png",
+		groups = {food_orange = 1}
+	})
+	food.craft({
+		output = "food:orange",
+		recipe = {
+			{"", "default:desert_sand", ""},
+			{"default:desert_sand", "default:desert_sand", "default:desert_sand"},
+			{"", "default:desert_sand", ""}
+		}
+	})
+end, true)
+
 food.module("tomato", function()
 	minetest.register_craftitem("food:tomato", {
-		description = S("Tomato"), 
-		inventory_image = "food_tomato.png", 
+		description = S("Tomato"),
+		inventory_image = "food_tomato.png",
 		groups = {food_tomato = 1}
 	})
 	food.craft({
-		output = "food:tomato", 
+		output = "food:tomato",
 		recipe = {
-			{"", "default:desert_sand", ""}, 
-			{"default:desert_sand", "", "default:desert_sand"}, 
+			{"", "default:desert_sand", ""},
+			{"default:desert_sand", "", "default:desert_sand"},
 			{"", "default:desert_sand", ""}
 		}
 	})
@@ -77,48 +93,48 @@ end, true)
 
 food.module("carrot", function()
 	minetest.register_craftitem("food:carrot", {
-		description = S("Carrot"), 
-		inventory_image = "food_carrot.png", 
-		groups = {food_carrot=1}, 
+		description = S("Carrot"),
+		inventory_image = "food_carrot.png",
+		groups = {food_carrot=1},
 		on_use = food.item_eat(3)
 	})
 	food.craft({
-		output = "food:carrot", 
+		output = "food:carrot",
 		recipe = {
-			{"default:apple", "default:apple", "default:apple"}, 
+			{"default:apple", "default:apple", "default:apple"},
 		}
 	})
 end, true)
 
 food.module("milk", function()
 	minetest.register_craftitem("food:milk", {
-		description = S("Milk"), 
-		image = "food_milk.png", 
-		on_use = food.item_eat(1), 
-		groups = { eatable=1, food_milk = 1 }, 
+		description = S("Milk"),
+		image = "food_milk.png",
+		on_use = food.item_eat(1),
+		groups = { eatable=1, food_milk = 1 },
 		stack_max=10
 	})
 	food.craft({
-		output = "food:milk", 
+		output = "food:milk",
 		recipe = {
-			{"default:sand"}, 
+			{"default:sand"},
 			{"bucket:bucket_water"}
-		}, 
-		replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}}, 
+		},
+		replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}},
 	})
 end, true)
 
 food.module("egg", function()
 	minetest.register_craftitem("food:egg", {
-		description = S("Egg"), 
-		inventory_image = "food_egg.png", 
+		description = S("Egg"),
+		inventory_image = "food_egg.png",
 		groups = {food_egg=1}
 	})
 	food.craft({
-		output = "food:egg", 
+		output = "food:egg",
 		recipe = {
-			{"", "default:sand", ""}, 
-			{"default:sand", "", "default:sand"}, 
+			{"", "default:sand", ""},
+			{"default:sand", "", "default:sand"},
 			{"", "default:sand", ""}
 		}
 	})
@@ -126,15 +142,15 @@ end, true)
 
 food.module("cocoa", function()
 	minetest.register_craftitem("food:cocoa", {
-		description = S("Cocoa Bean"), 
-		inventory_image = "food_cocoa.png", 
+		description = S("Cocoa Bean"),
+		inventory_image = "food_cocoa.png",
 		groups = {food_cocoa=1}
 	})
 	food.craft({
-		output = "food:cocoa", 
+		output = "food:cocoa",
 		recipe = {
-			{"", "default:apple", ""}, 
-			{"default:apple", "", "default:apple"}, 
+			{"", "default:apple", ""},
+			{"default:apple", "", "default:apple"},
 			{"", "default:apple", ""}
 		}
 	})
@@ -142,29 +158,29 @@ end, true)
 
 food.module("meat", function()
 	minetest.register_craftitem("food:meat", {
-		description = S("Venison"), 
-		inventory_image = "food_meat.png", 
+		description = S("Venison"),
+		inventory_image = "food_meat.png",
 		groups = {food_meat=1, food_chicken=1}
-	})	
+	})
 	food.craft({
-		type = "cooking", 
-		output = "food:meat", 
-		recipe = "group:food_meat_raw", 
+		type = "cooking",
+		output = "food:meat",
+		recipe = "group:food_meat_raw",
 		cooktime = 30
 	})
 
 	if not minetest.get_modpath("animalmaterials") then
 		minetest.register_craftitem("food:meat_raw", {
-			description = S("Raw meat"), 
-			image = "food_meat_raw.png", 
-			on_use = food.item_eat(1), 
-			groups = { meat=1, eatable=1, food_meat_raw=1 }, 
+			description = S("Raw meat"),
+			image = "food_meat_raw.png",
+			on_use = food.item_eat(1),
+			groups = { meat=1, eatable=1, food_meat_raw=1 },
 			stack_max=25
 		})
 		food.craft({
-			output = "food:meat_raw", 
+			output = "food:meat_raw",
 			recipe = {
-				{"default:apple"}, 
+				{"default:apple"},
 				{"default:dirt"}
 			}
 		})
@@ -173,15 +189,15 @@ end, true)
 
 food.module("sugar", function()
 	minetest.register_craftitem("food:sugar", {
-		description = S("Sugar"), 
-		inventory_image = "food_sugar.png", 
+		description = S("Sugar"),
+		inventory_image = "food_sugar.png",
 		groups = {food_sugar=1}
 	})
 
 	minetest.register_craft({
-		output = "food:sugar 20", 
+		output = "food:sugar 20",
 		recipe = {
-			{"default:papyrus"}, 
+			{"default:papyrus"},
 		}
 	})
 end, true)
@@ -261,9 +277,9 @@ end, true)
 
 if (minetest.get_modpath("animalmaterials") and not minetest.get_modpath("mobfcooking")) then
 	food.craft({
-		type = "cooking", 
-		output = "food:meat", 
-		recipe = "animalmaterials:meat_raw", 
+		type = "cooking",
+		output = "food:meat",
+		recipe = "animalmaterials:meat_raw",
 		cooktime = 30
 	})
 end

@@ -105,7 +105,7 @@ for i=1, #soups do
 		minetest.register_craftitem("food:soup_"..flav[1].."_raw",{
 			description = S("Uncooked ".. flav[1].." Soup"),
 			inventory_image = "food_soup_"..flav[1].."_raw.png",
-	
+
 		})
 		food.craft({
 			type = "cooking",
@@ -125,7 +125,7 @@ for i=1, #soups do
 end
 
 -- Juices
-local juices = {"apple","cactus"}
+local juices = {"apple", "orange", "cactus"}
 for i=1, #juices do
 	local flav = juices[i]
 	food.module(flav.."_juice", function()
@@ -133,12 +133,12 @@ for i=1, #juices do
 			description = S(flav.." Juice"),
 			inventory_image = "food_"..flav.."_juice.png",
 			on_use = food.item_eat(2),
-		})		
+		})
 		food.craft({
 			output = "food:"..flav.."_juice 4",
 			recipe = {
 				{"","",""},
-				{"","default:"..flav,""},
+				{"","group:food_"..flav,""},
 				{"","group:food_cup",""},
 			}
 		})

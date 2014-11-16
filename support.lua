@@ -14,6 +14,9 @@
 -- Add support for other mods
 food.support("cocoa", "farming_plus:cocoa_bean")
 food.support("cup", "vessels:drinking_glass")
+food.support("cactus", "default:cactus")
+food.support("apple", "default:apple")
+food.support("orange", "farming_plus:orange_item")
 food.support("potato", {
 	"docfarming:potato",
 	"veggies:potato",
