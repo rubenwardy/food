@@ -11,6 +11,14 @@ print("Food Mod - Version 2.3")
 dofile(minetest.get_modpath("food_basic").."/support.lua")
 dofile(minetest.get_modpath("food_basic").."/ingredients.lua")
 
+-- Boilerplate to support localized strings if intllib mod is installed.
+local S = 0
+if (intllib) then
+	dofile(minetest.get_modpath("intllib").."/intllib.lua")
+	S = intllib.Getter(minetest.get_current_modname())
+else
+	S = function ( s ) return s end
+end
 
 -- Register dark chocolate
 food.module("dark_chocolate", function()
