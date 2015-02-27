@@ -111,6 +111,7 @@ function food.item_eat(amt)
 			return hphunger.item_eat(amt)
 		else
 			return hunger.item_eat(amt)
+		end
 	else
 		return minetest.item_eat(amt)
 	end
