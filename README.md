@@ -1,5 +1,5 @@
-The Food Mod
-============
+Food
+====
 
 This is the main mod in the food mod collection.
 
