@@ -100,16 +100,22 @@ function food.module(name, func, ingred)
 	func()
 end
 
+local global_exists = minetest.global_exists or function(name)
+	return (_G[name] ~= nil)
+end
+
 -- Checks for hunger mods to register food on
 function food.item_eat(amt)
-	if minetest.get_modpath("diet") and diet and diet.item_eat then
+	if minetest.get_modpath("diet") and global_exists("diet") and diet.item_eat then
 		return diet.item_eat(amt)
-	elseif minetest.get_modpath("hud") and hud and hud.item_eat then
+	elseif minetest.get_modpath("hud") and global_exists("hud") and hud.item_eat then
 		return hud.item_eat(amt)
 	elseif minetest.get_modpath("hbhunger") then
-		if hbhunger then
+		if global_exists("hbhunger") then
 			return hbhunger.item_eat(amt)
-		else
+		elseif global_exists("hunger") then
+			-- For backwards compatibility
+			-- It used to be called `hunger` rather than `hbhunger`
 			return hunger.item_eat(amt)
 		end
 	else
