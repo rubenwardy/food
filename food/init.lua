@@ -12,9 +12,7 @@ food = {
 	debug = false,
 	version = 2.3,
 	disable_fallbacks =
-		minetest.setting_getbool("food.disable_fallbacks"),
-	suppress_no_fallback_error =
-		minetest.setting_getbool("food.suppress_no_fallback_error")
+		minetest.setting_getbool("food.disable_fallbacks")
 }
 
 -- Checks for external content, and adds support
@@ -95,12 +93,7 @@ function food.module(name, func, ingred)
 		end
 	
 		if food.disable_fallbacks then
-			if food.suppress_no_fallback_error then
-				print("Warning: Fallbacks are disabled, and no item for " .. name .. " registered!")
-			else
-				error("Food: Fallbacks are disabled, and no item for " .. name .. " registered!" ..
-					"\nUse setting food.suppress_no_fallback_error = true to ignore this error.")
-			end
+			print("Warning: Fallbacks are disabled, and no item for " .. name .. " registered!")
 			return
 		end
 
