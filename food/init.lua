@@ -98,7 +98,8 @@ function food.module(name, func, ingred)
 			if food.suppress_no_fallback_error then
 				print("Warning: Fallbacks are disabled, and no item for " .. name .. " registered!")
 			else
-				error("Food: Fallbacks are disabled, and no item for " .. name .. " registered!")
+				error("Food: Fallbacks are disabled, and no item for " .. name .. " registered!" ..
+					"\nUse setting food.suppress_no_fallback_error = true to ignore this error.")
 			end
 			return
 		end
