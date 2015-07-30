@@ -86,9 +86,17 @@ function food.module(name, func, ingred)
 		for name, def in pairs(minetest.registered_items) do
 			local g = def.groups and def.groups["food_"..name] or 0
 			if g > 0 then
-				print("cancelled")
 				return
 			end
+		end
+	
+		if minetest.setting_getbool("food.disable_fallbacks") then
+			if minetest.setting_getbool("food.suppress_no_fallback_error") then
+				print("Warning: Fallbacks are disabled, and no item for " .. name .. " registered!")
+			else
+				error("Food: Fallbacks are disabled, and no item for " .. name .. " registered!")
+			end
+			return
 		end
 
 		if food.debug then
