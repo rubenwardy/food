@@ -79,11 +79,61 @@ function food.disable_if(mod, name)
 	end
 end
 
+local mtreg_item = minetest.register_item
+function minetest.register_item(name, def)
+	if food._reg_items then
+		local iname = food.strip_name(name)
+		food._reg_items[iname] = true
+	end
+	return mtreg_item(name, def)
+end
+
+local mtreg_node = minetest.register_node
+function minetest.register_node(name, def)
+	if food._reg_items then
+		local iname = food.strip_name(name)
+		food._reg_items[iname] = true
+	end
+	return mtreg_node(name, def)
+end
+
+function food.strip_name(name)
+	res = name:gsub('%"', '')
+	if res:sub(1, 1) == ":" then
+		res = res:sub(2, #res)
+		--table.concat{res:sub(1, 1-1), "", res:sub(1+1)}
+	end
+	for str in string.gmatch(res, "([^ ]+)") do
+		if str ~= " " and str ~= nil then
+			res = str
+			break
+		end
+	end
+	if not res then
+		res = ""
+	end
+	return res
+end
+
+local mtreg_craft = minetest.register_craft
+function minetest.register_craft(def)
+	if food._reg_items and food._cur_module and def.output then
+		local name = food.strip_name(def.output)
+		if not food._reg_items[name] then
+			print("[Food] (Error) Modules should only define recipes for the items they create!")
+			print("Output: " .. name .. " in module " .. food._cur_module)
+		end
+	end
+
+	return mtreg_craft(def)
+end
+
 -- Adds a module
 function food.module(name, func, ingred)
 	if food.disabled_modules[name] then
 		return
 	end
+
 	if ingred then
 		for name, def in pairs(minetest.registered_items) do
 			local g = def.groups and def.groups["food_"..name] or 0
@@ -91,7 +141,7 @@ function food.module(name, func, ingred)
 				return
 			end
 		end
-	
+
 		if food.disable_fallbacks then
 			print("Warning: Fallbacks are disabled, and no item for " .. name .. " registered!")
 			return
@@ -103,7 +153,14 @@ function food.module(name, func, ingred)
 	elseif food.debug then
 		print("[Food Debug] Module " .. name)
 	end
+
+	food._cur_module = name
+	food._reg_items = {}
+
 	func()
+
+	food._reg_items = nil
+	food._cur_module = nil
 end
 
 local global_exists = minetest.global_exists or function(name)
@@ -161,4 +218,3 @@ end
 function food.craft(craft)
 	minetest.register_craft(craft)
 end
-
