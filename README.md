@@ -1,6 +1,8 @@
 Food
 ====
 
+[![Build Status](https://travis-ci.org/rubenwardy/food.svg?branch=master)](https://travis-ci.org/rubenwardy/food)
+
 This is the main mod in the food mod collection.
 
 Version 2.3

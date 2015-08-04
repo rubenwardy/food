@@ -1,0 +1,7 @@
+docfarming?
+PilzAdam/farming_plus@github?
+JKMurray/JKFarming@github?
+my_mobs?
+PilzAdam/mobs@github
+sapier/animals_modpack@github?
+hawkril/mobfcooking@github?

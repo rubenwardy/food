@@ -1,0 +1,5 @@
+language: lua
+before_install: sh travis_install.sh
+script: cd minetest && ./bin/minetestserver --gameid minetest_game --worldname world --port 31234
+notifications:
+  email: false
