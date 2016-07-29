@@ -3,6 +3,7 @@ animalmaterials?
 bushes_classic?
 default?
 docfarming?
+ethereal?
 farming?
 farming_plus?
 intllib?
