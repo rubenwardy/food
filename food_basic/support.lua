@@ -16,7 +16,13 @@ food.support("cocoa", "farming_plus:cocoa_bean")
 food.support("cup", "vessels:drinking_glass")
 food.support("cactus", "default:cactus")
 food.support("apple", "default:apple")
-food.support("orange", "farming_plus:orange_item")
+food.support("strawberry", "ethereal:strawberry")
+food.support("orange", {
+	"farming_plus:orange_item",
+	"ethereal:orange"
+})
+food.disable_if("ethereal", "orange")
+
 food.support("potato", {
 	"docfarming:potato",
 	"veggies:potato",
@@ -68,6 +74,8 @@ if farming and farming.mod == "redo" then
 	food.support("dark_chocolate", "farming:chocolate_dark")
 	food.support("sugar", "farming:sugar")
 	food.support("cup", "farming:drinking_cup")
+	food.support("rhubarb", "farming:rhubarb")
+	food.support("blueberry", "farming:blueberries")
 	food.disable_if("farming", "baked_potato")
 else
 	food.support("wheat", "farming:wheat")
@@ -81,3 +89,6 @@ if minetest.get_modpath("mtfoods") then
 	food.support("rhubarb", "farming_plus:rhubarb_item")
 end
 
+if minetest.get_modpath("mobs") and mobs.mod == "redo" then
+	food.support("chicken", "mobs:chicken_cooked")
+end
