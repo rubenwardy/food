@@ -1,6 +1,6 @@
 food
 animalmaterials?
-bushes_classic?
+bushes?
 default?
 docfarming?
 ethereal?
@@ -12,6 +12,7 @@ jkfarming?
 my_mobs?
 mobs?
 mobfcooking?
+mtfoods?
 plantlib?
 veggies?
 vessels?
