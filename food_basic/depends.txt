@@ -1,6 +1,7 @@
 food
 animalmaterials?
 bushes?
+bushes_classic?
 default?
 docfarming?
 ethereal?
