@@ -98,7 +98,7 @@ function minetest.register_node(name, def)
 end
 
 function food.strip_name(name)
-	res = name:gsub('%"', '')
+	local res = name:gsub('%"', '')
 	if res:sub(1, 1) == ":" then
 		res = res:sub(2, #res)
 		--table.concat{res:sub(1, 1-1), "", res:sub(1+1)}
