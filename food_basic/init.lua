@@ -95,9 +95,13 @@ food.module("pasta_bake", function()
 end)
 
 -- Register Soups
+local chicken = "meat"
+if minetest.get_modpath("mobs") and mobs.mod == "redo" then
+	chicken = "chicken"
+end
 local soups = {
 	{"tomato", "tomato"},
-	{"chicken", "meat"}
+	{"chicken", chicken}
 }
 for i=1, #soups do
 	local flav = soups[i]
