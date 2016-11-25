@@ -82,5 +82,9 @@ else
 end
 
 if minetest.get_modpath("mobs") and mobs.mod == "redo" then
-	food.support("chicken", "mobs:chicken_cooked")
+	if minetest.get_modpath("mobs_animal") then
+		food.support("chicken", "mobs:chicken_cooked")
+	else
+		food.support("chicken", "mobs:meat")
+	end
 end
