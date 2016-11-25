@@ -16,11 +16,13 @@ food.support("cocoa", "farming_plus:cocoa_bean")
 food.support("cup", "vessels:drinking_glass")
 food.support("cactus", "default:cactus")
 food.support("apple", "default:apple")
+minetest.register_alias("farming:orange", "ethereal:orange")
 food.support("orange", {
 	"farming_plus:orange_item",
-	"ethereal:orange"
+	"ethereal:orange",
+	"farming:orange"
 })
-food.disable_if("ethereal", "orange")
+--food.disable_if("ethereal", "orange")
 
 food.support("potato", {
 	"docfarming:potato",
