@@ -12,6 +12,7 @@ jkanimals?
 jkfarming?
 my_mobs?
 mobs?
+mobs_animal?
 mobfcooking?
 mtfoods?
 plantlib?
