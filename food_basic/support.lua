@@ -18,7 +18,7 @@ food.support("cactus", "default:cactus")
 food.support("apple", "default:apple")
 food.support("orange", {
 	"farming_plus:orange_item",
-	"ethereal:orange"
+	"ethereal:orange",
 })
 food.disable_if("ethereal", "orange")
 
@@ -84,5 +84,9 @@ else
 end
 
 if minetest.get_modpath("mobs") and mobs.mod == "redo" then
-	food.support("chicken", "mobs:chicken_cooked")
+	if minetest.get_modpath("mobs_animal") then
+		food.support("chicken", "mobs:chicken_cooked")
+	else
+		food.support("chicken", "mobs:meat")
+	end
 end
