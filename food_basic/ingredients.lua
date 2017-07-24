@@ -264,16 +264,18 @@ food.module("butter", function()
 		output = "food:butter",
 		recipe = {{"group:food_milkbucket","group:food_milkbucket"}},
 		replacements = { 
-		    {"group:food_milkbucket","bucket:bucket_empty"},
-		    {"group:food_milkbucket","bucket:bucket_empty"} 
+			{"group:food_milkbucket","bucket:bucket_empty"},
+			{"group:food_milkbucket","bucket:bucket_empty"} 
 		},
 	})
 	food.craft({
-	output = "food:butter",
-	recipe = {{"group:food_milk","group:food_milkbucket"}},
-	replacements = { 
-	    {"group:food_milkbucket","bucket:bucket_empty"},
-	},
+		output = "food:butter",
+		recipe = {
+			{"group:food_milk","group:food_milkbucket"}
+		},
+		replacements = { 
+			{"group:food_milkbucket","bucket:bucket_empty"},
+		},
 	})
 	food.craft({
 		output = "food:butter",
