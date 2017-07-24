@@ -40,9 +40,11 @@ food.support("carrot", {
 food.support("milk", {
 	"animalmaterials:milk",
 	"my_mobs:milk_glass_cup",
+	"mtfoods:dandelion_milk"
+})
+food.support("milkbucket", {
 	"jkanimals:bucket_milk",
 	"mobs:bucket_milk",
-	"mtfoods:dandelion_milk"
 })
 food.support("egg", {
 	"animalmaterials:egg",
